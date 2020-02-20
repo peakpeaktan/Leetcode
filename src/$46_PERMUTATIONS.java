@@ -38,7 +38,6 @@ public class $46_PERMUTATIONS {
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums);
                 tempList.remove(tempList.size() - 1);
-//                System.out.println(tempList);
             }
         }
 
@@ -81,7 +80,8 @@ public class $46_PERMUTATIONS {
                     tempList.remove(1) -> templist = {1}
             tempList.remove(0) -> templist = {}
         i = 1
-
+            tempList.add(nums[1]) -> templist = {2}
+            ...
      */
 
     public static void main(String [] args){
