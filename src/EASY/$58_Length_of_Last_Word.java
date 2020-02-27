@@ -19,4 +19,11 @@ public class $58_Length_of_Last_Word {
         //trim() eliminates leading and trailing spaces of a string
         return s.trim().length() - s.trim().lastIndexOf(" ")-1;
     }
+
+    public int lengthOfLastWord2(String s) {
+
+        String[] words = s.split(" ");
+        if (words.length==0) return 0;
+        else return words[words.length-1].length();
+    }
 }

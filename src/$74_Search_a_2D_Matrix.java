@@ -27,7 +27,7 @@ Output: false
 
 public class $74_Search_a_2D_Matrix {
 
-    public boolean searchMatrix(int[][] matrix, int target) {
+    public static boolean searchMatrix(int[][] matrix, int target) {
 
         int row = matrix.length;
 
@@ -63,5 +63,13 @@ public class $74_Search_a_2D_Matrix {
         }
 
         return false;
+    }
+
+    public static void main(String [] args){
+        int[][] array = {{1, 2,  3,  4},
+                         {5, 6,  7,  8},
+                         {9, 10, 11, 12},
+                         {13,14, 15, 16}};
+        System.out.println(searchMatrix(array, 7));
     }
 }

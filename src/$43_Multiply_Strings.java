@@ -20,11 +20,11 @@ Both num1 and num2 do not contain any leading zero, except the number 0 itself.
 You must not use any built-in BigInteger library or convert the inputs to integer directly.
  */
 
-//https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
-//https://www.youtube.com/watch?v=Z_xGMYUSEJ8
 public class $43_Multiply_Strings {
 
-    public String multiply(String num1, String num2) {
+    //https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
+    ////https://www.youtube.com/watch?v=Z_xGMYUSEJ8
+    public static String multiply(String num1, String num2) {
 
         int m = num1.length(), n = num2.length();
         int[] pos = new int[m + n];
@@ -43,5 +43,19 @@ public class $43_Multiply_Strings {
         StringBuilder sb = new StringBuilder();
         for(int p : pos) if(!(sb.length() == 0 && p == 0)) sb.append(p);
         return sb.length() == 0 ? "0" : sb.toString();
+    }
+
+    public static void main(String [] args){
+        System.out.println(multiply("23", "45"));
+        /*
+               2 3
+               4 5
+
+               1 5
+             1 0
+             1 2
+             8
+
+         */
     }
 }

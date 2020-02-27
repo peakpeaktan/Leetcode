@@ -26,7 +26,6 @@ public class $26_REMOVE_DUPLICATES_FROM_SORTED_ARRAY {
 
     public static int removeDuplicates(int[] nums) {
 
-//        System.out.println(Arrays.toString(nums));
         if (nums.length == 0 || nums == null) return 0;
 
         if(nums.length == 1) return nums[0];
@@ -41,7 +40,6 @@ public class $26_REMOVE_DUPLICATES_FROM_SORTED_ARRAY {
                 count++;
             }
         }
-        //System.out.println(Arrays.toString(nums));
         return count;
     }
 
@@ -49,6 +47,8 @@ public class $26_REMOVE_DUPLICATES_FROM_SORTED_ARRAY {
 
         int[] arr = {0,0,1,1,2,2,3};
 
-        System.out.println(removeDuplicates(arr));
+        int[] arr2 = {0,0};
+
+        System.out.println(removeDuplicates(arr2));
     }
 }

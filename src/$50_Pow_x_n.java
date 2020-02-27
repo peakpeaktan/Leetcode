@@ -50,8 +50,7 @@ public class $50_Pow_x_n {
 
     public static void main(String [] args){
 
-//        String[] array = {"eat", "tea", "tan", "ate", "nat", "bat"};
-
-        System.out.println(myPow(1, Integer.MIN_VALUE));
+        //System.out.println(myPow(1, Integer.MIN_VALUE));
+        System.out.println(myPow(2, 10));
     }
 }

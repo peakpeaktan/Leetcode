@@ -28,10 +28,9 @@ A solution set is:
 ]
  */
 
-//https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
 import java.util.*;
 public class $39_COMBINATION_SUM {
-
+    //https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
     public static List<List<Integer>> combinationSum(int[] nums, int target) {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
@@ -40,8 +39,12 @@ public class $39_COMBINATION_SUM {
     }
 
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
-        if(remain < 0) return;
-        else if(remain == 0) list.add(new ArrayList<>(tempList));
+        if(remain < 0) {
+            return;
+        }
+        else if(remain == 0) {
+            list.add(new ArrayList<>(tempList));
+        }
         else{
             for(int i = start; i < nums.length; i++){
                 tempList.add(nums[i]);
@@ -54,6 +57,6 @@ public class $39_COMBINATION_SUM {
 
     public static void main(String [] args){
         int[] array = {1,2,3,4,5};
-        combinationSum(array, 7);
+        System.out.println(combinationSum(array, 7));
     }
 }

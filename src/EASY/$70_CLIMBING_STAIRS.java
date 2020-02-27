@@ -1,4 +1,5 @@
 package EASY;
+
 /*
 You are climbing a stair case. It takes n steps to reach to the top.
 
@@ -24,19 +25,8 @@ Explanation: There are three ways to climb to the top.
  */
 
 public class $70_CLIMBING_STAIRS {
-
-    public int climbStairs(int n) {
-
-        if(n == 0 || n == 1 || n == 2) return n;
-        int[] mem = new int[n];
-        mem[0] = 1;
-        mem[1] = 2;
-        for(int i = 2; i < n; i++){
-            mem[i] = mem[i-1] + mem[i-2];
-        }
-        return mem[n-1];
-
-        /*
+    //nice explanation: https://leetcode.com/problems/climbing-stairs/discuss/25299/Basically-it's-a-fibonacci.
+    public static int climbStairs(int n) {
         if(n == 0 || n == 1 || n == 2){return n;}
         int[] mem = new int[n+1];
         mem[0] = 0;
@@ -46,6 +36,9 @@ public class $70_CLIMBING_STAIRS {
             mem[i] = mem[i-1] + mem[i-2];
         }
         return mem[n];
-         */
+    }
+
+    public static void main(String [] args){
+        System.out.println(climbStairs(5));
     }
 }

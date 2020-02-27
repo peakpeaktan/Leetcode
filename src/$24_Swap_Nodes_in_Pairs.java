@@ -10,9 +10,9 @@ Your algorithm should use only constant extra space.
 You may not modify the values in the list's nodes, only nodes itself may be changed.
  */
 
-//https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share
 public class $24_Swap_Nodes_in_Pairs {
-
+    //https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share
+    //awesome diagram for explanation: https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share/186959
     public ListNode swapPairs(ListNode head) {
         ListNode dummy = new ListNode(0);
         dummy.next = head;

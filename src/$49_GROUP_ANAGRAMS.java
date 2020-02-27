@@ -16,12 +16,12 @@ Note:
 All inputs will be in lowercase.
 The order of your output does not matter.
  */
-//https://leetcode.com/problems/group-anagrams/discuss/19176/Share-my-short-JAVA-solution
+
 import java.util.*;
 import java.util.Arrays;
 
 public class $49_GROUP_ANAGRAMS {
-
+    //https://leetcode.com/problems/group-anagrams/discuss/19176/Share-my-short-JAVA-solution
     public static List<List<String>> groupAnagrams(String[] strs) {
         if(strs == null || strs.length ==0) return new ArrayList<List<String>>();
         Map<String, List<String>> map = new HashMap<>();
@@ -32,16 +32,10 @@ public class $49_GROUP_ANAGRAMS {
             Arrays.sort(charArray);
             String sorted = String.valueOf(charArray);
 
-            if(map.containsKey(sorted)){
-
-                map.get(sorted).add(str);
-
-            }else{
-
+            if(!map.containsKey(sorted)){
                 map.put(sorted, new ArrayList<String>());
-                map.get(sorted).add(str);
             }
-
+            map.get(sorted).add(str);
         }
 
         return new ArrayList<>(map.values());
