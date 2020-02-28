@@ -34,21 +34,22 @@ for (int i = 0; i < len; i++) {
     print(nums[i]);
 }
  */
-//https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/discuss/27987/Short-and-Simple-Java-solution-(easy-to-understand)
 
 public class $80_Remove_Duplicates_from_Sorted_Array_II {
-
-    public int removeDuplicates(int[] nums) {
-
-        int count = 2;
-        for (int i = 2; i < nums.length; i++) {
-
-            if(nums[i] > nums[count-2]){
-
-                nums[count] = nums[i];
-                count++;
+    //https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/discuss/27987/Short-and-Simple-Java-solution-(easy-to-understand)
+    public static int removeDuplicates(int[] nums) {
+        int count = 0;
+        for (int n : nums)
+            if (count < 2 || n > nums[count - 2]){
+                nums[count++] = n;
             }
-        }
         return count;
+    }
+
+    public static void main(String [] args){
+
+        int[] arr = {0,0,1,1,1,1,2,3,3};
+
+        System.out.println(removeDuplicates(arr));
     }
 }
