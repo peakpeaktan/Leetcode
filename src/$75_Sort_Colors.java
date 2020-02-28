@@ -18,31 +18,25 @@ followed by 2's.
 Could you come up with a one-pass algorithm using only constant space?
  */
 import java.util.Arrays;
+
 public class $75_Sort_Colors {
-
-    public static void sortColors(int[] nums) {
-
+    //https://leetcode.com/problems/sort-colors/discuss/26549/Java-solution-both-2-pass-and-1-pass
+    public static void sortColorsOnePass(int[] nums) {
         int left = 0;
         int right = nums.length-1;
         int index = 0;
-
         while(index <= right) {
-
             if(nums[index] == 0){
-
                 nums[index] = nums[left];
                 nums[left] = 0;
                 left++;
             }
-
             if(nums[index] == 2){
-
                 nums[index] = nums[right];
                 nums[right] = 2;
                 right--;
                 index--;//index--
             }
-
             index++;
         }
     }
@@ -51,7 +45,7 @@ public class $75_Sort_Colors {
 
         int[] array = {2,0,2,1,1,0};
 
-        sortColors(array);
+        sortColorsOnePass(array);
 
         System.out.println(Arrays.toString(array));
     }

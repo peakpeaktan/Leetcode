@@ -26,42 +26,24 @@ Output: false
  */
 
 public class $74_Search_a_2D_Matrix {
-
+    //https://leetcode.com/problems/search-a-2d-matrix/discuss/26220/Don't-treat-it-as-a-2D-matrix-just-treat-it-as-a-sorted-list
     public static boolean searchMatrix(int[][] matrix, int target) {
-
         int row = matrix.length;
-
-        if(row == 0) return false;
-
         int column = matrix[0].length;
-
-        if(column == 0) return false;
-
-        int begin = 0;
-
+        if(row == 0 || column == 0) return false;
+        int begin = 0;//index in an array
         int end = row * column -1;
-
         while(begin <= end){
-
             int mid = (begin + end)/2;
-
             int midValue = matrix[mid/column][mid%column];
-
             if(midValue == target){
-
                 return true;
-
             }else if(midValue < target){
-
                 begin = mid + 1;
-
             }else{
-
                 end = mid - 1;
-
             }
         }
-
         return false;
     }
 

@@ -21,7 +21,7 @@ Explanation: The array represents the integer 4321.
 
 public class $66_PLUS_ONE {
 
-    public int[] plusOne(int[] digits) {
+    public static int[] plusOne(int[] digits) {
 
         int n = digits.length;
         for(int i=n-1; i>=0; i--) {
@@ -37,5 +37,12 @@ public class $66_PLUS_ONE {
         newNumber[0] = 1;
 
         return newNumber;
+    }
+
+    public static void main(String [] args){
+
+        System.out.println(plusOne(new int[]{1,2,3}));
+        System.out.println(plusOne(new int[]{1,2,9}));
+        System.out.println(plusOne(new int[]{9,9,9}));
     }
 }
