@@ -12,8 +12,6 @@ Input: "cbbd"
 Output: "bb"
  */
 
-import java.util.Arrays;
-
 //https://www.youtube.com/watch?v=m2Mk9JN5T4A
 public class $5_LONGEST_PALINDROMIC_SUBSTRING {
 
@@ -25,12 +23,11 @@ public class $5_LONGEST_PALINDROMIC_SUBSTRING {
         String result = "";
         int maxLength = 0;
         boolean[][] dp = new boolean[s.length()][s.length()];
-
+        //two pointers, scan from left to right
         for (int j = 0; j < s.length(); j++) {
 
             for (int i = 0; i <= j; i++) {
-
-                dp[i][j] = s.charAt(i) == s.charAt(j) && ( j - i <= 2 || dp[i+1][j-1] );
+                dp[i][j] = s.charAt(i) == s.charAt(j) && ( j - i <= 2 || dp[i+1][j-1] );//dp[i+1][j-1] will take effect after j-i > 2
                 if(dp[i][j]){
                     if(j - i + 1 > maxLength){
                         maxLength = j - i + 1;

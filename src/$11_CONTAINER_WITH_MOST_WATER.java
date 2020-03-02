@@ -6,8 +6,7 @@ n vertical lines are drawn such that the two endpoints of line i is at (i, ai) a
 Note: You may not slant the container and n is at least 2.
  */
 
-//Good explanation
-//https://www.youtube.com/watch?v=pdKz9TvIjS8
+//Good explanation: https://www.youtube.com/watch?v=pdKz9TvIjS8
 public class $11_CONTAINER_WITH_MOST_WATER {
 
     public int maxArea(int[] height) {

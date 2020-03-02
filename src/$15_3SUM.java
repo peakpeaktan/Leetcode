@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.*;
 /*
 Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0?
 Find all unique triplets in the array which gives the sum of zero.
@@ -17,8 +19,6 @@ Find all unique triplets in the array which gives the sum of zero.
         ]
 */
 //https://www.youtube.com/watch?v=gq-uWp327m8
-import java.util.Arrays;
-import java.util.*;
 
 public class $15_3SUM {
 
@@ -31,7 +31,7 @@ public class $15_3SUM {
 
             int target = 0 - nums[i];
             if(i > 0 && nums[i] == nums[i-1]){
-                continue;
+                continue;//skip if there is duplicate number
             }
             int left = i + 1;
             int right = nums.length - 1;
@@ -72,6 +72,8 @@ public class $15_3SUM {
         int[] arr = {-1, 0, 1, 2, -1, -4};
         //after sort {-4, -1, -1, 0, 1, 2}
 
-        System.out.println(threeSum(arr));
+        int[] arr2 = {-4, 0, 0, 1, 2, 2, 3, 4, 4};
+
+        System.out.println(threeSum(arr2));
     }
 }

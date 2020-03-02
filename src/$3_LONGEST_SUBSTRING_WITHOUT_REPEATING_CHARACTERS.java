@@ -1,3 +1,4 @@
+import java.util.HashMap;
 /*
 
 Given a string, find the length of the longest substring without repeating characters.
@@ -12,7 +13,6 @@ Given "pwwkew", the answer is "wke", with the length of 3.
 Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
  */
 //https://www.youtube.com/watch?v=hw0zHamgaks&t=5s
-import java.util.HashMap;
 
 public class $3_LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS {
 
@@ -21,9 +21,11 @@ public class $3_LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS {
         if (s.length()==0) return 0;
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
         int max=0;
-        for (int i=0, j=0; i<s.length(); ++i){
+        int j = 0;
+        for (int i=0; i<s.length(); ++i){
             if (map.containsKey(s.charAt(i))){//if encounters same character
-                j = Math.max(j,map.get(s.charAt(i))+1);//update j to the position after the encountered character
+                j = Math.max(j,map.get(s.charAt(i))+1);//update j's index to either j or just repeated character's index + 1,
+                                                       //you need to compare using max here, consider "tmsmfdut"
             }
             map.put(s.charAt(i),i);//update the index of the character
             max = Math.max(max,i-j+1);
@@ -35,6 +37,7 @@ public class $3_LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS {
 
         String first = "abcabcbb";
         String second = "abcaa";
+        String third = "tmsmfdut";
 
         System.out.println(lengthOfLongestSubstring(second));
     }

@@ -1,5 +1,5 @@
 package EASY;
-
+import java.util.*;
 /*
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -14,15 +14,11 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
  */
 
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Arrays;
-
 public class $1_TWO_SUM {
 
     public static int[] twoSum(int[] numbers, int target) {
 
-        //key: number value: index
+        //key: number , value: index in array
         Map<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
         int[] array = new int[2];
 
@@ -50,4 +46,9 @@ public class $1_TWO_SUM {
 
         System.out.println(Arrays.toString(twoSum(arr, target)));
     }
+
+    /*
+    The important thing here is that we can assume each input has exactly ONE solution,
+    and we cannot use the same element twice.
+     */
 }

@@ -15,7 +15,7 @@ public class $2_Add_Two_Numbers {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode c1 = l1;
         ListNode c2 = l2;
-        ListNode dummy = new ListNode(0);
+        ListNode dummy = new ListNode(0);//use a dummy node to record result
         ListNode cur = dummy;
         int sum = 0;
         while (c1 != null || c2 != null) {
@@ -31,7 +31,7 @@ public class $2_Add_Two_Numbers {
             cur.next = new ListNode(sum % 10);
             cur = cur.next;
         }
-        if (sum / 10 == 1)
+        if (sum / 10 == 1)//IMPORTANT
             cur.next = new ListNode(1);
         return dummy.next;
     }

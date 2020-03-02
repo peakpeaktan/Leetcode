@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given an array nums of n integers and an integer target,
 
@@ -11,7 +12,7 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
  */
 //https://leetcode.com/problems/3sum-closest/discuss/7872/Java-solution-with-O(n2)-for-reference
 //https://www.youtube.com/watch?v=eHtHNK3Lfmw
-import java.util.*;
+
 public class $16_3SUM_CLOSET {
 
     public int threeSumClosest(int[] nums, int target) {
