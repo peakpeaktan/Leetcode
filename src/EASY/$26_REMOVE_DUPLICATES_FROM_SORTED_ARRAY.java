@@ -49,6 +49,6 @@ public class $26_REMOVE_DUPLICATES_FROM_SORTED_ARRAY {
 
         int[] arr2 = {0,0};
 
-        System.out.println(removeDuplicates(arr2));
+        System.out.println(removeDuplicates(arr));
     }
 }

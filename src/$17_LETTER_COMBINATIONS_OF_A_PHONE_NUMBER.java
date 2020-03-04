@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.
 
@@ -13,10 +14,10 @@ Note:
 
 Although the above answer is in lexicographical order, your answer could be in any order you want.
  */
-import java.util.*;
+
 public class $17_LETTER_COMBINATIONS_OF_A_PHONE_NUMBER {
 
-    //BFS
+    //BFS using a queue
     public static List<String> letterCombinationsBFS(String digits) {
 
         //LinkedList as Queue implementation
@@ -44,14 +45,28 @@ public class $17_LETTER_COMBINATIONS_OF_A_PHONE_NUMBER {
         */
     }
 
-//    //DFS
-//    public static List<String> letterCombinationsDFS(String digits) {
-//
-//
-//    }
+    public static List<String> letterCombinationsBacktracking(String digits) {
+        List<String> ret = new LinkedList<>();
+        if(digits == null || digits.length() == 0) return ret;
+        combination("", digits, 0, ret);
+        return ret;
+    }
+
+    private static void combination(String prefix, String digits, int offset, List<String> ret) {
+        String[] KEYS = { "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz" };
+        if (offset == digits.length()) {
+            ret.add(prefix);
+            return;
+        }
+        String letters = KEYS[(digits.charAt(offset) - '0')];
+        for (int i = 0; i < letters.length(); i++) {
+            combination(prefix + letters.charAt(i), digits, offset + 1, ret);
+        }
+    }
 
     public static void main(String [] args){
 
         letterCombinationsBFS("23");
+        letterCombinationsBacktracking("23");
     }
 }

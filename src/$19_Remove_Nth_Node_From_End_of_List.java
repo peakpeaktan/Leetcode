@@ -26,12 +26,12 @@ public class $19_Remove_Nth_Node_From_End_of_List {
 
         dummy.next = head;
 
-        for (int i = 0; i < n; i++) {//it can also be i <= n, just change to fast != null down below
+        for (int i = 0; i < n; i++) {
 
             fast = fast.next;
         }
 
-        while(fast.next != null){
+        while(fast != null){
 
             fast = fast.next;
             slow = slow.next;

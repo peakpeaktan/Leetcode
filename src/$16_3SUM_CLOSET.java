@@ -15,7 +15,7 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 
 public class $16_3SUM_CLOSET {
 
-    public int threeSumClosest(int[] nums, int target) {
+    public static int threeSumClosest(int[] nums, int target) {
 
         int result = nums[0] + nums[1] + nums[nums.length - 1];
         Arrays.sort(nums);
@@ -34,5 +34,12 @@ public class $16_3SUM_CLOSET {
             }
         }
         return result;
+    }
+
+    public static void main(String [] args){
+
+        int[] arr = {-1, 2, 1, -2, -3, -4};
+
+        System.out.println(threeSumClosest(arr, 1));
     }
 }
