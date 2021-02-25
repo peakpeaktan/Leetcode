@@ -25,17 +25,23 @@ Example 3:
 Input: 701
 Output: "ZY"
  */
+
+//similar: 171. Excel Sheet Column Number
 public class $168_Excel_Sheet_Column_Title {
 
-    public String convertToTitle(int n) {
+    public static String convertToTitle(int n) {
         StringBuilder result = new StringBuilder();
 
         while(n>0){
             n--;
-            result.insert(0, (char)('A' + n % 26));
+            result.append( (char)('A' + n % 26));
             n /= 26;
         }
 
-        return result.toString();
+        return result.reverse().toString();
+    }
+
+    public static void main(String [] args){
+        convertToTitle(28);
     }
 }

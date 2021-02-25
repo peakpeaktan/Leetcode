@@ -9,29 +9,9 @@ import java.util.HashMap;
 
 public class $138_Copy_List_With_Random_Pointer {
 
-    public static void main(String [] args){
-
-        RandomListNode one = new RandomListNode(1);
-        RandomListNode two = new RandomListNode(2);
-        RandomListNode three = new RandomListNode(3);
-        RandomListNode four = new RandomListNode(4);
-
-        one.next = two;
-        one.random = three;
-
-        two.next = three;
-        two.random = one;
-
-        three.next = four;
-        three.random = two;
-        four.next = null;
-
-        // 1 -> 2 -> 3 -> 4 -> null
-        // |    |    |
-        // 3    1    2
-
-    }
-
+    //solution 1: use hashmap, O(N) space complexity
+    //https://www.youtube.com/watch?v=oXABtaRa37U
+    //https://www.youtube.com/watch?v=OvpKeraoxW0
     public RandomListNode copyRandomList(RandomListNode head) {
 
         if (head == null) return null;
@@ -58,6 +38,28 @@ public class $138_Copy_List_With_Random_Pointer {
 
     }
 
+    public static void main(String [] args){
+
+        RandomListNode one = new RandomListNode(1);
+        RandomListNode two = new RandomListNode(2);
+        RandomListNode three = new RandomListNode(3);
+        RandomListNode four = new RandomListNode(4);
+
+        one.next = two;
+        one.random = three;
+
+        two.next = three;
+        two.random = one;
+
+        three.next = four;
+        three.random = two;
+        four.next = null;
+
+        // 1 -> 2 -> 3 -> 4 -> null
+        // |    |    |
+        // 3    1    2
+
+    }
 }
 
 class RandomListNode {

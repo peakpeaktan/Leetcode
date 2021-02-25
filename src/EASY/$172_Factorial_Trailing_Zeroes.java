@@ -16,13 +16,13 @@ Explanation: 5! = 120, one trailing zero.
  */
 
 public class $172_Factorial_Trailing_Zeroes {
-
+    //https://www.youtube.com/watch?v=T3lhjrX2z9k
     public static int trailingZeroes(int n) {
         return n == 0 ? 0 : n/5 + trailingZeroes(n/5);
     }
 
     public static void main(String [] args){
 
-        System.out.println(trailingZeroes(10));
+        System.out.println(trailingZeroes(50));
     }
 }

@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
 
@@ -21,10 +22,12 @@ Return:
    [5,8,4,5]
 ]
  */
-import java.util.*;
+
 public class $113_Path_Sum_II {
 
-    public List<List<Integer>> pathSum(TreeNode root, int sum) {
+    //solution 1: backtracking, DFS
+    //https://leetcode.com/problems/path-sum-ii/discuss/36683/DFS-with-one-LinkedList-accepted-java-solution/34805
+    public static List<List<Integer>> pathSumDFS(TreeNode root, int sum) {
 
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> tempList = new ArrayList<>();
@@ -33,15 +36,15 @@ public class $113_Path_Sum_II {
         return result;
     }
 
-    public void helper(TreeNode root, int sum, List<List<Integer>> result, List<Integer> tempList) {
+    public static void helper(TreeNode root, int sum, List<List<Integer>> result, List<Integer> tempList) {
 
         if(root == null) return;
 
-        tempList.add(new Integer(root.val));
+        tempList.add(root.val);
 
         if(root.left == null && root.right == null && root.val == sum){//a leaf node is reached and the path sum adds up to sum
 
-            result.add(new ArrayList<>(tempList));
+            result.add(new ArrayList(tempList));
 
         }else{//is not a leaf node
 
@@ -50,5 +53,10 @@ public class $113_Path_Sum_II {
         }
 
         tempList.remove(tempList.size() - 1);//remove last item
+    }
+
+    public static void main(String [] args){
+        TreeNode tree = TreeNode.fromArray(new Integer[]{5,4,8,11,null,13,4,7,2,null,null,5,1});
+        pathSumDFS(tree, 22);
     }
 }

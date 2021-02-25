@@ -15,8 +15,9 @@ Example 3:
 Input: 218
 Output: false
  */
-public class $231_Power_of_Two {
 
+public class $231_Power_of_Two {
+    //https://leetcode.com/problems/power-of-two/discuss/63966/4-different-ways-to-solve-Iterative-Recursive-Bit-operation-Math
     public boolean isPowerOfTwo(int n) {
 
         if(n==0) return false;

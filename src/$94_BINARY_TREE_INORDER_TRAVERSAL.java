@@ -37,7 +37,7 @@ public class $94_BINARY_TREE_INORDER_TRAVERSAL {
         RecursiveHelper(list, node.right);
     }
 
-    public List<Integer> inorderTraversalIterative(TreeNode root) {
+    public static List<Integer> inorderTraversalIterative(TreeNode root) {
 
         List<Integer> result = new ArrayList<Integer>();
 
@@ -55,5 +55,28 @@ public class $94_BINARY_TREE_INORDER_TRAVERSAL {
         }
 
         return result;
+    }
+
+    public static void main(String [] args){
+        /*
+                        4
+                    2       6
+                 1     3  5
+         */
+        TreeNode root = new TreeNode(4);
+        TreeNode left1 = new TreeNode(2);
+        TreeNode right1 = new TreeNode(6);
+        TreeNode left1left = new TreeNode(1);
+        TreeNode left1right = new TreeNode(3);
+        TreeNode right1left = new TreeNode(5);
+        root.left = left1;
+        root.right = right1;
+        left1.left = left1left;
+        left1.right = left1right;
+        right1.left = right1left;
+
+        //System.out.println(inorderTraversalRecursive(root));
+
+        System.out.println(inorderTraversalIterative(root));
     }
 }

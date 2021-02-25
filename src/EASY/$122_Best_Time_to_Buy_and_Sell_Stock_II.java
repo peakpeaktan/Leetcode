@@ -27,15 +27,38 @@ Input: [7,6,4,3,1]
 Output: 0
 Explanation: In this case, no transaction is done, i.e. max profit = 0.
  */
+
 public class $122_Best_Time_to_Buy_and_Sell_Stock_II {
 
-    public int maxProfit(int[] prices) {
-
+    //solution 1
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/39564/Another-accepted-Java-solution
+    //https://www.youtube.com/watch?v=Wma-p_QRJgs
+    public static int maxProfit(int[] prices) {
         int total = 0;
         for (int i=0; i< prices.length-1; i++) {
             if (prices[i+1]>prices[i]) total += prices[i+1]-prices[i];
         }
 
         return total;
+    }
+
+    //solution 2
+    //https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/208241/Explanation-for-the-dummy-like-me.
+    public static int maxProfit2(int[] prices) {
+        int i = 0, buy, sell, profit = 0, N = prices.length - 1;
+        while (i < N) {
+            while (i < N && prices[i + 1] <= prices[i]) i++;
+            buy = prices[i];
+
+            while (i < N && prices[i + 1] > prices[i]) i++;
+            sell = prices[i];
+
+            profit += sell - buy;
+        }
+        return profit;
+    }
+
+    public static void main(String [] args){
+
     }
 }

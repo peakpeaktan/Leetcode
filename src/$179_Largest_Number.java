@@ -17,6 +17,9 @@ import java.util.Arrays;
 
 public class $179_Largest_Number {
 
+    //https://www.youtube.com/watch?v=qEIGhVtZ-sg
+    //https://www.youtube.com/watch?v=LUxREjEADCw
+    //https://leetcode.com/problems/largest-number/discuss/53158/My-Java-Solution-to-share
     public static String largestNumber(int[] num) {
         if(num == null || num.length == 0)
             return "";

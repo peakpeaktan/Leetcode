@@ -15,8 +15,9 @@ Output: false
  */
 public class $125_Valid_Palindrome {
 
-    public boolean isPalindrome(String s) {
-
+    //solution 1
+    //https://leetcode.com/problems/valid-palindrome/discuss/40029/Accepted-pretty-Java-solution(271ms)
+    public static boolean isPalindrome(String s) {
         if (s.isEmpty()) {
             return true;
         }
@@ -38,7 +39,10 @@ public class $125_Valid_Palindrome {
                 tail--;
             }
         }
-
         return true;
+    }
+
+    public static void main(String [] args){
+        isPalindrome("a? bcdd !cb# a");
     }
 }

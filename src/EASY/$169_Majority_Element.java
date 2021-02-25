@@ -17,22 +17,12 @@ Output: 2
  */
 import java.util.*;
 
+/**
+ * follow up: 229 Majority Element II
+ */
 public class $169_Majority_Element {
-
-//     Moore voting algorithm
-    public static int majorityElement2(int[] nums) {
-        int count=0, ret = 0;
-        for (int num: nums) {
-            if (count==0)
-                ret = num;
-            if (num!=ret)
-                count--;
-            else
-                count++;
-        }
-        return ret;
-    }
-
+    ////https://leetcode.com/problems/majority-element/discuss/51611/Java-solutions-(sorting-hashmap-moore-voting-bit-manipulation).
+    //hash table
     public int majorityElement(int[] nums) {
         Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
         int ret=0;
@@ -45,6 +35,20 @@ public class $169_Majority_Element {
                 ret = num;
                 break;
             }
+        }
+        return ret;
+    }
+
+    //moore voting algorithm
+    public static int majorityElement2(int[] nums) {
+        int count=0, ret = 0;
+        for (int num: nums) {
+            if (count==0)
+                ret = num;
+            if (num!=ret)
+                count--;
+            else
+                count++;
         }
         return ret;
     }

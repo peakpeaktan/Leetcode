@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 
 Given a binary tree
@@ -36,8 +37,9 @@ After calling your function, the tree should look like:
  */
 
 public class $116_Populating_Next_Right_Pointers_In_Each_Node {
-
-    public void connect(TreeLinkNode root) {
+    //solution 1: iterative, level order
+    //https://www.youtube.com/watch?v=dPCrKhwswEk
+    public static void connect(TreeLinkNode root) {
 
         if(root == null) return;
 
@@ -59,11 +61,55 @@ public class $116_Populating_Next_Right_Pointers_In_Each_Node {
         }
     }
 
+    //solution 2: recursive
 
+    public static void main(String [] args){
+        //     1
+        //    / \
+        //   2   3
+        //  / \ /  \
+        // 4  5 6   7
+        TreeLinkNode tree = TreeLinkNode.fromArray(new Integer[]{1,2,3,4,5,6,7});
+        connect(tree);
+    }
 }
 
 class TreeLinkNode {
       int val;
       TreeLinkNode left, right, next;
       TreeLinkNode(int x) { val = x; }
+
+    public static TreeLinkNode fromArray(Integer[] tree) {
+        if (tree.length == 0) return null;
+        TreeLinkNode root = new TreeLinkNode(tree[0]);
+        Queue<TreeLinkNode> q = new LinkedList<>();
+        q.add(root);
+        boolean skipLeft = false;
+        boolean skipRight = false;
+        for (int i = 1; i < tree.length; i++) {
+            TreeLinkNode node = q.peek();
+            if (node.left == null && !skipLeft) {
+                if(tree[i] == null){
+                    skipLeft = true;
+                }else{
+                    node.left = new TreeLinkNode(tree[i]);
+                    q.add(node.left);
+                }
+            } else if (node.right == null) {
+                if(tree[i] == null){
+                    skipRight = true;
+                }else{
+                    node.right = new TreeLinkNode(tree[i]);
+                    q.add(node.right);
+                    q.remove();
+                }
+            }
+            if(skipRight){
+                q.remove();
+                skipLeft = false;
+                skipRight = false;
+            }
+        }
+        return root;
+    }
 }
