@@ -31,6 +31,7 @@ A solution set is:
 import java.util.*;
 public class $39_COMBINATION_SUM {
     //https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
+    //https://www.youtube.com/watch?v=aBL-aNWNmB4
     public static List<List<Integer>> combinationSum(int[] nums, int target) {
         List<List<Integer>> list = new ArrayList<>();
         Arrays.sort(nums);
@@ -39,16 +40,18 @@ public class $39_COMBINATION_SUM {
     }
 
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums, int remain, int start){
-        if(remain < 0) {
-            return;
-        }
-        else if(remain == 0) {
+//        if(remain < 0) {//not needed because remain will never be less than 0 if we break in advance in the code below
+//            return;
+//        }
+        if(remain == 0) {
             list.add(new ArrayList<>(tempList));
         }
         else{
             for(int i = start; i < nums.length; i++){
+                if(nums[i] > remain){//since array is sorted, we can break if nums[i] is greater than the remain we are looking for
+                    break;
+                }
                 tempList.add(nums[i]);
-//                System.out.println(tempList);
                 backtrack(list, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same elements
                 tempList.remove(tempList.size() - 1);
             }

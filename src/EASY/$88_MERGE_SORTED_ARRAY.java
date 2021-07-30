@@ -17,7 +17,7 @@ Output: [1,2,2,3,5,6]
 
  */
 
-//https://www.youtube.com/watch?v=xM4JbwA99Tc
+//https://www.youtube.com/watch?v=KkmV7Uuosmc
 public class $88_MERGE_SORTED_ARRAY {
 
     public void merge(int[] nums1, int m, int[] nums2, int n) {

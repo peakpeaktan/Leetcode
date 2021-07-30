@@ -24,8 +24,8 @@ public class $3_LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS {
         int j = 0;
         for (int i=0; i<s.length(); ++i){
             if (map.containsKey(s.charAt(i))){//if encounters same character
-                j = Math.max(j,map.get(s.charAt(i))+1);//update j's index to either j or just repeated character's index + 1,
-                                                       //you need to compare using max here, consider "tmsmfdut"
+                j = Math.max(j,map.get(s.charAt(i))+1);//update j's index to either j or last repeated character's index + 1,
+                                                       //https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/1729/11-line-simple-Java-solution-O(n)-with-explanation/2121
             }
             map.put(s.charAt(i),i);//update the index of the character
             max = Math.max(max,i-j+1);

@@ -18,6 +18,31 @@ public class $31_Next_Permutation {
         reverse(A, i + 1, A.length - 1);       // Reverse the descending sequence
     }
 
+    //my solution
+    public static void nextPermutation2(int[] A) {
+        int j = 0;
+        for (int i = A.length - 1; i >= 0; i--) {
+            if(i == 0) {//descending, reverse the whole thing and return
+                reverse(A, 0, A.length-1);
+                return;
+            }
+            if(i >= 1 && A[i] > A[i-1]){//solution above is better in looking for element that
+                                        // breaks the descending order from right to left.
+                j =  i - 1;
+                break;
+            }
+        }
+        int n = 0;
+        for (int m = A.length - 1; m > j; m--) {
+            if(A[m] > A[j]){
+                n = m;
+                break;
+            }
+        }
+        swap(A, j, n);
+        reverse(A, j+1, A.length - 1);
+    }
+
     public static void swap(int[] A, int i, int j) {
         int tmp = A[i];
         A[i] = A[j];
@@ -30,7 +55,7 @@ public class $31_Next_Permutation {
 
     public static void main(String [] args){
 
-        int[] arr = {1, 2, 5, 3, 3, 0};
+        int[] arr = {1,3,2};//{1, 2, 5, 3, 3, 0};
         nextPermutation(arr);
         System.out.println(arr);
     }

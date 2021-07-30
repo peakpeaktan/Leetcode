@@ -43,7 +43,7 @@ rotate the input matrix in-place such that it becomes:
  */
 import java.util.Arrays;
 
-public class $48_ROTATE_IMAGE {
+public class $48_Rotate_Image {
     //https://leetcode.com/problems/rotate-image/discuss/18872/A-common-method-to-rotate-the-image
     public static void rotate(int[][] matrix) {
 

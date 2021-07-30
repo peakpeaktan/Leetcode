@@ -21,22 +21,44 @@ For the purpose of this problem, we will return 0 when needle is an empty string
 This is consistent to C's strstr() and Java's indexOf().
  */
 
+//https://www.youtube.com/watch?v=OhPtAQtfsuM
 public class $28_Implement_strStr {
     //https://leetcode.com/problems/implement-strstr/discuss/12807/Elegant-Java-solution/13117
-    public static int strStr(String s, String t) {
-        if (t.isEmpty()) return 0; // edge case: "",""=>0  "a",""=>0
-        for (int i = 0; i <= s.length() - t.length(); i++) {
+    public static int strStr(String haystack, String needle) {
+        if (needle.isEmpty()) return 0; // edge case: "",""=>0  "a",""=>0
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
             for (int j = 0;
-                 j < t.length() && s.charAt(i + j) == t.charAt(j);
+                 j < needle.length() && haystack.charAt(i + j) == needle.charAt(j);
                  j++)
-                if (j == t.length() - 1) {
+                if (j == needle.length() - 1) {
                     return i;
                 }
         }
         return -1;
     }
 
+    //my solution
+    public static int strStr2(String haystack, String needle) {
+        if(needle.isEmpty()) return 0;
+        for (int i = 0; i < haystack.length(); i++) {
+            if(haystack.charAt(i) == needle.charAt(0)){
+                if(i+needle.length() > haystack.length()) return -1;
+                for (int j = 0; j < needle.length(); j++) {
+                    if(haystack.charAt(i+j) != needle.charAt(j)){
+                        break;
+                    }
+                    if(j == needle.length() - 1){
+                        return i;
+                    }
+                }
+            }
+        }
+
+        return -1;
+    }
+
     public static void main(String [] args){
         System.out.println(strStr("hello","ll"));
+        System.out.println(strStr2("mississippi","issip"));
     }
 }

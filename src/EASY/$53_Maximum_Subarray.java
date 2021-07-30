@@ -16,7 +16,7 @@ If you have figured out the O(n) solution, try coding another solution using the
 
 //https://www.youtube.com/watch?v=EcJ0wBBMoKA
 //https://www.youtube.com/watch?v=zT28AwRNTaQ
-public class $53_MAXIMUM_SUBARRAY {
+public class $53_Maximum_Subarray {
     //https://leetcode.com/problems/maximum-subarray/discuss/329089/O(N)-TIME-O(1)-SPACE-JAVA-SOLUTION
     public static int maxSubArrayDP(int[] nums) {
         if(nums.length == 0) return 0;

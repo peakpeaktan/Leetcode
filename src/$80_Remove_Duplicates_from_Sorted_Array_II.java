@@ -44,6 +44,16 @@ public class $80_Remove_Duplicates_from_Sorted_Array_II {
                 nums[count++] = n;
             }
         return count;
+
+            //another way of writing
+            //https://www.youtube.com/watch?v=JimP_qCjb0Q
+//        int index = 2;
+//        for (int i = 2; i < nums.length; i++) {//start from third element
+//            if(nums[i] != nums[index-2]){
+//                nums[index++] = nums[i];
+//            }
+//        }
+//        return index;
     }
 
     public static void main(String [] args){

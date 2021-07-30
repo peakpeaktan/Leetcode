@@ -17,28 +17,24 @@ Could you do this in one pass?
  */
 
 public class $19_Remove_Nth_Node_From_End_of_List {
-
+    //https://www.youtube.com/watch?v=F5kFspTdW1I
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
         ListNode dummy = new ListNode(0);
         ListNode slow = dummy;
-        ListNode fast = head;
+        ListNode fast = dummy;
 
         dummy.next = head;
 
         for (int i = 0; i < n; i++) {
-
             fast = fast.next;
         }
 
-        while(fast != null){
-
+        while(fast.next != null){
             fast = fast.next;
             slow = slow.next;
         }
-
         slow.next = slow.next.next;
-
         return dummy.next;
     }
 

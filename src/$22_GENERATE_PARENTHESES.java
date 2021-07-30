@@ -26,7 +26,7 @@ public class $22_GENERATE_PARENTHESES {
 
         public static void backtrack(List<String> list, String currentStr,int open, int close, int n){
 
-            if (currentStr.length() == n * 2) {
+            if (currentStr.length() == n * 2) {//or if (close == n)
                 list.add(currentStr);
                 return;
             }
@@ -39,6 +39,6 @@ public class $22_GENERATE_PARENTHESES {
 
 
     public static void main(String [] args){
-        System.out.println(generateParenthesisBackTrack(3));
+            System.out.println(generateParenthesisBackTrack(3));
     }
 }

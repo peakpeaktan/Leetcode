@@ -27,7 +27,7 @@ public class $17_LETTER_COMBINATIONS_OF_A_PHONE_NUMBER {
         String[] mapping = {"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         ans.add("");//initialize by adding an empty string
         while(ans.peek().length()!=digits.length()){
-            String remove = ans.remove();//LinkedList remove() removes element at head position
+            String remove = ans.remove();//LinkedList remove() removes head element
             String map = mapping[digits.charAt(remove.length())-'0'];
             for(char c: map.toCharArray()){
                 ans.addLast(remove+c);
@@ -45,6 +45,7 @@ public class $17_LETTER_COMBINATIONS_OF_A_PHONE_NUMBER {
         */
     }
 
+    //also DFS, this solution can also use a string builder to avoid creating too many strings: https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/8109/My-recursive-solution-using-Java/222635
     public static List<String> letterCombinationsBacktracking(String digits) {
         List<String> ret = new LinkedList<>();
         if(digits == null || digits.length() == 0) return ret;
@@ -65,8 +66,7 @@ public class $17_LETTER_COMBINATIONS_OF_A_PHONE_NUMBER {
     }
 
     public static void main(String [] args){
-
-        letterCombinationsBFS("23");
-        letterCombinationsBacktracking("23");
+        //letterCombinationsBFS("234");
+        letterCombinationsBacktracking("234");
     }
 }

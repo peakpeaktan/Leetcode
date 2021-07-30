@@ -27,4 +27,29 @@ public class $24_Swap_Nodes_in_Pairs {
         }
         return dummy.next;
     }
+
+    //my own solution
+    public static ListNode swapPairsMySolution(ListNode head) {
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode pre = dummy;
+        ListNode cur = head;
+        while(cur != null && cur.next != null){
+            ListNode temp = cur.next.next;
+            pre.next = cur.next;
+            cur.next.next = cur;
+            cur.next = temp;
+
+            pre = cur;
+            cur = temp;
+        }
+        return dummy.next;
+    }
+
+    public static void main(String[] args){
+        int[] arr = {1,2,3,4};
+        ListNode head = ListNode.fromArray(arr,4);
+        ListNode result = swapPairsMySolution(head);
+        System.out.println(head);
+    }
 }

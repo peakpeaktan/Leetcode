@@ -46,11 +46,13 @@ public class $20_VALID_PARENTHESES {
                 stack.push(']');
             }else if(chr == '{'){
                 stack.push('}');
-            }else{//all closing ones
-                //if stack is already empty meaning that there is an extra closing one
+            }else{//closing brackets
+                //if stack is already empty meaning that there is an extra closing one, for example ()}}
                 if(stack.isEmpty() || stack.pop() != chr) return false;
             }
         }
         return stack.isEmpty();
+        //another solution, which differs in what we push into the stack:
+        //https://www.youtube.com/watch?v=o7lQWD8FiIA
     }
 }

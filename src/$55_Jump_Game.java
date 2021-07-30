@@ -19,12 +19,11 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum
              jump length is 0, which makes it impossible to reach the last index.
  */
 
-public class $55_JUMP_GAME {
+public class $55_Jump_Game {
     //https://leetcode.com/problems/jump-game/discuss/20932/6-line-java-solution-in-O(n)
     public static boolean canJump(int[] nums) {
         int maxReach = 0;
         for (int i = 0; i < nums.length; i++) {
-
             if(i > maxReach) return false;
             maxReach = Math.max(i + nums[i], maxReach);
         }

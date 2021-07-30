@@ -31,6 +31,27 @@ public class $148_Sort_List {
             return h2;
         }
 
+        //iterative merge
+//        ListNode l = new ListNode(0), p = l;
+//
+//        while (l1 != null && l2 != null) {
+//            if (l1.val < l2.val) {
+//                p.next = l1;
+//                l1 = l1.next;
+//            } else {
+//                p.next = l2;
+//                l2 = l2.next;
+//            }
+//            p = p.next;
+//        }
+//
+//        if (l1 != null)
+//            p.next = l1;
+//
+//        if (l2 != null)
+//            p.next = l2;
+//
+//        return l.next;
     }
 
     public ListNode sortList(ListNode head) {
@@ -42,10 +63,10 @@ public class $148_Sort_List {
             return head;
         }
 
-        //p1 move 1 step every time, p2 move 2 step every time, pre record node before p1
-        ListNode p1 = head;
-        ListNode p2 = head;
-        ListNode pre = head;
+        //p1 move 1 step every time, p2 move 2 step every time, pre is node before p1
+        ListNode p1 = head;//slow
+        ListNode p2 = head;//fast
+        ListNode pre = head;//node before slow
 
         while(p2 != null && p2.next != null){
             pre = p1;

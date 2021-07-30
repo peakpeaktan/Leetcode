@@ -22,7 +22,7 @@ It doesn't matter what values are set beyond the returned length.
 
 import java.util.Arrays;
 
-public class $26_REMOVE_DUPLICATES_FROM_SORTED_ARRAY {
+public class $26_Remove_Duplicates_From_Sorted_Array {
 
     public static int removeDuplicates(int[] nums) {
 
@@ -44,11 +44,7 @@ public class $26_REMOVE_DUPLICATES_FROM_SORTED_ARRAY {
     }
 
     public static void main(String [] args){
-
         int[] arr = {0,0,1,1,2,2,3};
-
-        int[] arr2 = {0,0};
-
         System.out.println(removeDuplicates(arr));
     }
 }

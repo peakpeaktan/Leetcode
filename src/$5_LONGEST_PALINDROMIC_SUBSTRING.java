@@ -12,7 +12,7 @@ Input: "cbbd"
 Output: "bb"
  */
 
-//https://www.youtube.com/watch?v=m2Mk9JN5T4A
+//must watch: https://www.youtube.com/watch?v=ZnzvU03HtYk
 public class $5_LONGEST_PALINDROMIC_SUBSTRING {
 
     //DP
@@ -27,7 +27,7 @@ public class $5_LONGEST_PALINDROMIC_SUBSTRING {
         for (int j = 0; j < s.length(); j++) {
 
             for (int i = 0; i <= j; i++) {
-                dp[i][j] = s.charAt(i) == s.charAt(j) && ( j - i <= 2 || dp[i+1][j-1] );//dp[i+1][j-1] will take effect after j-i > 2
+                dp[i][j] = s.charAt(i) == s.charAt(j) && ( j - i <= 2 || dp[i+1][j-1] );//dp[i+1][j-1] is for j-i > 2
                 if(dp[i][j]){
                     if(j - i + 1 > maxLength){
                         maxLength = j - i + 1;

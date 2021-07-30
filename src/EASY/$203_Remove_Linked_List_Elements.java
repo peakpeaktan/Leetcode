@@ -10,7 +10,6 @@ Output: 1->2->3->4->5
 public class $203_Remove_Linked_List_Elements {
 
     public ListNode removeElements(ListNode head, int val) {
-
         while (head != null && head.val == val) head = head.next;
         ListNode curr = head;
         while (curr != null && curr.next != null)

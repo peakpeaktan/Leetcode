@@ -18,7 +18,7 @@ Output:
 
 import java.util.*;
 
-public class $46_PERMUTATIONS {
+public class $46_Permutations {
 
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
@@ -28,11 +28,9 @@ public class $46_PERMUTATIONS {
     }
 
     private static void backtrack(List<List<Integer>> list, List<Integer> tempList, int [] nums){
-
         if(tempList.size() == nums.length){
             list.add(new ArrayList<>(tempList));
         } else{
-
             for(int i = 0; i < nums.length; i++){
                 if(tempList.contains(nums[i])) continue; // element already exists, skip
                 tempList.add(nums[i]);
@@ -40,7 +38,6 @@ public class $46_PERMUTATIONS {
                 tempList.remove(tempList.size() - 1);
             }
         }
-
     }
 
     /*

@@ -19,7 +19,7 @@ Output: [4,3,2,2]
 Explanation: The array represents the integer 4321.
  */
 
-public class $66_PLUS_ONE {
+public class $66_Plus_One {
 
     public static int[] plusOne(int[] digits) {
 

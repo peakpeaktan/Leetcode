@@ -13,7 +13,7 @@ You must do this in-place without making a copy of the array.
 Minimize the total number of operations.
  */
 
-public class $283_MOVE_ZEROES {
+public class $283_Move_Zeroes {
 
     public void moveZeroes(int[] nums) {
 
