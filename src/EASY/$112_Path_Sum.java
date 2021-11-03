@@ -19,12 +19,14 @@ Given the below binary tree and sum = 22,
 return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
  */
 
-public class $112_PATH_SUM {
+//label_binarytree
+//label_recursive
+public class $112_Path_Sum {
     //solution 1: DFS
     //https://leetcode.com/problems/path-sum/discuss/36378/AcceptedMy-recursive-solution-in-Java/34584
     public static boolean hasPathSum(TreeNode root, int sum) {
         if(root == null) return false;
-        ////we are looking for root to leaf path, so check node that has both left and right null
+        ////we are looking for root to leaf path, end condition is to check for node that has both left and right null
         if(root.left == null && root.right == null) return sum == root.val;
         boolean left = hasPathSum(root.left, sum - root.val);
         boolean right = hasPathSum(root.right, sum - root.val);

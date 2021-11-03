@@ -33,7 +33,7 @@ public class $108_Convert_Sorted_Array_to_Binary_Search_Tree {
         if (low > high) {
             return null;
         }
-        int mid = (low + high) / 2;
+        int mid = low + (high - low) / 2;
         TreeNode node = new TreeNode(num[mid]);
         node.left = helper(num, low, mid - 1);
         node.right = helper(num, mid + 1, high);

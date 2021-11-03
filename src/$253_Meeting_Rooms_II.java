@@ -20,7 +20,7 @@ Only need one meeting room
  */
 public class $253_Meeting_Rooms_II {
     public int minMeetingRooms(List<Interval> intervals) {
-
+        return 1;
     }
 }
 

@@ -5,27 +5,21 @@ For this problem, a height-balanced binary tree is defined as a binary tree in w
  */
 
 public class $109_Convert_Sorted_List_to_Binary_Search_Tree {
-
-    //solution 1
-    //https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/discuss/35476/Share-my-JAVA-solution-1ms-very-short-and-concise.
+    //https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree/discuss/35476/Share-my-JAVA-solution-1ms-very-short-and-concise./229025
     public static TreeNode sortedListToBST(ListNode head) {
-        if(head==null) return null;
-        return toBST(head,null);
-    }
-
-    public static TreeNode toBST(ListNode head, ListNode tail){
-        ListNode slow = head;
-        ListNode fast = head;
-        if(head==tail) return null;
-
-        while(fast!=tail&&fast.next!=tail){
-            fast = fast.next.next;
+        if (head == null) return null;
+        if (head.next == null) return new TreeNode(head.val);
+        ListNode slow = head, pre = null, fast = head;
+        while (fast != null && fast.next != null) {
+            pre = slow;
             slow = slow.next;
+            fast = fast.next.next;
         }
-        TreeNode thead = new TreeNode(slow.val);
-        thead.left = toBST(head,slow);
-        thead.right = toBST(slow.next,tail);
-        return thead;
+        pre.next = null; //cut left sub list here
+        TreeNode n = new TreeNode(slow.val);
+        n.left = sortedListToBST(head);
+        n.right = sortedListToBST(slow.next);
+        return n;
     }
 
     public static void main(String [] args){

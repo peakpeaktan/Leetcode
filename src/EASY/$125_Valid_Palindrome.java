@@ -13,9 +13,12 @@ Example 2:
 Input: "race a car"
 Output: false
  */
-public class $125_Valid_Palindrome {
 
-    //solution 1
+//label_palindrome
+//label_twopointers
+//label_string
+public class $125_Valid_Palindrome {
+    //solution 1, use built in method to check if a char is alphanumeric
     //https://leetcode.com/problems/valid-palindrome/discuss/40029/Accepted-pretty-Java-solution(271ms)
     public static boolean isPalindrome(String s) {
         if (s.isEmpty()) {
@@ -38,6 +41,26 @@ public class $125_Valid_Palindrome {
                 head++;
                 tail--;
             }
+        }
+        return true;
+    }
+
+    //https://leetcode.com/problems/valid-palindrome/discuss/39993/3ms-java-solution(beat-100-of-java-solution)
+    //solution 2, do not use built in method, build the alphanumeric char array myself
+    public static boolean isPalindrome2(String s) {
+        char[] charMap = new char[256];
+        for (int i = 0; i < 10; i++)
+            charMap['0'+i] = (char) (1+i);  // numeric - don't use 0 as it's reserved for illegal chars
+        for (int i = 0; i < 26; i++)
+            charMap['a'+i] = charMap['A'+i] = (char) (11+i);  //alphabetic, ignore cases, continue from 11
+
+        for (int start = 0, end = s.length()-1; start < end;) {
+            if (charMap[s.charAt(start)] == 0)
+                start++;
+            else if (charMap[s.charAt(end)] == 0)
+                end--;
+            else if (charMap[s.charAt(start++)] != charMap[s.charAt(end--)])
+                return false;
         }
         return true;
     }

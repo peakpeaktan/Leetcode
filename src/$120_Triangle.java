@@ -17,9 +17,11 @@ Note:
 Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
  */
 
+//label_dp
+//label_matrix
 public class $120_Triangle {
 
-    //solution 1: bottom up
+    //solution 1: bottom up, much easier than top down, not modifying input, use an array to record values
     //https://leetcode.com/problems/triangle/discuss/38724/7-lines-neat-Java-Solution
     public static int minimumTotal(List<List<Integer>> triangle) {
         int[] A = new int[triangle.size()+1];
@@ -31,7 +33,7 @@ public class $120_Triangle {
         return A[0];
     }
 
-    //solution 1 optimized, in place
+    //in place, modifying input
     //https://leetcode.com/problems/triangle/discuss/38724/7-lines-neat-Java-Solution/112560
     //https://www.youtube.com/watch?v=RPuhCa2NCvw
     public static int minimumTotalOptimized(List<List<Integer>> triangle) {
