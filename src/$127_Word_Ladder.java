@@ -34,58 +34,13 @@ Output: 0
 Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
  */
 
+//label_bfs
+//label_queue
+//label_important
 public class $127_Word_Ladder {
-    //solution 1: BFS, using null to calculate/check for level
-    //https://leetcode.com/problems/word-ladder/discuss/40717/Another-accepted-Java-solution-(BFS)
-    public static int ladderLength(String beginWord, String endWord, Set<String> wordList) {
-        // Use queue to help BFS
-        Queue<String> queue = new LinkedList<String>();
-        queue.add(beginWord);
-        queue.add(null);
-
-        // Mark visited word
-        Set<String> visited = new HashSet<String>();
-        visited.add(beginWord);
-
-        int level = 1;
-
-        while (!queue.isEmpty()) {
-            String str = queue.poll();
-
-            if (str != null) {
-                // Modify each character (so word distance is 1)
-                for (int i = 0; i < str.length(); i++) {
-                    char[] chars = str.toCharArray();
-
-                    for (char c = 'a'; c <= 'z'; c++) {
-                        chars[i] = c;
-
-                        String word = new String(chars);
-
-                        // Found the end word
-                        if (word.equals(endWord)) return level + 1;
-
-                        // Put it to the queue
-                        if (wordList.contains(word) && !visited.contains(word)) {
-                            queue.add(word);
-                            visited.add(word);
-                        }
-                    }
-                }
-            } else {
-                level++;
-
-                if (!queue.isEmpty()) {
-                    queue.add(null);
-                }
-            }
-        }
-
-        return 0;
-    }
-
-    //solution 1 improved: BFS, using queue.size to calculate level, no dedicated hashset for making visited works
+    //solution 1: BFS, using queue.size to calculate level, no dedicated hashset for making visited works
     //https://www.youtube.com/watch?v=hB_nYXFtwP0
+    //https://www.youtube.com/watch?v=ZVJ3asMoZ18&ab_channel=TECHDOSE
     public static int ladderLength2(String beginWord, String endWord, List<String> wordList) {
         Set<String> dict = new HashSet<>(wordList);
         Queue<String> queue = new LinkedList<>();

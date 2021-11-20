@@ -22,10 +22,22 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
              Total amount you can rob = 2 + 9 + 1 = 12.
  */
 
-//similar: 213. House Robber II
+//label_dp
+//label_array
+//label_important
 public class $198_House_Robber {
-    ////https://www.youtube.com/watch?v=-i2BFAU25Zk
+    //https://www.youtube.com/watch?v=73r3KWiEvyk&ab_channel=NeetCode
     public int rob(int[] nums) {
+
+    }
+
+    //https://www.youtube.com/watch?v=-i2BFAU25Zk
+    /* example
+            2   7   9   3   1
+        r   2   7  11  10  12
+       nr   0   2  7   11  11
+     */
+    public int rob2(int[] nums) {
 
         if(nums.length == 0 ) return 0;
 

@@ -3,6 +3,9 @@ import java.util.*;
 https://leetcode.com/problems/clone-graph/
  */
 
+//label_bfs
+//label_hashmap
+//label_graph
 public class $133_Clone_Graph {
     public static HashMap<Integer, Node> map = new HashMap<>();
 

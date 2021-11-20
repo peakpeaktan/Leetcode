@@ -7,8 +7,9 @@ Return a deep copy of the list.
 
 import java.util.HashMap;
 
+//label_hashmap
+//label_linkedlist
 public class $138_Copy_List_With_Random_Pointer {
-
     //solution 1: use hashmap, O(N) space complexity
     //https://www.youtube.com/watch?v=oXABtaRa37U
     //https://www.youtube.com/watch?v=OvpKeraoxW0

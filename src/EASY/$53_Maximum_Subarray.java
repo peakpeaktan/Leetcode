@@ -14,8 +14,9 @@ Follow up:
 If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
  */
 
-//https://www.youtube.com/watch?v=EcJ0wBBMoKA
-//https://www.youtube.com/watch?v=zT28AwRNTaQ
+//label_array
+//label_dp
+//label_important
 public class $53_Maximum_Subarray {
     //https://leetcode.com/problems/maximum-subarray/discuss/329089/O(N)-TIME-O(1)-SPACE-JAVA-SOLUTION
     public static int maxSubArrayDP(int[] nums) {
@@ -34,6 +35,7 @@ public class $53_Maximum_Subarray {
         return result;
     }
 
+    //https://www.youtube.com/watch?v=EcJ0wBBMoKA
     public static int maxSubArray(int[] A) {
         int maxSoFar=A[0], maxEndingHere=A[0];
         for (int i=1;i<A.length;++i){

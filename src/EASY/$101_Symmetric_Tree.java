@@ -22,6 +22,8 @@ Bonus points if you could solve it both recursively and iteratively.
 
 import java.util.Stack;
 
+//label_binarytree
+//label_recursive
 public class $101_Symmetric_Tree {
     //solution 1
     //https://leetcode.com/problems/symmetric-tree/discuss/33054/Recursive-and-non-recursive-solutions-in-Java

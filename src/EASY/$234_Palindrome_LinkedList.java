@@ -18,28 +18,40 @@ Could you do it in O(n) time and O(1) space?
 
 import java.util.List;
 
+//label_palindrome
+//label_linkedlist
 public class $234_Palindrome_LinkedList {
     //reverse right half
     //https://leetcode.com/problems/palindrome-linked-list/discuss/64501/Java-easy-to-understand
     public boolean isPalindrome(ListNode head) {
+        int count = 0;//count is the number of nodes we need to check for equality
         ListNode fast = head, slow = head;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;
+            count++;
         }
-        if (fast != null) { // odd nodes: let right half smaller
-            slow = slow.next;
-        }
+//        if (fast != null) { // odd nodes: let right half smaller
+//            slow = slow.next;
+//        }
         slow = $206_Reverse_Linked_List.reverseList(slow);
         fast = head;
-
-        while (slow != null) {
-            if (fast.val != slow.val) {
-                return false;
+        for (int i = 0; i < count ; i++) {
+            if(slow != null && fast != null){
+                if (fast.val != slow.val) {
+                    return false;
+                }
+                fast = fast.next;
+                slow = slow.next;
             }
-            fast = fast.next;
-            slow = slow.next;
         }
+//        while (slow != null) {
+//            if (fast.val != slow.val) {
+//                return false;
+//            }
+//            fast = fast.next;
+//            slow = slow.next;
+//        }
         return true;
     }
 

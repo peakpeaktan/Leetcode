@@ -13,6 +13,7 @@ A linked list can be reversed either iteratively or recursively. Could you imple
  */
 
 //similar: 92. Reverse Linked List II
+//label_linkedlist
 public class $206_Reverse_Linked_List {
     //https://www.youtube.com/watch?v=sYcOK51hl-A
     public static ListNode reverseList(ListNode head) {
@@ -35,6 +36,6 @@ public class $206_Reverse_Linked_List {
     }
 
     public static void main(String [] args){
-        //memeda
+
     }
 }

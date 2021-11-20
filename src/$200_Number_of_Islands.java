@@ -23,8 +23,10 @@ Input:
 
 Output: 3
  */
+//label_matrix
+//label_dfs
 public class $200_Number_of_Islands {
-
+    //https://www.youtube.com/watch?v=__98uL6wst8&ab_channel=TECHDOSE
     public int numIslands(char[][] grid) {
 
         if(grid.length == 0) return 0;

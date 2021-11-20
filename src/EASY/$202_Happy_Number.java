@@ -20,6 +20,8 @@ Explanation:
 import java.util.HashSet;
 import java.util.Set;
 
+//label_hashset
+//label_number
 public class $202_Happy_Number {
 
     public static boolean isHappy(int n) {
@@ -28,7 +30,6 @@ public class $202_Happy_Number {
         while(mySet.add(n)) {
             int sum = 0;
             while(n > 0){
-
                 int single = n % 10;
                 sum = single * single + sum;
                 n /= 10;

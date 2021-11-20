@@ -14,9 +14,13 @@ Output:
 ]
  */
 
+//label_backtrack
+//label_palindrome
+//label_important
 public class $131_Palindrome_Partitioning {
     //Solution 1: backtracking, DFS
     //https://leetcode.com/problems/palindrome-partitioning/discuss/182307/Java%3A-Backtracking-Template-General-Approach
+    //https://www.youtube.com/watch?v=dl1gtKWXKEs&ab_channel=XinghaoHuang
     public static List<List<String>> partition(String s) {
         // Backtracking
         // Edge case
@@ -81,6 +85,6 @@ public class $131_Palindrome_Partitioning {
     }
 
     public static void main(String [] args){
-        partition2("aabb");
+        partition("abba");
     }
 }

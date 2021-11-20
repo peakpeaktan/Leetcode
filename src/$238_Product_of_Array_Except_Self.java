@@ -13,11 +13,12 @@ Follow up:
 Could you solve it with constant space complexity? (The output array does not count as extra space for the purpose of space complexity analysis.)
  */
 
+//label_array
 public class $238_Product_of_Array_Except_Self {
     //https://www.youtube.com/watch?v=rpQhKorJRd8
     public static int[] productExceptSelf(int[] nums) {
         int left = 1;
-        int[] output = new int[nums.length];
+        int[] output = new int[nums.length];//output array does not count as extra space per the description above
         for (int i = 0; i < nums.length; i++) {
             output[i] = left;
             left = left * nums[i];
@@ -32,8 +33,6 @@ public class $238_Product_of_Array_Except_Self {
     }
 
     public static void main (String[] args){
-        //2, 3, 4, 5
-        //1, 0, 0, 0
         productExceptSelf(new int[]{2,3,4,5});
     }
 }

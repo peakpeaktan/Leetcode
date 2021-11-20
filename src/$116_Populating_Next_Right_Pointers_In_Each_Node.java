@@ -36,6 +36,7 @@ After calling your function, the tree should look like:
 
  */
 
+//label_binarytree
 public class $116_Populating_Next_Right_Pointers_In_Each_Node {
     //solution 1: iterative, level order
     //https://www.youtube.com/watch?v=dPCrKhwswEk
@@ -60,8 +61,6 @@ public class $116_Populating_Next_Right_Pointers_In_Each_Node {
             start = start.left;
         }
     }
-
-    //solution 2: recursive
 
     public static void main(String [] args){
         //     1

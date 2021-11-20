@@ -6,6 +6,7 @@ Follow up:
 Can you solve it without using extra space?
  */
 
+//label_linkedlist
 public class $141_Linked_List_Cycle {
 
     public boolean hasCycle(ListNode head) {

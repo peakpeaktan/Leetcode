@@ -17,8 +17,10 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
  -10  5
  */
 
+//label_bst
+//label_binarytree
+//label_binarysearch
 public class $108_Convert_Sorted_Array_to_Binary_Search_Tree {
-
     //solution 1:
     //https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/discuss/35220/My-Accepted-Java-Solution
     public static TreeNode sortedArrayToBST(int[] num) {

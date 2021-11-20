@@ -11,8 +11,9 @@ Input: -1->5->3->4->0
 Output: -1->0->3->4->5
  */
 
+//label_sort
+//label_linkedlist
 public class $148_Sort_List {
-
     //merge two sorted list, return result head
     public ListNode merge(ListNode h1, ListNode h2){
         if(h1 == null){
@@ -31,7 +32,7 @@ public class $148_Sort_List {
             return h2;
         }
 
-        //iterative merge
+        //iterative way of merging
 //        ListNode l = new ListNode(0), p = l;
 //
 //        while (l1 != null && l2 != null) {

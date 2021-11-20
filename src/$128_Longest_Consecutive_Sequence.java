@@ -11,34 +11,33 @@ Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefor
  */
 import java.util.*;
 
+//label_array
+//label_set
 public class $128_Longest_Consecutive_Sequence {
-    //https://leetcode.com/problems/longest-consecutive-sequence/discuss/41055/My-really-simple-Java-O(n)-solution-Accepted
-    public static int longestConsecutive(int[] num) {
-        int res = 0;
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int n : num) {
-            if (!map.containsKey(n)) {
-                int left = (map.containsKey(n - 1)) ? map.get(n - 1) : 0;
-                int right = (map.containsKey(n + 1)) ? map.get(n + 1) : 0;
-                // sum: length of the sequence n is in
-                int sum = left + right + 1;
-                map.put(n, sum);
-
-                // keep track of the max length
-                res = Math.max(res, sum);
-
-                // extend the length to the boundary(s)
-                // of the sequence
-                // will do nothing if n has no neighbors
-                map.put(n - left, sum);
-                map.put(n + right, sum);
-            }
-            else {
-                // duplicates
-                continue;
-            }
+    //https://leetcode.com/problems/longest-consecutive-sequence/discuss/41130/Another-accepted-Java-O(n)-solution
+    //https://www.youtube.com/watch?v=P6RZZMu_maU&ab_channel=NeetCode
+    public static int longestConsecutive(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        for(int each : nums){
+            set.add(each);
         }
-        return res;
+        int count = 0;
+        for(int each : nums){
+            int newCount = 1;
+            int num = each;
+            while(set.contains(--num)){
+                newCount++;
+                set.remove(num);
+            }
+            num = each;
+            while(set.contains(++each)){
+                newCount++;
+                set.remove(num);
+            }
+            set.remove(each);
+            count = Math.max(count, newCount);
+        }
+        return count;
     }
 
     public static void main(String [] args){
