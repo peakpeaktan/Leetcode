@@ -42,7 +42,8 @@ Travel to station 1. Your tank = 3 - 3 + 3 = 3
 You cannot travel back to station 2, as it requires 4 unit of gas but you only have 3.
 Therefore, you can't travel around the circuit once no matter where you start.
  */
-//TODO: figure out this problem
+
+//label_greedy
 public class $134_Gas_Station {
     public static int canCompleteCircuit(int[] gas, int[] cost) {
         int sumGas = 0;
@@ -63,6 +64,11 @@ public class $134_Gas_Station {
         } else {
             return start;
         }
+    }
+
+    //two pass approach
+    public static int canCompleteCircuit2(int[] gas, int[] cost) {
+
     }
 
     public static void main(String [] args){

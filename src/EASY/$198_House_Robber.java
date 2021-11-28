@@ -26,18 +26,13 @@ Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (m
 //label_array
 //label_important
 public class $198_House_Robber {
-    //https://www.youtube.com/watch?v=73r3KWiEvyk&ab_channel=NeetCode
-    public int rob(int[] nums) {
-
-    }
-
     //https://www.youtube.com/watch?v=-i2BFAU25Zk
     /* example
             2   7   9   3   1
         r   2   7  11  10  12
        nr   0   2  7   11  11
      */
-    public int rob2(int[] nums) {
+    public int rob(int[] nums) {
 
         if(nums.length == 0 ) return 0;
 
@@ -51,5 +46,34 @@ public class $198_House_Robber {
         }
 
         return Math.max(robMax, notRobMax);
+    }
+
+    public int rob2(int[] num) {
+        int last = 0;
+        int now = 0;
+        int tmp;
+        for (int n :num) {
+            tmp = now;
+            now = Math.max(last + n, now);
+            last = tmp;
+        }
+        return now;
+    }
+
+    //my solution, similar to rob2
+    public int rob3(int[] nums) {
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        int prev  = nums[0];
+        int beforePrev = 0;
+        int cur = nums[1];
+
+        for (int i=1; i<nums.length; i++) {
+            cur  = Math.max(prev,nums[i] + beforePrev);
+            beforePrev = prev;
+            prev = cur;
+        }
+        return cur;
     }
 }
