@@ -13,9 +13,8 @@ Output: "bb"
  */
 
 //must watch: https://www.youtube.com/watch?v=ZnzvU03HtYk
-public class $5_LONGEST_PALINDROMIC_SUBSTRING {
-
-    //DP
+//label_dp
+public class $5_Longest_Palindromic_Substring{
     public static String longestPalindrome(String s) {
 
         if(s == null || s.length() == 0) return s;

@@ -1,4 +1,5 @@
 package EASY;
+import Utilities.ListNode;
 /*
 
 Reverse a singly linked list.

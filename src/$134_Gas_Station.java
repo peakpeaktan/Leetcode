@@ -10,6 +10,7 @@ Note:
 If there exists a solution, it is guaranteed to be unique.
 Both input arrays are non-empty and have the same length.
 Each element in the input arrays is a non-negative integer.
+
 Example 1:
 
 Input:
@@ -45,6 +46,32 @@ Therefore, you can't travel around the circuit once no matter where you start.
 
 //label_greedy
 public class $134_Gas_Station {
+    //two pass approach
+    //https://leetcode.com/problems/gas-station/discuss/42568/Share-some-of-my-ideas./180595
+    //1. if sum of gas is more than sum of cost, then there must be a solution. And the question guaranteed that the solution is unique(The first one I found is the right one).
+    //2. The tank should never be negative, so go to next location whenever there is a negative number.
+    public static int canCompleteCircuit2(int[] gas, int[] cost) {
+        if(gas.length == 0 || cost.length == 0) return -1;
+        int total = 0;
+        for (int i = 0; i < gas.length; i++) {
+            total += (gas[i] - cost[i]);
+        }
+        if(total < 0){//first pass to see if there is a solution
+            return -1;
+        }
+        total = 0;
+        int start = 0;
+        for (int i = 0; i < gas.length; i++) {//once we know there is a solution, simply iterate through the array to find a starting location that can complete a circle
+            total += (gas[i] - cost[i]);
+            if(total < 0){
+                start = i + 1;
+                total = 0;
+            }
+        }
+        return start;
+    }
+
+    //one pass solution
     public static int canCompleteCircuit(int[] gas, int[] cost) {
         int sumGas = 0;
         int sumCost = 0;
@@ -64,11 +91,6 @@ public class $134_Gas_Station {
         } else {
             return start;
         }
-    }
-
-    //two pass approach
-    public static int canCompleteCircuit2(int[] gas, int[] cost) {
-
     }
 
     public static void main(String [] args){

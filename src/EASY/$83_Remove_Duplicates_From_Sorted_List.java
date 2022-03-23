@@ -1,4 +1,5 @@
 package EASY;
+import Utilities.ListNode;
 /*
 Given a sorted linked list, delete all duplicates such that each element appear only once.
 
@@ -12,7 +13,7 @@ Input: 1->1->2->3->3
 Output: 1->2->3
  */
 
-public class $83_REMOVE_DUPLICATES_FROM_SORTED_LIST {
+public class $83_Remove_Duplicates_From_Sorted_List {
     //https://leetcode.com/problems/remove-duplicates-from-sorted-list/discuss/28614/My-pretty-solution.-Java.
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode list = head;

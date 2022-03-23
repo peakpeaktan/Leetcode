@@ -6,8 +6,9 @@ n vertical lines are drawn such that the two endpoints of line i is at (i, ai) a
 Note: You may not slant the container and n is at least 2.
  */
 
-//Good explanation: https://www.youtube.com/watch?v=pdKz9TvIjS8
-public class $11_CONTAINER_WITH_MOST_WATER {
+//https://www.youtube.com/watch?v=pdKz9TvIjS8
+//label_twopointers
+public class $11_Container_With_Most_Water {
 
     public int maxArea(int[] height) {
 
@@ -21,9 +22,7 @@ public class $11_CONTAINER_WITH_MOST_WATER {
             int currHeight = Math.min(height[left],height[right]);
             int currMax = currHeight * (right - left);
             maxArea = Math.max(maxArea, currMax);
-
             if(height[left] < height[right]){
-
                 left++;
             }else if(height[left] > height[right]){
                 right--;

@@ -20,7 +20,7 @@ Output:
 ]
  */
 
-public class $78_SUBSETS {
+public class $78_Subsets {
     //https://leetcode.com/problems/subsets/discuss/27281/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
     public static List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();

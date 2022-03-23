@@ -32,7 +32,7 @@ public class $14_Longest_Common_Prefix {
 
         for (int i = 1; i < strs.length; i++) {//loop from the second string to the end
 
-            while (strs[i].indexOf(str) != 0){//if there is no common prefix, then decrement string by 1 letter from the end
+            while (!strs[i].startsWith(str)){//if there is no common prefix, then decrement string by 1 letter from the end
                 str = str.substring(0, str.length()-1);
             }
         }
