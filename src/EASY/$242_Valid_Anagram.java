@@ -1,5 +1,5 @@
 package EASY;
-
+import java.util.*;
 /*
 Given two strings s and t, write a function to determine if t is an anagram of s.
 
@@ -14,6 +14,8 @@ Follow up:
 What if the inputs contain unicode characters? How would you adapt your solution to such case?
 
  */
+
+//label_string
 public class $242_Valid_Anagram {
 
     public static boolean isAnagram(String s, String t) {
@@ -33,6 +35,24 @@ public class $242_Valid_Anagram {
             if(num != 0){
                 return false;
             }
+        }
+
+        return true;
+    }
+
+    //https://leetcode.com/problems/valid-anagram/discuss/66484/Accepted-Java-O(n)-solution-in-5-lines/190829
+    //follow up - input containing Unicode characters
+    public boolean isAnagram2(String s, String t) {
+        HashMap<Character,Integer> smap=new HashMap<>();
+        int sl=s.length();
+        int tl=t.length();
+        if(sl!=tl){return false;}
+        for(int i=0;i<sl;i++){
+            smap.put(s.charAt(i),smap.getOrDefault(s.charAt(i),0)+1);
+            smap.put(t.charAt(i),smap.getOrDefault(t.charAt(i),0)-1);
+        }
+        for(char c:smap.keySet()){
+            if(smap.get(c)!=0){return false;}
         }
 
         return true;

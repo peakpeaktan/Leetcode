@@ -20,6 +20,7 @@ Output: false
  */
 
 //follow up: 247, 248
+//label_string
 public class $246_Strobogrammatic_Number {
     public boolean isStrobogrammatic(String num) {
         HashMap<Character, Character> dict = new HashMap<>();

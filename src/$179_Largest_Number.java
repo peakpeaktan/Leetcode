@@ -15,6 +15,7 @@ Note: The result may be very large, so you need to return a string instead of an
 import java.util.Comparator;
 import java.util.Arrays;
 
+//label_string
 public class $179_Largest_Number {
 
     //https://www.youtube.com/watch?v=qEIGhVtZ-sg

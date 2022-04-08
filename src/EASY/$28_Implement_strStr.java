@@ -22,13 +22,13 @@ This is consistent to C's strstr() and Java's indexOf().
  */
 
 //https://www.youtube.com/watch?v=OhPtAQtfsuM
+//label_string
 public class $28_Implement_strStr {
     //https://leetcode.com/problems/implement-strstr/discuss/12807/Elegant-Java-solution/13117
     public static int strStr(String haystack, String needle) {
         if (needle.isEmpty()) return 0; // edge case: "",""=>0  "a",""=>0
         for (int i = 0; i <= haystack.length() - needle.length(); i++) {
-            for (int j = 0;
-                 j < needle.length() && haystack.charAt(i + j) == needle.charAt(j);
+            for (int j = 0; j < needle.length() && haystack.charAt(i + j) == needle.charAt(j);
                  j++)
                 if (j == needle.length() - 1) {
                     return i;

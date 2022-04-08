@@ -15,6 +15,7 @@ Output: [1,2]
 Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
  */
 
+//label_binary_search
 public class $167_Two_Sum_II_Input_Array_is_Sorted {
 
     public int[] twoSum(int[] numbers, int target) {
@@ -26,12 +27,9 @@ public class $167_Two_Sum_II_Input_Array_is_Sorted {
         int end = numbers.length - 1;
 
         while (start <= end){
-
             if(numbers[start] + numbers[end] == target){
-
                 result[0] = start + 1;
                 result[1] = end + 1;
-
                 return result;
             }else if (numbers[start] + numbers[end] < target){
 

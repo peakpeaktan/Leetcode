@@ -83,7 +83,10 @@ Interval
 252. Meeting Room
 253. Meeting Room 2
 
-排列组合 backtrack DFS
+
+
+
+排列组合/backtrack/DFS
 22. Generate Parentheses, consider number of open and close parentheses
 17. Letter Combination of a Phone Number
 39. Combination Sum
@@ -94,6 +97,7 @@ Interval
 46. Permutations
 47. Permutations II
 131. Palindrome Partitioning
+*267. Palindrome Permutation II
 
 Linkedlist
 
@@ -102,7 +106,7 @@ Linkedlist
 82. Remove Duplicates from Sorted List II - delete all numbers and their duplicates
 237. Delete Node in a Linked List - head not given, node given is the node that needs to be delete, change its value to next's and skip next
 203. Remove Linked List Elements
-206. Reverse Linked List
+*206. Reverse Linked List
 92. Reverse Linked List II
 234. Palindrome Linked List - use slow and fast pointer to find mid element(be careful about odd or even number of nodes), reverse right half and compare values
 141. Linked List Cycle
@@ -110,6 +114,81 @@ Linkedlist
 24. Swap Node in Pairs - awesome diagram: https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share/186959
 2. Add Two Numbers
 160. Intersection of Two Linked Lists - get length of both lists, move/align longer list first and move both lists at the same time to reach the intersection
+21. Merge Two Sorted Lists
+*148. Sort List - merge sort
+*147. Insertion Sort List
+61. Rotate List - get the length of the input linked list which is n, move to n-k%n and rotate
+86. Partition List - maintain two lists, one holds nodes < x, one holds nodes >= x and connect them, O(n)
+[!]23. Merge k Sorted Lists
+328. Odd Even Linked List - space complexity requirement is O(1), in place
+
+String
+28. Implement strStr()
+14. Longest Common Prefix
+58. Length of Last Word
+151. Reverse Words in a String - split using s.trim().split("\\s+") and reverse words
+186. Reverse Words in a String II - reverse the whole string(input), and reverse each word again(guaranteed to have one single space between words)
+205. Isomorphic Strings - use hashmap to save char mapping and check along the way that if mapping of char to another char is one to one only
+293. Flip Game - important: str.substring(str.length()) == ""
+*242. Valid Anagram - use int[26] or hashmap
+*49. Group Anagrams - iterate through each string -> sort it -> maintain a hashmap of string : list
+*249. Group Shifted Strings - two strings are considered shifted if the difference between each char is the same, for example, acd -> 2 1, dfg -> 2 1, mop -> 2 1
+iterate through each string and calculate such difference, use a hashmap to keep track of all shifted strings that have the same difference
+179. Largest Number - sort the array using a comparator that compares s1 concat s2 with s2 concat s1
+161. One Edit Distance
+38. Count and Say
+*168. Excel Sheet Column Title - while n>0 -> n-- -> n%26 -> n/26
+171. Excel Sheet Column Number
+12. Integer to Roman
+13. Roman to Integer
+[H, !]273. Integer to English Words
+*246. Strobogrammatic Number
+*247. Strobogrammatic Number II
+[H, !]68. Text Justification
+[H, !]65. Valid Number
+*157. Read N Characters Given Read4
+158. Read N Characters Given Read4 II - Call multiple times
+[H, !]214. Shortest Palindrome - KMP
+[low priority]165. Compare Version Numbers - split("\\.");
+
+Sliding Window - String
+[H, *]76. Minimum Window Substring
+[H, !]30. Substring with Concatenation of All Words
+*3. Longest Substring Without Repeating Characters
+*340. Longest Substring with At Most K Distinct Characters
+*159. Longest Substring with At Most Two Distinct Characters
+
+Palindrome - String
+*125. Valid Palindrome - use of built-in method of Character.isLetterOrDigit(), compare characters using two pointers head and tail, skip if non alphanumeric
+*266. Palindrome Permutation - use hashset or hashmap - only one character can appear odd number of times, all the other characters must appear even number of times
+
+Parentheses - String
+*20. Valid Parentheses - use a stack -> push corresponding closing brackets if opening brackets are encountered -> if closing brackets are encountered, pop stack and compare -> stack should not be empty at the end
+[H, *]32. Longest Valid Parentheses - use a stack, push the index of (, pop the stack when ) is encountered
+
+DP - 2D array
+*5. Longest Palindromic Substring - draw the dp table and visualize, the start/end indexes can be set using many different ways
+[H, !]132. Palindrome Partitioning II
+
+Math
+*9. Palindrome Number
+*7. Reverse Integer - check overflow: if ((newResult - tail) / 10 != result)
+8. String to Integer (atoi) - another way to check overflow: if(Integer.MAX_VALUE / 10 < total || Integer.MAX_VALUE / 10 == total && Integer.MAX_VALUE % 10 < digit)
+66. Plus One - from last element to first element of the array, if it is less than 9, add 1 to it and return, otherwise set it to 0 and continue, after the iteration if first element becomes 0(for example 999 -> 000), create a new array of n+ 1 sizeand set 0 index to be 1
+[low priority]258. Add Digits
+67. Add Binary
+[x]43. Multiply Strings
+[x]29. Divide Two Integers
+
+Binary Search
+167. Two Sum II - Input Array Is Sorted
 
 uncategorized
 31. Next Permutation, from right to left find first element that breaks ascending order, swap with next largest element to its right and reverse the rest
+*1. Two Sum
+170. Two Sum III - Data structure design
+*15. 3Sum
+*16. 3Sum Closest
+259. 3Sum Smaller
+[x]18. 4Sum
+[x]560. Subarray Sum Equals K

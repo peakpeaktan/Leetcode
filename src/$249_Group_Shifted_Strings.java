@@ -13,6 +13,7 @@ A solution is:
 ]
  */
 
+//label_string
 public class $249_Group_Shifted_Strings {
     //https://www.youtube.com/watch?v=Im-isYiYqDk
     public static List<List<String>> groupStrings(String[] strings) {

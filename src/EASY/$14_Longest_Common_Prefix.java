@@ -1,7 +1,5 @@
 package EASY;
 
-import java.util.Arrays;
-
 /*
 Write a function to find the longest common prefix string amongst an array of strings.
 
@@ -20,6 +18,8 @@ Note:
 
 All given inputs are in lowercase letters a-z.
  */
+
+//label_string
 public class $14_Longest_Common_Prefix {
 
     public static String longestCommonPrefix(String[] strs) {

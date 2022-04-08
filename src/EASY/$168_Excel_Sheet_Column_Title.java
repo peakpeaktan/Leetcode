@@ -27,6 +27,7 @@ Output: "ZY"
  */
 
 //similar: 171. Excel Sheet Column Number
+//label_string
 public class $168_Excel_Sheet_Column_Title {
 
     public static String convertToTitle(int n) {

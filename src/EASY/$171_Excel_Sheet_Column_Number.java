@@ -27,6 +27,7 @@ Output: 701
  */
 
 //similar: 168. Excel Sheet Column Title
+//label_string
 public class $171_Excel_Sheet_Column_Number {
 
     public int titleToNumber(String s) {

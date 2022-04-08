@@ -22,8 +22,8 @@ Coud you solve it without converting the integer to a string?
  */
 
 //label_palindrome
-//label_number
-public class $9_PALINDROME_NUMBER {
+//label_math
+public class $9_Palindrome_Number {
 
     public boolean isPalindrome(int x) {
 

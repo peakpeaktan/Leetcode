@@ -19,10 +19,10 @@ Output: [4,3,2,2]
 Explanation: The array represents the integer 4321.
  */
 
+//label_math
 public class $66_Plus_One {
 
     public static int[] plusOne(int[] digits) {
-
         int n = digits.length;
         for(int i=n-1; i>=0; i--) {
             if(digits[i] < 9) {

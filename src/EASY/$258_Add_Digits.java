@@ -11,8 +11,10 @@ Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2.
 Follow up:
 Could you do it without any loop/recursion in O(1) runtime?
  */
-public class $258_Add_Digits {
 
+//label_math
+public class $258_Add_Digits {
+    //solution using math
     public int addDigits(int num) {
         if(num<10)
             return num;
@@ -20,5 +22,12 @@ public class $258_Add_Digits {
             return 9;
         else
             return num % 9;
+    }
+
+    //solution using loop
+    public int sumDigits(int n){
+        if(n==0)
+            return 0;
+        return (n%10) + sumDigits(n/10);
     }
 }

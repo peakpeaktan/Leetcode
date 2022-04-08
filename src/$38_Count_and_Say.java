@@ -11,7 +11,6 @@ For example, the saying and conversion for digit string "3322251":
 Given a positive integer n, return the nth term of the count-and-say sequence.
 
 
-
 Example 1:
 
 Input: n = 1
@@ -32,6 +31,7 @@ Constraints:
 
 1 <= n <= 30
  */
+//label_string
 public class $38_Count_and_Say {
     //https://www.youtube.com/watch?v=0EGzSHEbXrQ
     //my solution

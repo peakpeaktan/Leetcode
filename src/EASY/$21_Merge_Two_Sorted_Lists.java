@@ -11,7 +11,9 @@ Example:
 Input: 1->2->4, 1->3->4
 Output: 1->1->2->3->4->4
  */
-public class $21_MERGE_TWO_SORTED_LISTS {
+
+//label_linkedlist
+public class $21_Merge_Two_Sorted_Lists {
 
     public ListNode mergeTwoListsRecursive(ListNode l1, ListNode l2) {
 

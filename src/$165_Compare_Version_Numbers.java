@@ -45,6 +45,7 @@ version1 and version2 are valid version numbers.
 All the given revisions in version1 and version2 can be stored in a 32-bit integer.
  */
 
+//label_string
 public class $165_Compare_Version_Numbers {
     //https://leetcode.com/problems/compare-version-numbers/discuss/50774/Accepted-small-Java-solution.
     public static int compareVersion(String version1, String version2) {

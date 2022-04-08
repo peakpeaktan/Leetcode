@@ -32,14 +32,12 @@ Output: true
 
 import java.util.Stack;
 
-public class $20_VALID_PARENTHESES {
-
+//label_string
+public class $20_Valid_Parentheses {
+    //https://leetcode.com/problems/valid-parentheses/discuss/9178/Short-java-solution
     public boolean isValid(String s) {
-
         Stack<Character> stack = new Stack<>();
-
         for (Character chr : s.toCharArray()){
-
             if(chr == '('){
                 stack.push(')');
             }else if(chr == '['){
@@ -52,7 +50,8 @@ public class $20_VALID_PARENTHESES {
             }
         }
         return stack.isEmpty();
-        //another solution, which differs in what we push into the stack:
-        //https://www.youtube.com/watch?v=o7lQWD8FiIA
     }
+
+    //another solution, which differs in what we push into the stack:
+    //https://www.youtube.com/watch?v=o7lQWD8FiIA
 }

@@ -14,10 +14,9 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
  */
 
-public class $1_TWO_SUM {
+public class $1_Two_Sum {
 
     public static int[] twoSum(int[] numbers, int target) {
-
         //key: number , value: index in array
         Map<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
         int[] array = new int[2];

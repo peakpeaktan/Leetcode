@@ -16,6 +16,8 @@ For example, given n = 3, a solution set is:
 //https://www.youtube.com/watch?v=PCb1Ca_j6OU
 
 import java.util.*;
+
+//label_backtrack
 public class $22_Generate_Parentheses {
         //https://leetcode.com/problems/generate-parentheses/discuss/10100/Easy-to-understand-Java-backtracking-solution
         public static List<String> generateParenthesisBackTrack ( int n){

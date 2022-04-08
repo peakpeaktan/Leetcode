@@ -24,7 +24,6 @@ public class $5_Longest_Palindromic_Substring{
         boolean[][] dp = new boolean[s.length()][s.length()];
         //two pointers, scan from left to right
         for (int j = 0; j < s.length(); j++) {
-
             for (int i = 0; i <= j; i++) {
                 dp[i][j] = s.charAt(i) == s.charAt(j) && ( j - i <= 2 || dp[i+1][j-1] );//dp[i+1][j-1] is for j-i > 2
                 if(dp[i][j]){

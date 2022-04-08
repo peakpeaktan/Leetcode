@@ -50,7 +50,7 @@ public class $151_Reverse_Words_in_a_String {
     //https://leetcode.com/problems/reverse-words-in-a-string/discuss/47781/Java-3-line-builtin-solution
     //use built-in functions
     public String reverseWords(String s) {
-        String[] words = s.trim().split(" +");
+        String[] words = s.trim().split(" +");//\\s+
         Collections.reverse(Arrays.asList(words));
         return String.join(" ", words);
     }

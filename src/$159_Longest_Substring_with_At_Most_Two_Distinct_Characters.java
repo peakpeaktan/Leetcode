@@ -15,9 +15,8 @@ Explanation: "aabbb" which its length is 5.
 
 import java.util.HashMap;
 
-//label_hashmap
 //label_string
-//label_twopointers
+//label_sliding_window
 //similar: 340, 904, 3
 public class $159_Longest_Substring_with_At_Most_Two_Distinct_Characters {
     //my solution based on https://www.youtube.com/watch?v=2vW_Q8ToSAU&ab_channel=XinghaoHuang

@@ -1,3 +1,5 @@
+import java.util.*;
+import java.util.Arrays;
 /*
 
 Given an array of strings, group anagrams together.
@@ -17,9 +19,7 @@ All inputs will be in lowercase.
 The order of your output does not matter.
  */
 
-import java.util.*;
-import java.util.Arrays;
-
+//label_string
 public class $49_Group_Anagrams {
     //https://leetcode.com/problems/group-anagrams/discuss/19176/Share-my-short-JAVA-solution
     public static List<List<String>> groupAnagrams(String[] strs) {

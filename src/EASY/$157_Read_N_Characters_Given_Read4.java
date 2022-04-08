@@ -20,7 +20,7 @@ read4(buf); // read4 returns 4. Now buf = "efgh", fp points to 'i'
 read4(buf); // read4 returns 3. Now buf = "ijk", fp points to end of file
 
 Method read:
-By using the read4 method, implement the method read that reads n characters from the file and store it in the buffer array buf. Consider that you cannotmanipulate the file directly.
+By using the read4 method, implement the method read that reads n characters from the file and store it in the buffer array buf. Consider that you cannot manipulate the file directly.
 The return value is the number of actual characters read.
 Definition of read:
 Parameters:	char[] buf, int n
@@ -51,7 +51,7 @@ You may assume the destination buffer array, buf, is guaranteed to have enough s
  */
 
 //label_interactive
-//label_important
+//label_string
 public class $157_Read_N_Characters_Given_Read4 {
     /**
      * @param buf Destination buffer

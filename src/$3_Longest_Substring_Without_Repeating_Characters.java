@@ -14,9 +14,8 @@ Note that the answer must be a substring, "pwke" is a subsequence and not a subs
  */
 
 //https://www.youtube.com/watch?v=hw0zHamgaks&t=5s
-//label_hashmap
 //label_string
-//label_twopointers
+//label_sliding_window
 //similar: 159, 340, 904, 1695
 public class $3_Longest_Substring_Without_Repeating_Characters {
     //https://leetcode.com/problems/longest-substring-without-repeating-characters/discuss/1729/11-line-simple-Java-solution-O(n)-with-explanation/2121
