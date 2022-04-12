@@ -19,10 +19,9 @@ Given the below binary tree and sum = 22,
 return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
  */
 
-//label_binarytree
-//label_recursive
+//label_binary_tree
 public class $112_Path_Sum {
-    //solution 1: DFS
+    //solution 1: recursive + DFS
     //https://leetcode.com/problems/path-sum/discuss/36378/AcceptedMy-recursive-solution-in-Java/34584
     public static boolean hasPathSum(TreeNode root, int sum) {
         if(root == null) return false;
@@ -33,7 +32,7 @@ public class $112_Path_Sum {
         return left || right;
     }
 
-    //solution 2: stack, preorder, DFS
+    //solution 2: iterative using a stack, preorder, DFS
     //https://leetcode.com/problems/path-sum/discuss/36534/My-java-no-recursive-method/34652
     public static boolean hasPathSumPreOrderDFS(TreeNode root, int sum) {
         Stack<TreeNode> stack = new Stack<TreeNode>();

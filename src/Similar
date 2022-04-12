@@ -98,6 +98,7 @@ Interval
 47. Permutations II
 131. Palindrome Partitioning
 *267. Palindrome Permutation II
+113. Path Sum II
 
 Linkedlist
 
@@ -179,11 +180,18 @@ Math
 67. Add Binary
 [x]43. Multiply Strings
 [x]29. Divide Two Integers
+231. Power of Two - using iterative solution is trivial, use bitwise solution: (x & (-x)) == x
+[low priority]326. Power of Three
+[low priority]342. Power of Four
+191. Number of 1 Bits - for each bit, AND with 1 and the result is 1 if the bit is 1
+292. Nim Game
+*202. Happy Number
+263. Ugly Number
 
 Binary Search
 167. Two Sum II - Input Array Is Sorted
 
-uncategorized
+Uncategorized
 31. Next Permutation, from right to left find first element that breaks ascending order, swap with next largest element to its right and reverse the rest
 *1. Two Sum
 170. Two Sum III - Data structure design
@@ -192,3 +200,24 @@ uncategorized
 259. 3Sum Smaller
 [x]18. 4Sum
 [x]560. Subarray Sum Equals K
+
+Binary Tree
+*144. Binary Tree Preorder Traversal
+*94. Binary Tree Inorder Traversal - look for leftmost node, add the nodes along the way to stack, pop the stack and add the node's value to list, continue the operation for the right node(if exists)
+145. Binary Tree Postorder Traversal
+*102. Binary Tree Level Order Traversal
+*107. Binary Tree Level Order Traversal II
+*103. Binary Tree Zigzag Level Order Traversal
+*100. Same Tree
+*101. Symmetric Tree
+*226. Invert Binary Tree
+*257. Binary Tree Paths
+*112. Path Sum
+*113. Path Sum II
+*129. Sum Root to Leaf Numbers
+298. Binary Tree Longest Consecutive Sequence
+*111. Minimum Depth of Binary Tree
+*104. Maximum Depth of Binary Tree
+[x]110. Balanced Binary Tree
+[H,x]124. Binary Tree Maximum Path Sum
+[low priorty]250. Count Univalue Subtrees

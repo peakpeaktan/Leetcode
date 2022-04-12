@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 
 Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
@@ -17,11 +18,7 @@ return its level order traversal as:
 ]
  */
 
-import java.util.*;
-
 //label_binary_tree
-//label_bfs
-//label_dfs
 public class $102_Binary_Tree_Level_Order_Traversal {
 
     //solution 1: DFS
@@ -42,10 +39,9 @@ public class $102_Binary_Tree_Level_Order_Traversal {
         levelHelper(res, root.right, height+1);
     }
 
-    //solution 2: queue, BFS
+    //solution 2: Iterative using queue, BFS
     //https://leetcode.com/problems/binary-tree-level-order-traversal/discuss/33450/Java-solution-with-a-queue-used/32165
     public static List<List<Integer>> levelOrderIterativeBFS(TreeNode root) {
-
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) return res;
         Queue<TreeNode> queue = new LinkedList<>();

@@ -14,6 +14,8 @@ Input: [1,null,2,3]
 Output: [1,2,3]
 Follow up: Recursive solution is trivial, could you do it iteratively?
  */
+
+//label_binary_tree
 public class $144_Binary_Tree_Preorder_Traversal {
     //https://leetcode.com/problems/binary-tree-preorder-traversal/discuss/45468/3-Different-Solutions
     //Solution 1: Iterative + stack
@@ -37,6 +39,7 @@ public class $144_Binary_Tree_Preorder_Traversal {
         preHelper(root,pre);
         return pre;
     }
+
     public void preHelper(TreeNode root, List<Integer> pre) {
         if(root==null) return;
         pre.add(root.val);

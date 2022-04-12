@@ -22,10 +22,9 @@ Bonus points if you could solve it both recursively and iteratively.
 
 import java.util.Stack;
 
-//label_binarytree
-//label_recursive
+//label_binary_tree
 public class $101_Symmetric_Tree {
-    //solution 1
+    //Recursive solution
     //https://leetcode.com/problems/symmetric-tree/discuss/33054/Recursive-and-non-recursive-solutions-in-Java
     public static boolean isSymmetricRecursive(TreeNode root) {
 
@@ -42,7 +41,7 @@ public class $101_Symmetric_Tree {
         return left.val == right.val && isSymmetricHelper(left.left, right.right) && isSymmetricHelper(left.right, right.left);
     }
 
-    //solution 2, stack
+    //Iterative solution using stack
     //https://leetcode.com/problems/symmetric-tree/discuss/33054/Recursive-and-non-recursive-solutions-in-Java/31849
     public static boolean isSymmetricIterativeStack(TreeNode root) {
 
@@ -80,7 +79,7 @@ public class $101_Symmetric_Tree {
         return true;
     }
 
-    //solution 3, queue
+    //Iterative solution using queue
     //https://leetcode.com/problems/symmetric-tree/discuss/33054/Recursive-and-non-recursive-solutions-in-Java/139618
     public static boolean isSymmetricIterativeQueue(TreeNode root) {
         if(root == null)

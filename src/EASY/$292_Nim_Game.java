@@ -14,8 +14,9 @@ Explanation: If there are 4 stones in the heap, then you will never win the game
              No matter 1, 2, or 3 stones you remove, the last stone will always be
              removed by your friend.
  */
-public class $292_Nim_Game {
 
+//label_math
+public class $292_Nim_Game {
     public boolean canWinNim(int n) {
         return n % 4 != 0 ;
     }

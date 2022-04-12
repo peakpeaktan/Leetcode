@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given a binary tree, return the inorder traversal of its nodes' values.
 
@@ -14,10 +15,9 @@ Output: [1,3,2]
 Follow up: Recursive solution is trivial, could you do it iteratively?
  */
 
-//https://www.youtube.com/watch?v=xGtb5F1A7kE
-import java.util.*;
-public class $94_BINARY_TREE_INORDER_TRAVERSAL {
-
+//label_binary_tree
+public class $94_Binary_Tree_Inorder_Traversal {
+    //Recursive solution
     public static List<Integer> inorderTraversalRecursive(TreeNode root) {
 
         List<Integer> result = new ArrayList<>();
@@ -37,6 +37,7 @@ public class $94_BINARY_TREE_INORDER_TRAVERSAL {
         RecursiveHelper(list, node.right);
     }
 
+    //Iterative using stack
     public static List<Integer> inorderTraversalIterative(TreeNode root) {
 
         List<Integer> result = new ArrayList<Integer>();

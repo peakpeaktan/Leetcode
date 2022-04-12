@@ -4,6 +4,8 @@ Given the root of a binary tree, return the postorder traversal of its nodes' va
 
 Follow up: Recursive solution is trivial, could you do it iteratively?
  */
+
+//label_binary_tree
 public class $145_Binary_Tree_Postorder_Traversal {
 
     //Solution 1: Iterative + stack

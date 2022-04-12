@@ -16,7 +16,7 @@ If there is no valid move, return an empty list [].
  */
 
 //label_string
-public class $293_Flip_Gmae {
+public class $293_Flip_Game {
     public List<String> generatePossibleNextMoves(String s) {
         List<String> res = new ArrayList<String>();
         for (int i = 1; i < s.length(); i++) {

@@ -1,4 +1,5 @@
 package EASY;
+import java.util.*;
 /*
 Given a binary tree, return the bottom-up level order traversal of its nodes' values.
 (ie, from left to right, level by level from leaf to root).
@@ -18,12 +19,8 @@ return its bottom-up level order traversal as:
 ]
  */
 
-import java.util.*;
-
-//label_binarytree
-//label_bfs
-//label_dfs
-public class $107_Binary_Tree_Level_Order_Traversal2 {
+//label_binary_tree
+public class $107_Binary_Tree_Level_Order_Traversal_II {
 
     //solution 1: DFS
     //https://leetcode.com/problems/binary-tree-level-order-traversal-ii/discuss/34981/My-DFS-and-BFS-java-solution
@@ -47,7 +44,7 @@ public class $107_Binary_Tree_Level_Order_Traversal2 {
     //solution 2: queue, BFS
     //https://leetcode.com/problems/binary-tree-level-order-traversal-ii/discuss/35089/Java-Solution.-Using-Queue
     public static List<List<Integer>> levelOrderBottomBFS(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<List<Integer>>();//or use LinkedList here
         if(root==null) return result;
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
@@ -60,7 +57,7 @@ public class $107_Binary_Tree_Level_Order_Traversal2 {
                 if(node.left!=null) q.add(node.left);
                 if(node.right!=null) q.add(node.right);
             }
-            result.add(0,list);
+            result.add(0,list);//if using linked list: result.addFirst(level);
         }
         return result;
     }

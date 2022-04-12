@@ -23,7 +23,7 @@ Return:
 ]
  */
 
-//label_binarytree
+//label_binary_tree
 //label_backtracking
 //label_dfs
 //label_recursive

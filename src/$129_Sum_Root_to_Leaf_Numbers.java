@@ -35,9 +35,9 @@ The root-to-leaf path 4->0 represents the number 40.
 Therefore, sum = 495 + 491 + 40 = 1026.
  */
 
+//label_binary_tree
 public class $129_Sum_Root_to_Leaf_Numbers {
     static int total;
-
     //solution 1: Recursive, DFS, preorder
     //https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/41531/Clean-Java-DFS-solution-(preorder-traversal)
     public static int sumNumbers(TreeNode root) {
@@ -59,7 +59,7 @@ public class $129_Sum_Root_to_Leaf_Numbers {
         helper(root.right, sum);
     }
 
-    //solution 2: Iterative, DFS, preorder
+    //solution 2: Iterative, DFS, preorder, but will change the value of node
     //https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/41367/Non-recursive-preorder-traverse-Java-solution
     public static int sumNumbers2(TreeNode root) {
         if(root==null){
@@ -88,6 +88,36 @@ public class $129_Sum_Root_to_Leaf_Numbers {
             }
         }
         return sum;
+    }
+
+    //solution 3: Iterative using a stack, DFS, preorder, won't change the value of the node
+    //https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/41363/Short-Java-solution.-Recursion./123155
+    public int sumNumbers3(TreeNode root) {
+        if(root == null){
+            return 0;
+        }
+        Stack<TreeNode> nodeStack = new Stack<>();
+        Stack<String> nodePath = new Stack<>();
+        nodeStack.push(root);
+        nodePath.push(""+root.val);
+        int runningSum = 0;
+        while(!nodeStack.isEmpty()){
+            TreeNode node = nodeStack.pop();
+            String currentPath = nodePath.pop();
+            if(node.right != null){
+                nodeStack.push(node.right);
+                nodePath.push(currentPath + (""+node.right.val));
+            }
+            if(node.left != null){
+                nodeStack.push(node.left);
+                nodePath.push(currentPath+ (""+ node.left.val) );
+            }
+            if( node.left == null && node.right == null){
+                runningSum = runningSum + Integer.valueOf(currentPath);
+            }
+
+        }
+        return runningSum;
     }
 
     public static void main(String [] args){

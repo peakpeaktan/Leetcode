@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
 
@@ -16,8 +17,7 @@ return its zigzag level order traversal as:
 ]
  */
 
-import java.util.*;
-
+//label_binary_tree
 public class $103_Binary_Tree_Zigzag_Level_Order_Traversal {
     //solution 1: DFS
     //https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/discuss/33815/My-accepted-JAVA-solution

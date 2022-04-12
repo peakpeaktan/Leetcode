@@ -1,4 +1,5 @@
 package EASY;
+import java.util.*;
 /*
 Given a binary tree, find its maximum depth.
 
@@ -18,12 +19,10 @@ Given binary tree [3,9,20,null,null,15,7],
 return its depth = 3.
  */
 
-import java.util.*;
-
 //https://www.youtube.com/watch?v=lY2vzApDHYs
-public class $104_MAXIMUM_DEPTH_OF_BINARY_TREE {
-
-    //solution 1: recursive
+//label_binary_tree
+public class $104_Maximum_Depth_of_Binary_Tree {
+    //solution 1: recursive DFS
     //https://leetcode.com/problems/maximum-depth-of-binary-tree/discuss/34216/Simple-solution-using-Java
     public static int maxDepthRecursive(TreeNode root) {
 
@@ -32,7 +31,7 @@ public class $104_MAXIMUM_DEPTH_OF_BINARY_TREE {
         return 1 + Math.max(maxDepthRecursive(root.left), maxDepthRecursive(root.right));
     }
 
-    //solution 2: queue, BFS
+    //solution 2: iterative using a queue, BFS
     //https://leetcode.com/problems/maximum-depth-of-binary-tree/discuss/34195/Two-Java-Iterative-solution-DFS-and-BFS
     public static int maxDepthBFS(TreeNode root) {
         if(root == null) {
@@ -55,6 +54,40 @@ public class $104_MAXIMUM_DEPTH_OF_BINARY_TREE {
             count++;
         }
         return count;
+    }
+
+    //solution 3: iterative using two stacks, DFS
+    public int maxDepth(TreeNode root) {
+        if (root == null) return 0;
+
+        int max = 1;
+
+        Stack<TreeNode> nodes = new Stack<>();
+        Stack<Integer> depths = new Stack<>();
+
+        nodes.push(root);
+        depths.push(1);
+
+        while (!nodes.empty()) {
+            TreeNode curr = nodes.pop();
+            int depth = depths.pop();
+
+            if (curr.left == null && curr.right == null) {
+                max = Math.max(max, depth);
+            }
+
+            if (curr.right != null) {
+                nodes.push(curr.right);
+                depths.push(depth + 1);
+            }
+            if (curr.left != null) {
+                nodes.push(curr.left);
+                depths.push(depth + 1);
+            }
+        }
+
+        return max;
+
     }
 
     public static void main(String [] args){

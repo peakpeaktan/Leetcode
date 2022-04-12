@@ -23,8 +23,10 @@ Output:
 
 import java.util.Stack;
 
+//label_binary_tree
 public class $226_Invert_Binary_Tree {
     //https://leetcode.com/problems/invert-binary-tree/discuss/62707/Straightforward-DFS-recursive-iterative-BFS-solutions
+    //bottom up recursive solution
     public static TreeNode invertTree(TreeNode root) {
         if(root == null) return null;
         TreeNode left = root.left, right = root.right;
@@ -33,7 +35,7 @@ public class $226_Invert_Binary_Tree {
         return root;
     }
 
-    //top down
+    //top down recursive solution
     public static TreeNode invertTree2(TreeNode root)
     {
         if(root==null)
