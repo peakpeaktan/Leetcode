@@ -16,8 +16,8 @@ Output:
 ]
  */
 
-public class $118_PASCALS_TRIANGLE {
-
+//label_array
+public class $118_Pascals_Triangle {
     //https://leetcode.com/problems/pascals-triangle/discuss/38141/My-concise-solution-in-Java
     public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<>();

@@ -1,9 +1,5 @@
 package EASY;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-
+import java.util.*;
 /*
 Given an array of meeting time intervals consisting of start and end times[[s1,e1],[s2,e2],...](si< ei), determine if a person could attend all meetings.
 
@@ -19,6 +15,8 @@ Input:
 Output:
  true
  */
+
+//label_array
 public class $252_Meeting_Rooms {
     //https://aaronice.gitbook.io/lintcode/sweep-line/meeting-rooms
     //https://www.youtube.com/watch?v=0roQnDBC27o

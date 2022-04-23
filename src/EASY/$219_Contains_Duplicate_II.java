@@ -18,9 +18,34 @@ Output: false
  */
 
 //similar: 217. Contains Duplicate, 220. Contains Duplicate III
+//label_array
 public class $219_Contains_Duplicate_II {
-    //https://www.youtube.com/watch?v=n37pC3L3VVU
-    public boolean containsNearbyDuplicate(int[] nums, int k) {
+    //sliding window + set
+    public static boolean containsNearbyDuplicate(int[] nums, int k) {
+        Set<Integer> set = new HashSet<Integer>();
+        for(int i = 0; i < nums.length; i++){
+            if(i > k) {
+                set.remove(nums[i-k-1]);
+            }
+            if(!set.add(nums[i])) {
+                return true;
+            }
+        }
         return false;
+    }
+
+    //hashmap
+    public static boolean containsNearbyDuplicate2(int[] nums, int k) {
+        Map<Integer, Integer> indices = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            Integer lastIndex = indices.put(nums[i], i);
+            if (lastIndex != null && (i - lastIndex) <= k)
+                return true;
+        }
+        return false;
+    }
+
+    public static void main(String[] args){
+        containsNearbyDuplicate(new int[]{1,2,3,1,2,3}, 2);
     }
 }

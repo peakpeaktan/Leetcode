@@ -1,26 +1,73 @@
-import java.util.List;
+import java.util.*;
 /*
-Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), find the minimum number of conference rooms required.
+Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
 
-Example
-Example1
 
-Input: intervals = [(0,30),(5,10),(15,20)]
+Example 1:
+
+Input: intervals = [[0,30],[5,10],[15,20]]
 Output: 2
-Explanation:
-We need two meeting rooms
-room1: (0,30)
-room2: (5,10),(15,20)
-Example2
+Example 2:
 
-Input: intervals = [(2,7)]
+Input: intervals = [[7,10],[2,4]]
 Output: 1
-Explanation:
-Only need one meeting room
+
+
+Constraints:
+
+1 <= intervals.length <= 104
+0 <= starti < endi <= 106
  */
+
+//label_array
+//label_priority_queue
 public class $253_Meeting_Rooms_II {
-    public int minMeetingRooms(List<Interval> intervals) {
-        return 1;
+    //https://www.youtube.com/watch?v=4MEkBvqE_2Q&ab_channel=%E5%B1%B1%E6%99%AF%E5%9F%8E%E4%B8%80%E5%A7%90
+    //priority queue solution from leetcode solution
+    public int minMeetingRooms(int[][] intervals) {
+
+        // Check for the base case. If there are no intervals, return 0
+        if (intervals.length == 0) {
+            return 0;
+        }
+
+        // Min heap
+        PriorityQueue<Integer> allocator =
+                new PriorityQueue<Integer>(
+                        intervals.length,
+                        new Comparator<Integer>() {
+                            public int compare(Integer a, Integer b) {
+                                return a - b;
+                            }
+                        });
+
+        // Sort the intervals by start time
+        Arrays.sort(
+                intervals,
+                new Comparator<int[]>() {
+                    public int compare(final int[] a, final int[] b) {
+                        return a[0] - b[0];
+                    }
+                });
+
+        // Add the first meeting
+        allocator.add(intervals[0][1]);
+
+        // Iterate over remaining intervals
+        for (int i = 1; i < intervals.length; i++) {
+
+            // If the room due to free up the earliest is free, assign that room to this meeting.
+            if (intervals[i][0] >= allocator.peek()) {
+                allocator.poll();
+            }
+
+            // If a new room is to be assigned, then also we add to the heap,
+            // If an old room is allocated, then also we have to add to the heap with updated end time.
+            allocator.add(intervals[i][1]);
+        }
+
+        // The size of the heap tells us the minimum rooms required for all the meetings.
+        return allocator.size();
     }
 }
 

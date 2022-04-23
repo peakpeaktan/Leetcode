@@ -3,6 +3,8 @@ import java.util.*;
 /*
 You are given a sorted unique integer array nums.
 
+A range [a,b] is the set of all integers from a to b (inclusive).
+
 Return the smallest sorted list of ranges that cover all the numbers in the array exactly. That is, each element of nums is covered by exactly one of the ranges, and there is no integer x such that x is in one of the ranges but not in nums.
 
 Each range [a,b] in the list should be output as:
@@ -28,18 +30,6 @@ Explanation: The ranges are:
 [2,4] --> "2->4"
 [6,6] --> "6"
 [8,9] --> "8->9"
-Example 3:
-
-Input: nums = []
-Output: []
-Example 4:
-
-Input: nums = [-1]
-Output: ["-1"]
-Example 5:
-
-Input: nums = [0]
-Output: ["0"]
 
 
 Constraints:
@@ -51,6 +41,7 @@ nums is sorted in ascending order.
  */
 
 //similar: 163. Missing Ranges, 352. Data Stream as Disjoint Intervals
+//label_array
 public class $228_Summary_Ranges {
     //https://www.youtube.com/watch?v=CQC8rmyjAkg
     public static List<String> summaryRanges(int[] nums) {

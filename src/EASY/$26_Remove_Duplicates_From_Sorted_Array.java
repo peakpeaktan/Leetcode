@@ -20,22 +20,15 @@ Your function should return length = 5, with the first five elements of nums bei
 It doesn't matter what values are set beyond the returned length.
  */
 
-import java.util.Arrays;
-
+//label_array
 public class $26_Remove_Duplicates_From_Sorted_Array {
 
     public static int removeDuplicates(int[] nums) {
-
         if (nums.length == 0 || nums == null) return 0;
-
         if(nums.length == 1) return nums[0];
-
         int count = 1;
-
         for (int i = 1; i < nums.length; i++) {
-
             if(nums[i] != nums[i-1]){
-
                 nums[count] = nums[i];
                 count++;
             }

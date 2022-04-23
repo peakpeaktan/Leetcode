@@ -1,17 +1,53 @@
+import java.util.*;
 /*
-This is a follow-up problem of Shortest Word Distance. The only difference is now word1 could be the same as word2.
+Given an array of strings wordsDict and two strings that already exist in the array word1 and word2, return the shortest distance between these two words in the list.
 
-Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.
-word1 and word2 may be the same and they represent two individual words in the list.
+Note that word1 and word2 may be the same. It is guaranteed that they represent two individual words in the list.
 
-For example,
-Assume that words = ["practice", "makes", "perfect", "coding", "makes"].
-Given word1 = “makes”, word2 = “coding”, return 1.
-Given word1 = "makes", word2 = "makes", return 3.
+
+Example 1:
+
+Input: wordsDict = ["practice", "makes", "perfect", "coding", "makes"], word1 = "makes", word2 = "coding"
+Output: 1
+Example 2:
+
+Input: wordsDict = ["practice", "makes", "perfect", "coding", "makes"], word1 = "makes", word2 = "makes"
+Output: 3
+
+
+Constraints:
+
+1 <= wordsDict.length <= 105
+1 <= wordsDict[i].length <= 10
+wordsDict[i] consists of lowercase English letters.
+word1 and word2 are in wordsDict.
  */
 
+//label_array
 public class $245_Shortest_Word_Distance_III {
     public int shortestWordDistance(String[] words, String word1, String word2) {
+        Map<String, List<Integer>> map = new HashMap<>();
+        for(int i = 0; i < words.length; i++){
+            if(!map.containsKey(words[i])){
+                map.put(words[i], new ArrayList<Integer>());
+            }
+            map.get(words[i]).add(i);
+        }
+        int minDiff = Integer.MAX_VALUE;
+        List<Integer> list1 = map.get(word1);
+        List<Integer> list2 = map.get(word2);
+        for(int l1 : list1){
+            for(int l2 : list2){
+                if(l1 == l2){   //handle the case : word1 and word2 are the same!
+                    continue;
+                }
+                minDiff = Math.min(minDiff, Math.abs(l1 - l2));
+            }
+        }
+        return minDiff;
+    }
+
+    public int shortestWordDistance2(String[] words, String word1, String word2) {
         if(words==null||words.length==0)
             return -1;
 

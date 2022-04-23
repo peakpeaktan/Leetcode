@@ -17,14 +17,14 @@ Follow up:
 Could you optimize your algorithm to use only O(k) extra space?
  */
 
+//label_array
 public class $119_Pascals_Triangle_II {
-
     //https://leetcode.com/problems/pascals-triangle-ii/discuss/38478/My-accepted-java-solution-any-better-code
     public static List<Integer> getRow(int rowIndex) {
         List<Integer> temp = new ArrayList<>();
         for (int i = 0; i < rowIndex+1; i++) {//rowIndex + 1
             temp.add(0,1);//append a 1 at the beginning for each new row
-            for (int j = 1; j < temp.size() - 1; j++) {
+            for (int j = 1; j < temp.size() - 1; j++) {//start from third row(index 2)
                 temp.set(j, temp.get(j) + temp.get(j+1));
             }
         }

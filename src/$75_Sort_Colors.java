@@ -1,26 +1,36 @@
-/*
-Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent,
-with the colors in the order red, white and blue.
-
-Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
-
-Note: You are not suppose to use the library's sort function for this problem.
-
-Example:
-
-Input: [2,0,2,1,1,0]
-Output: [0,0,1,1,2,2]
-Follow up:
-
-A rather straight forward solution is a two-pass algorithm using counting sort.
-First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and
-followed by 2's.
-Could you come up with a one-pass algorithm using only constant space?
- */
 import java.util.Arrays;
+/*
+Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
 
+We will use the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
+
+You must solve this problem without using the library's sort function.
+
+
+Example 1:
+
+Input: nums = [2,0,2,1,1,0]
+Output: [0,0,1,1,2,2]
+Example 2:
+
+Input: nums = [2,0,1]
+Output: [0,1,2]
+
+
+Constraints:
+
+n == nums.length
+1 <= n <= 300
+nums[i] is either 0, 1, or 2.
+
+
+Follow up: Could you come up with a one-pass algorithm using only constant extra space?
+ */
+
+//similar: 283. Move Zeroes
+//label_array
 public class $75_Sort_Colors {
-
+    //https://www.youtube.com/watch?v=aVOm2Kickys&t=350s&ab_channel=%E5%B1%B1%E6%99%AF%E5%9F%8E%E4%B8%80%E5%A7%90
     public static void sortColors(int[] nums) {
         if(nums == null) return;
         int left = 0;

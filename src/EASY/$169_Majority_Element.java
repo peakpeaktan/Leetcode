@@ -1,4 +1,5 @@
 package EASY;
+import java.util.*;
 /*
 Given an array of size n, find the majority element.
 
@@ -15,11 +16,11 @@ Example 2:
 Input: [2,2,1,1,1,2,2]
 Output: 2
  */
-import java.util.*;
 
 /**
  * follow up: 229 Majority Element II
  */
+//label_array
 public class $169_Majority_Element {
     ////https://leetcode.com/problems/majority-element/discuss/51611/Java-solutions-(sorting-hashmap-moore-voting-bit-manipulation).
     //hash table

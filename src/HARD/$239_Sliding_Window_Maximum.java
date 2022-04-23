@@ -6,7 +6,6 @@ You are given an array of integers nums, there is a sliding window of size k whi
 Return the max sliding window.
 
 
-
 Example 1:
 
 Input: nums = [1,3,-1,-3,5,3,6,7], k = 3
@@ -24,18 +23,6 @@ Example 2:
 
 Input: nums = [1], k = 1
 Output: [1]
-Example 3:
-
-Input: nums = [1,-1], k = 1
-Output: [1,-1]
-Example 4:
-
-Input: nums = [9,11], k = 2
-Output: [11]
-Example 5:
-
-Input: nums = [4,-2], k = 2
-Output: [4]
 
 
 Constraints:
@@ -45,8 +32,9 @@ Constraints:
 1 <= k <= nums.length
  */
 
-//TODO: not fully understanding...
+//label_array
 public class $239_Sliding_Window_Maximum {
+    //https://www.youtube.com/watch?v=DfljaUwZsOk&ab_channel=NeetCode
     public static int[] maxSlidingWindow(int[] a, int k) {
         if (a == null || k <= 0) {
             return new int[0];

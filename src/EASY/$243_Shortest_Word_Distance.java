@@ -1,41 +1,47 @@
 package EASY;
 
 /*
-Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.
+Given an array of strings wordsDict and two different strings that already exist in the array word1 and word2, return the shortest distance between these two words in the list.
 
-You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
 
-Example
 Example 1:
 
-Input：["practice", "makes", "perfect", "coding", "makes"],"coding","practice"
-Output：3
-Explanation：index("coding") - index("practice") = 3
+Input: wordsDict = ["practice", "makes", "perfect", "coding", "makes"], word1 = "coding", word2 = "practice"
+Output: 3
 Example 2:
 
-Input：["practice", "makes", "perfect", "coding", "makes"],"makes","coding"
-Output：1
-Explanation：index("makes") - index("coding") = 1
+Input: wordsDict = ["practice", "makes", "perfect", "coding", "makes"], word1 = "makes", word2 = "coding"
+Output: 1
+
+
+Constraints:
+
+1 <= wordsDict.length <= 3 * 104
+1 <= wordsDict[i].length <= 10
+wordsDict[i] consists of lowercase English letters.
+word1 and word2 are in wordsDict.
+word1 != word2
  */
 
 //follow up: 244, 245
+//label_array
 public class $243_Shortest_Word_Distance {
     //https://www.youtube.com/watch?v=HmBjC413Vug
     public static int shortestWordDistance(String[] words, String word1, String word2){
-        int distance = Integer.MAX_VALUE;
-        int word1Index = 0;
-        int word2Index = 0;
+        int p1 = -1, p2 = -1, min = Integer.MAX_VALUE;
+
         for (int i = 0; i < words.length; i++) {
-            if(words[i].equals(word1)){
-                word1Index = i;
-            }else if (words[i].equals(word2)) {
-                word2Index = i;
-            }
-            if(Math.abs(word1Index - word2Index) != 0 && Math.abs(word1Index - word2Index) < distance){
-                distance = Math.abs(word1Index - word2Index);
-            }
+            if (words[i].equals(word1))
+                p1 = i;
+
+            if (words[i].equals(word2))
+                p2 = i;
+
+            if (p1 != -1 && p2 != -1)
+                min = Math.min(min, Math.abs(p1 - p2));
         }
-        return distance;
+
+        return min;
     }
 
     public static void main(String[] args){

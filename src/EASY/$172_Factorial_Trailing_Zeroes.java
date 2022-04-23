@@ -15,6 +15,7 @@ Output: 1
 Explanation: 5! = 120, one trailing zero.
  */
 
+//label_math
 public class $172_Factorial_Trailing_Zeroes {
     //https://www.youtube.com/watch?v=T3lhjrX2z9k
     public static int trailingZeroes(int n) {

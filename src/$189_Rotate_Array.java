@@ -1,11 +1,6 @@
 /*
 Given an array, rotate the array to the right by k steps, where k is non-negative.
 
-Follow up:
-
-Try to come up as many solutions as you can, there are at least 3 different ways to solve this problem.
-Could you do it in-place with O(1) extra space?
-
 
 Example 1:
 
@@ -26,10 +21,18 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 Constraints:
 
-1 <= nums.length <= 2 * 104
+1 <= nums.length <= 105
 -231 <= nums[i] <= 231 - 1
 0 <= k <= 105
+
+
+Follow up:
+
+Try to come up with as many solutions as you can. There are at least three different ways to solve this problem.
+Could you do it in-place with O(1) extra space?
  */
+
+//label_array
 public class $189_Rotate_Array {
     //https://www.youtube.com/watch?v=06-7_TTlkAw
     public void rotate(int[] nums, int k) {
