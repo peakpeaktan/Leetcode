@@ -36,8 +36,10 @@ A simple improvement uses O(m + n) space, but still not the best solution.
 Could you devise a constant space solution?
  */
 
+//label_matrix
 public class $73_Set_Matrix_Zeroes {
-    //nice explanation by basketwang: https://www.youtube.com/watch?v=-I8w2_sN93c
+    //https://www.youtube.com/watch?v=-I8w2_sN93c
+    //https://www.youtube.com/watch?v=5LU0pv0-ZtI
     //https://leetcode.com/problems/set-matrix-zeroes/discuss/26008/My-AC-java-O(1)-solution-(easy-to-read)
     public static void setZeroes(int[][] matrix) {
         boolean firstRowAllZero = false,firstColumnAllZero = false;

@@ -1,42 +1,38 @@
+package HARD;
 import java.util.*;
 /*
-Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation sequence from beginWord to endWord, such that:
+A transformation sequence from word beginWord to word endWord using a dictionary wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that:
 
-Only one letter can be changed at a time.
-Each transformed word must exist in the word list.
-Note:
+Every adjacent pair of words differs by a single letter.
+Every si for 1 <= i <= k is in wordList. Note that beginWord does not need to be in wordList.
+sk == endWord
+Given two words, beginWord and endWord, and a dictionary wordList, return the number of words in the shortest transformation sequence from beginWord to endWord, or 0 if no such sequence exists.
 
-Return 0 if there is no such transformation sequence.
-All words have the same length.
-All words contain only lowercase alphabetic characters.
-You may assume no duplicates in the word list.
-You may assume beginWord and endWord are non-empty and are not the same.
+
 Example 1:
 
-Input:
-beginWord = "hit",
-endWord = "cog",
-wordList = ["hot","dot","dog","lot","log","cog"]
-
+Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log","cog"]
 Output: 5
-
-Explanation: As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
-return its length 5.
+Explanation: One shortest transformation sequence is "hit" -> "hot" -> "dot" -> "dog" -> cog", which is 5 words long.
 Example 2:
 
-Input:
-beginWord = "hit"
-endWord = "cog"
-wordList = ["hot","dot","dog","lot","log"]
-
+Input: beginWord = "hit", endWord = "cog", wordList = ["hot","dot","dog","lot","log"]
 Output: 0
+Explanation: The endWord "cog" is not in wordList, therefore there is no valid transformation sequence.
 
-Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
+
+Constraints:
+
+1 <= beginWord.length <= 10
+endWord.length == beginWord.length
+1 <= wordList.length <= 5000
+wordList[i].length == beginWord.length
+beginWord, endWord, and wordList[i] consist of lowercase English letters.
+beginWord != endWord
+All the words in wordList are unique.
  */
 
 //label_bfs
-//label_queue
-//label_important
 public class $127_Word_Ladder {
     //solution 1: BFS, using queue.size to calculate level, no dedicated hashset for making visited works
     //https://www.youtube.com/watch?v=hB_nYXFtwP0
@@ -74,7 +70,7 @@ public class $127_Word_Ladder {
 
     //solution 2: bidirectional BFS
     //https://leetcode.com/problems/word-ladder/discuss/40711/Two-end-BFS-in-Java-31ms.
-    //https://www.youtube.com/watch?v=vWPCm69MSfs&t=1004s
+    //https://www.youtube.com/watch?v=vWPCm69MSfs
     public static int ladderLength3(String beginWord, String endWord, Set<String> wordList) {
         Set<String> beginSet = new HashSet<String>(), endSet = new HashSet<String>();
 

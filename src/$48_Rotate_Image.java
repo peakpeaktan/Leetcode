@@ -1,3 +1,4 @@
+import java.util.Arrays;
 /*
 
 You are given an n x n 2D matrix representing an image.
@@ -41,12 +42,11 @@ rotate the input matrix in-place such that it becomes:
   [16, 7,10,11]
 ]
  */
-import java.util.Arrays;
 
+//label_matrix
 public class $48_Rotate_Image {
     //https://leetcode.com/problems/rotate-image/discuss/18872/A-common-method-to-rotate-the-image
     public static void rotate(int[][] matrix) {
-
         int width = matrix[0].length;
         int height = matrix.length;
         int a = 0;

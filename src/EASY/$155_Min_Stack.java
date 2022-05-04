@@ -40,6 +40,7 @@ At most 3 * 104 calls will be made to push, pop, top, and getMin.
 
  */
 
+//similar: 716. Max Stack
 //label_stack
 public class $155_Min_Stack {
     //https://www.youtube.com/watch?v=8UegNFCUQks&ab_channel=TECHDOSE
@@ -52,7 +53,6 @@ public class $155_Min_Stack {
         public MinStack1() {
             stack = new Stack<>();
             minStack = new Stack<>();
-            //min = Integer.MAX_VALUE;
         }
 
         public void push(int val) {

@@ -1,5 +1,4 @@
 package EASY;
-
 import java.util.Stack;
 
 /*
@@ -25,6 +24,7 @@ stack.pop(); -> 1
 stack.top(); -> 5
  */
 
+//similar: 155. Min Stack
 //label_stack
 public class $716_Max_Stack {
     //https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/716-max-stack.html

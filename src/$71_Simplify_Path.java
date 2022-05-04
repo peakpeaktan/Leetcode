@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given an absolute path for a file (Unix-style), simplify it. Or in other words, convert it to the canonical path.
 
@@ -35,10 +36,11 @@ Example 6:
 Input: "/a//b////c/d//././/.."
 Output: "/a/b/c"
  */
-import java.util.*;
 
+//label_stack
 public class $71_Simplify_Path {
     //nice explanation: https://www.youtube.com/watch?v=l-og2X5GibY
+    //https://www.youtube.com/watch?v=SxuGQnlsXcw&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
     public static String simplifyPath(String path) {
         Stack<String> stack = new Stack<>();
         String[] array = path.split("/");

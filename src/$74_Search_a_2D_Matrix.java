@@ -25,6 +25,9 @@ target = 13
 Output: false
  */
 
+//similar: 240. Search a 2D Matrix II
+//label_binary_search
+//label_matrix
 public class $74_Search_a_2D_Matrix {
     //https://leetcode.com/problems/search-a-2d-matrix/discuss/26220/Don't-treat-it-as-a-2D-matrix-just-treat-it-as-a-sorted-list
     public static boolean searchMatrix(int[][] matrix, int target) {
@@ -34,7 +37,7 @@ public class $74_Search_a_2D_Matrix {
         int begin = 0;//index in an array
         int end = row * column -1;
         while(begin <= end){
-            int mid = (begin + end)/2;
+            int mid = begin + (end - begin)/2;
             int midValue = matrix[mid/column][mid%column];
             if(midValue == target){
                 return true;

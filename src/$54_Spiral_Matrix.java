@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
 
@@ -21,18 +22,15 @@ Input:
 Output: [1,2,3,4,8,12,11,10,9,5,6,7]
  */
 
-import java.util.*;
+//similar: 59. Spiral Matrix II
+//label_matrix
 public class $54_Spiral_Matrix {
-
     //https://leetcode.com/problems/spiral-matrix/discuss/20599/Super-Simple-and-Easy-to-Understand-Solution
     public static List<Integer> spiralOrder(int[][] matrix) {
-
         List<Integer> res = new ArrayList<Integer>();
-
         if (matrix.length == 0) {
             return res;
         }
-
         int rowBegin = 0;
         int rowEnd = matrix.length-1;
         int colBegin = 0;

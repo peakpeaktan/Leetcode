@@ -22,9 +22,10 @@ Surrounded regions shouldn’t be on the border, which means that any 'O' on the
  */
 
 //label_dfs
+//label_bfs
 //label_matrix
 public class $130_Surrounded_Regions {
-    //DFS
+    //DFS solution
     //https://leetcode.com/problems/surrounded-regions/discuss/41633/Java-DFS-+-boundary-cell-turning-solution-simple-and-clean-code-commented./112627
     //https://www.youtube.com/watch?v=xlstVQsDMV0
     public static void solve(char[][] board) {

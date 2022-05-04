@@ -4,10 +4,6 @@ Construct binary tree preorder/inorder traversal
 Binary tree, Binary search tree, Binary search
 108, 109
 
-backtracking
-51. N-Queens
-52. N-Queens II
-
 binary search
 33. Search in Rotated Sorted Array
 81. Search in Rotated Sorted Array II
@@ -18,14 +14,6 @@ binary search
 374. Guess Number Higher or Lower
 50. Pow(x, n) (Math)
 
-matrix
-36. Valid Sudoku
-48. Rotate Image
-51. N-Queens
-52. N-Queens II
-54. Spiral Matrix
-59. Spiral Matrix II
-
 find missing number/duplicates from array
 41. First Missing Positive
 136. Single Number (bit manipulation)
@@ -33,15 +21,6 @@ find missing number/duplicates from array
 287. Find the Duplicate Number
 442. Find All Duplicates in an Array
 448. Find All Numbers Disappeared in an Array
-
-anagram
-49. Group Anagrams
-242. Valid Anagram
-249. Group Shifted Strings
-438. Find All Anagrams in a String
-
-Sliding window
-438. Find All Anagrams in a String
 
 Dynamic programing
 53. Maximum Subarray
@@ -75,6 +54,9 @@ LIS
 131. Palindrome Partitioning
 *267. Palindrome Permutation II
 113. Path Sum II
+*79. Word Search
+[H, x]37. Sudoku Solver
+[H]51. N-Queens
 
 Linkedlist
 
@@ -231,12 +213,37 @@ Greedy - Array
 [H, low priority, X]321. Create Maximum Number
 [H, low priority, X]327. Count of Range Sum
 
+Matrix - 2D Array
+*48. Rotate Image - reverse matrix horizontally and transpose(swap) along the diagonal
+*54. Spiral Matrix - important while condition: result.size() < rows * columns, maintain four variables, left, right, up and down
+59. Spiral Matrix II
+73. Set Matrix Zeroes - check if first row and column has zero, start from second row & column if current element is 0 then mark first row and column to be 0, iterate through first column and row once, if it is 0 then mark whole column/row of the matrix to be 0, if first column and row originally have 0 then mark whole row/column to be 0 too.
+[low priority, x]311. Sparse Matrix Multiplication
+240. Search a 2D Matrix II - start from bottom left element(or upper right), if target is smaller than the element, search up, if target is larger than the element, search right
+[low priority, H, x]296. Best Meeting Point
+*36. Valid Sudoku - create 3 list/array of 9 hashsets each for the matrix's 9 rows, 9 column and 9 cubes(3*3 cube), iterate through whole matrix add the element to the corresponding hashset if the element is not empty, the index of the cube in the hashset array/list is idx = (r / 3) * 3 + c / 3
+
+Matrix - DFS/BFS
+*200. Number of Islands
+*286. Walls and Gates - BFS level order traversal, start from all the gates
+130. Surrounded Regions - DFS and mark all 0 on the border of the matrix to be 1, iterate through the matrix, mark the remaining 0 to be X and 1 back to 0.
+
+General DFS/BFS
+[H, *]127. Word Ladder -
+
+Matrix - backtracking
+[H, *]51. N-Queens -
+[H, *]52. N-Queens II -
+
 Sliding Window/Two Pointers - Array
 *209. Minimum Size Subarray Sum
 
 Binary Search
 275. H-Index II
 [H, *]4. Median of Two Sorted Arrays
+*278. First Bad Version
+*35. Search Insert Position
+*74. Search a 2D Matrix - binary search in a matrix, mid element position in the matrix: row = index / n and col = index % n
 
 Binary Tree
 *144. Binary Tree Preorder Traversal
@@ -259,9 +266,20 @@ Binary Tree
 [H,x]124. Binary Tree Maximum Path Sum
 [low priorty]250. Count Univalue Subtrees
 
+Stack/Queue/Priority Queue
+*155. Min Stack - use two stacks
+716. Max Stack
+232. Implement Queue using Stacks
+[low priority]225. Implement Stack using Queues
+150. Evaluate Reverse Polish Notation
+[*]71. Simplify Path - split with "/", iterate through the array, pop stack if it is ".."(if stack is not empty), push if it is not "." or empty string, at the end pop the stack and append with / each time to form the result
+[*]227. Basic Calculator II
+[H, *]224. Basic Calculator
+[H, x]84. Largest Rectangle in Histogram
+[*, needs review]215. Kth Largest Element in an Array - 1. use a priority queue and keep the size to be k, poll whenever size > k  2. quickselect(needs review)
 
 X - do not understand the solution or problem is skipped
 * - important
 H - hard
-low priority - do not frequently show up on the companies section in leetcode
+low priority - do not frequently show up in the leetcode companies section
 needs review - partially understand the solution/needs more understanding

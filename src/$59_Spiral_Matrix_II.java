@@ -11,8 +11,9 @@ Output:
  [ 7, 6, 5 ]
 ]
  */
-import java.util.*;
 
+//similar: 54. Spiral Matrix
+//label_matrix
 public class $59_Spiral_Matrix_II {
     //https://leetcode.com/problems/spiral-matrix-ii/discuss/22289/My-Super-Simple-Solution.-Can-be-used-for-both-Spiral-Matrix-I-and-II/21913
     public static int[][] generateMatrix(int n) {
