@@ -1,33 +1,40 @@
 import java.util.*;
 /*
-Given a binary tree, flatten it to a linked list in-place.
+Given the root of a binary tree, flatten the tree into a "linked list":
 
-For example, given the following tree:
+The "linked list" should use the same TreeNode class where the right child pointer points to the next node in the list and the left child pointer is always null.
+The "linked list" should be in the same order as a pre-order traversal of the binary tree.
 
-    1
-   / \
-  2   5
- / \   \
-3   4   6
-The flattened tree should look like:
 
-1
- \
-  2
-   \
-    3
-     \
-      4
-       \
-        5
-         \
-          6
+Example 1:
+
+
+Input: root = [1,2,5,3,4,null,6]
+Output: [1,null,2,null,3,null,4,null,5,null,6]
+Example 2:
+
+Input: root = []
+Output: []
+Example 3:
+
+Input: root = [0]
+Output: [0]
+
+
+Constraints:
+
+The number of nodes in the tree is in the range [0, 2000].
+-100 <= Node.val <= 100
+
+
+Follow up: Can you flatten the tree in-place (with O(1) extra space)?
  */
 
+//label_binary_tree
 public class $114_Flatten_Binary_Tree_To_Linked_List {
 
     static TreeNode prev = null;
-
+    //recursive solution
     public static void flatten(TreeNode root) {
 
         if (root == null)
@@ -39,6 +46,8 @@ public class $114_Flatten_Binary_Tree_To_Linked_List {
         prev = root;
     }
 
+    //iterative solution using a stack
+    //https://www.youtube.com/watch?v=v2ob-ek9TgE
     public static void flatten2(TreeNode root) {
         if (root == null) return;
         Stack<TreeNode> stk = new Stack<TreeNode>();

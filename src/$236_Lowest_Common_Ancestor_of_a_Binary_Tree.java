@@ -13,6 +13,7 @@ p and q will exist in the tree.
  */
 
 //similar: 235. Lowest Common Ancestor of a Binary Search Tree
+//label_binary_tree
 public class $236_Lowest_Common_Ancestor_of_a_Binary_Tree {
     //https://www.youtube.com/watch?v=13m9ZCB8gjw
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

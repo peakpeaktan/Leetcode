@@ -7,6 +7,9 @@ Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in 
 
 Given the sorted rotated array nums of unique elements, return the minimum element of this array.
 
+You must write an algorithm that runs in O(log n) time.
+
+
 Example 1:
 
 Input: nums = [3,4,5,1,2]
@@ -23,6 +26,7 @@ Input: nums = [11,13,15,17]
 Output: 11
 Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 
+
 Constraints:
 
 n == nums.length
@@ -32,7 +36,8 @@ All the integers of nums are unique.
 nums is sorted and rotated between 1 and n times.
  */
 
-//label_binarysearch
+//similar: 33. Search in Rotated Sorted Array, 81. Search in Rotated Sorted Array II, 154. Find Minimum in Rotated Sorted Array II
+//label_binary_search
 public class $153_Find_Minimum_in_Rotated_Sorted_Array {
     //https://www.youtube.com/watch?v=IQyJX5ddEx0
     public int findMin(int[] nums) {

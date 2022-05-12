@@ -1,6 +1,6 @@
+import java.util.*;
 /*
 Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
-
 
 
 Example 1:
@@ -27,38 +27,31 @@ Follow up:
 What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
 
 
-
 Constraints:
 
 The number of elements of the BST is between 1 to 10^4.
 You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
  */
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-
+//label_binary_search_tree
 public class $230_Kth_Smallest_Element_in_a_BST {
-    //https://www.youtube.com/watch?v=y9GhePWGVNU
-    //in order traversal
-    public int kthSmallest1(TreeNode root, int k) {
-        Queue<Integer> q = new LinkedList<>();
-        dfs(root, q);
-        for (int i = 0; i < k-1; i++) {
-            q.poll();
+    //https://www.youtube.com/watch?v=n-PU677retk
+    //in order traversal iterative
+    public int kthSmallest(TreeNode root, int k) {
+        LinkedList<TreeNode> stack = new LinkedList<>();
+
+        while (true) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if (--k == 0) return root.val;
+            root = root.right;
         }
-        return q.poll();
     }
 
-    public void dfs(TreeNode node, Queue q){
-        if(node == null) return;
-        dfs(node.left, q);
-        q.add(node.val);
-        dfs(node.right, q);
-    }
-
-    //solution 2: not using queue
+    //in order traversal recursive
     static int count = 0;
     static int result = 0;
     public static int kthSmallest2(TreeNode root, int k) {

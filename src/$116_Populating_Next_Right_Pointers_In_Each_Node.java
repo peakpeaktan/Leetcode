@@ -1,6 +1,5 @@
 import java.util.*;
 /*
-
 Given a binary tree
 
 struct TreeLinkNode {
@@ -36,7 +35,8 @@ After calling your function, the tree should look like:
 
  */
 
-//label_binarytree
+//label_binary_tree
+//https://www.youtube.com/watch?v=U4hFQCa1Cq0
 public class $116_Populating_Next_Right_Pointers_In_Each_Node {
     //solution 1: iterative, level order
     //https://www.youtube.com/watch?v=dPCrKhwswEk
@@ -60,6 +60,20 @@ public class $116_Populating_Next_Right_Pointers_In_Each_Node {
             }
             start = start.left;
         }
+    }
+
+    //Recursive solution
+    public void connect2(TreeLinkNode root) {
+        if(root == null) return;
+        helper(root.left, root.right);
+    }
+
+    void helper(TreeLinkNode node1, TreeLinkNode node2){
+        if(node1 == null) return;
+        node1.next = node2;
+        helper(node1.left, node1.right);
+        helper(node2.left, node2.right);
+        helper(node1.right, node2.left);
     }
 
     public static void main(String [] args){

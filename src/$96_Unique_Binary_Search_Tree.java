@@ -1,29 +1,31 @@
 /*
+Given an integer n, return the number of structurally unique BST's (binary search trees) which has exactly n nodes of unique values from 1 to n.
 
-Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
+Example 1:
 
-Example:
-
-Input: 3
+Input: n = 3
 Output: 5
-Explanation:
-//Given n = 3, there are a total of 5 unique BST's:
-//
-//   1         3     3      2      1
-//    \       /     /      / \      \
-//     3     2     1      1   3      2
-//    /     /       \                 \
-//   2     1         2                 3
-// */
-//public class $96_Unique_Binary_Search_Tree {
-//
-//    public int numTrees(int n) {
-//
-//        int[] res = new int[n];
-//        res[0] = res[1] = 1;
-//        for (int i = 2; i < n; i++) {
-//
-//
-//        }
-//    }
-//}
+Example 2:
+
+Input: n = 1
+Output: 1
+
+Constraints:
+
+1 <= n <= 19
+*/
+
+//label_dp
+//label_binary_search_tree
+//https://www.youtube.com/watch?v=Ox0TenN3Zpg
+public class $96_Unique_Binary_Search_Tree {
+    public int numTrees(int n) {
+        int [] dp = new int[n+1];
+        dp[0]= 1;
+        dp[1] = 1;
+        for(int level = 2; level <=n; level++)
+            for(int root = 1; root<=level; root++)
+                dp[level] += dp[level-root]*dp[root-1];
+        return dp[n];
+    }
+}

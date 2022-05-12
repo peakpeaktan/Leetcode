@@ -1,24 +1,9 @@
-Construct binary tree preorder/inorder traversal
-105, 106
-
 Binary tree, Binary search tree, Binary search
 108, 109
 
-binary search
-33. Search in Rotated Sorted Array
-81. Search in Rotated Sorted Array II
-153. Find Minimum in Rotated Sorted Array
-34. Find First and Last Position of Element in Sorted Array
-278. First Bad Version
-35. Search Insert Position
-374. Guess Number Higher or Lower
-50. Pow(x, n) (Math)
-
 find missing number/duplicates from array
-41. First Missing Positive
 136. Single Number (bit manipulation)
 268. Missing Number
-287. Find the Duplicate Number
 442. Find All Duplicates in an Array
 448. Find All Numbers Disappeared in an Array
 
@@ -199,6 +184,8 @@ Array
 *88. Merge Sorted Array - merge from the end of both array so that there is no need to create a new array
 *75. Sort Colors - maintain a left index that to the left of this index it will be all zeros, maintain a right index that to the right of this index it will be all 2s, iterate through the input array and if the current element is 0, swap with nums[left], left++, index++, if the current element is 1, continue the loop, if the current element is 2, swap with nums[right], right--, but do not increase the index here.
 *283. Move Zeroes - iterate through the input array, if the element is not zero, move it to the front, fill the rest of the array with 0s after the iteration ends.
+[low priority]349. Intersection of Two Arrays - 1. convert both input arrays to sets, iterate through the smaller set and see if the other set contains and add to the result if so 2. sort the smaller array and iterate through the longer array and do binary search in the smaller array
+[low priority]350. Intersection of Two Arrays II
 
 DP - Array
 [H]123. Best Time to Buy and Sell Stock III
@@ -244,11 +231,18 @@ Binary Search
 *278. First Bad Version
 *35. Search Insert Position
 *74. Search a 2D Matrix - binary search in a matrix, mid element position in the matrix: row = index / n and col = index % n
+*33. Search in Rotated Sorted Array
+81. Search in Rotated Sorted Array II
+153. Find Minimum in Rotated Sorted Array - compare nums[mid] against nums[right] here
+[H, low priority]154. Find Minimum in Rotated Sorted Array II
+*162. Find Peak Element - compare nums[mid] > nums[mid+1]
+374. Guess Number Higher or Lower
+*34. Find First and Last Position of Element in Sorted Array - two binary searches look for first position and last position
 
 Binary Tree
 *144. Binary Tree Preorder Traversal
 *94. Binary Tree Inorder Traversal - look for leftmost node, add the nodes along the way to stack, pop the stack and add the node's value to list, continue the operation for the right node(if exists)
-145. Binary Tree Postorder Traversal
+145. Binary Tree Postorder Traversal - modify preorder traversal so that it is root - right - left, and addFirst each element
 *102. Binary Tree Level Order Traversal
 *107. Binary Tree Level Order Traversal II
 *103. Binary Tree Zigzag Level Order Traversal
@@ -265,18 +259,42 @@ Binary Tree
 [x]110. Balanced Binary Tree
 [H,x]124. Binary Tree Maximum Path Sum
 [low priorty]250. Count Univalue Subtrees
+[low priority]106. Construct Binary Tree from Inorder and Postorder Traversal
+105. Construct Binary Tree from Preorder and Inorder Traversal
+*116. Populating Next Right Pointers in Each Node
+[low priority]117. Populating Next Right Pointers in Each Node II
+[*, x]236. Lowest Common Ancestor of a Binary Tree
+222. Count Complete Tree Nodes - check left depth and right depth of the root node, if equal it means the tree is a perfect binary tree, if they are not equal, recursively do the same for the left node & right node, either of them will be a perfect binary tree
+*114. Flatten Binary Tree to Linked List - preorder traversal using a stack, set cur.right = stack.peek(), cur.left = null
 
-Stack/Queue/Priority Queue
+Binary Search Tree
+96. Unique Binary Search Trees - BST + DP,
+[low priority]255. Verify Preorder Sequence in Binary Search Tree
+*99. Recover Binary Search Tree - inorder traversal of a BST is a sorted array
+*270. Closest Binary Search Tree Value
+[H, x]272. Closest Binary Search Tree Value II
+*230. Kth Smallest Element in a BST - in order traversal of a BST and get the kth element
+*173. Binary Search Tree Iterator
+
+Stack/Queue
 *155. Min Stack - use two stacks
 716. Max Stack
 232. Implement Queue using Stacks
 [low priority]225. Implement Stack using Queues
 150. Evaluate Reverse Polish Notation
 [*]71. Simplify Path - split with "/", iterate through the array, pop stack if it is ".."(if stack is not empty), push if it is not "." or empty string, at the end pop the stack and append with / each time to form the result
-[*]227. Basic Calculator II
-[H, *]224. Basic Calculator
+[*]227. Basic Calculator II - look inside problem
+[H, *]224. Basic Calculator - look inside problem
 [H, x]84. Largest Rectangle in Histogram
+
+Priority Queue/Heap
 [*, needs review]215. Kth Largest Element in an Array - 1. use a priority queue and keep the size to be k, poll whenever size > k  2. quickselect(needs review)
+*347. Top K Frequent Elements  - 1. use a hashmap to record each element's frequency and use a min heap and keep the size to be k 2. bucket sort Log(N)
+703. Kth Largest Element in a Stream
+1046. Last Stone Weight
+
+DP
+96. Unique Binary Search Trees
 
 X - do not understand the solution or problem is skipped
 * - important

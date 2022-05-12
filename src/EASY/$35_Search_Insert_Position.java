@@ -25,8 +25,9 @@ Input: [1,3,5,6], 0
 Output: 0
  */
 
+//label_binary_search
 //https://www.youtube.com/watch?v=xSs-R1onSpc&t=353s
-public class $35_SEARCH_INSERT_POSITION {
+public class $35_Search_Insert_Position {
 
     public int searchInsert(int[] nums, int target) {
 

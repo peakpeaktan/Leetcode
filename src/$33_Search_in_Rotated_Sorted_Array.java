@@ -19,8 +19,11 @@ Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1
  */
 
+//similar: 81. Search in Rotated Sorted Array II, 153. Find Minimum in Rotated Sorted Array, 154. Find Minimum in Rotated Sorted Array II
+//label_binary_search
 public class $33_Search_in_Rotated_Sorted_Array {
-    //https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/14436/Revised-Binary-Search
+    //https://www.youtube.com/watch?v=lWEIIFFflQY
+    //https://www.youtube.com/watch?v=vaGN5Cjlrfk
     public static int search(int[] A, int target) {
         int lo = 0;
         int hi = A.length - 1;
@@ -44,22 +47,6 @@ public class $33_Search_in_Rotated_Sorted_Array {
         }
         return -1;
         //return A[lo] == target ? lo : -1;
-    }
-
-    public static int findPeakIndex(int[] nums) {
-        if (nums.length == 1) return 0;
-        if (nums[0] <nums[nums.length - 1]) return nums.length - 1;
-        int left = 0, right = nums.length - 1;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            if (nums[mid] > nums[mid + 1]) return mid;
-            else if (nums[left] <= nums[mid]) {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        return 0;
     }
 
     public static void main(String [] args){

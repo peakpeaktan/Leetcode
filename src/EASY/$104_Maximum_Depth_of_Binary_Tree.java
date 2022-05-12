@@ -22,16 +22,27 @@ return its depth = 3.
 //https://www.youtube.com/watch?v=lY2vzApDHYs
 //label_binary_tree
 public class $104_Maximum_Depth_of_Binary_Tree {
-    //solution 1: recursive DFS
+    //solution 1: bottom up DFS
     //https://leetcode.com/problems/maximum-depth-of-binary-tree/discuss/34216/Simple-solution-using-Java
     public static int maxDepthRecursive(TreeNode root) {
-
         if(root == null) return 0;
-
         return 1 + Math.max(maxDepthRecursive(root.left), maxDepthRecursive(root.right));
     }
 
-    //solution 2: iterative using a queue, BFS
+    //solution 2: top down DFS
+    private int answer = 0;
+    private void maximum_depth(TreeNode root, int depth) {
+        if (root == null) {
+            return;
+        }
+        if (root.left == null && root.right == null) {
+            answer = Math.max(answer, depth);
+        }
+        maximum_depth(root.left, depth + 1);
+        maximum_depth(root.right, depth + 1);
+    }
+
+    //solution 3: BFS using a queue
     //https://leetcode.com/problems/maximum-depth-of-binary-tree/discuss/34195/Two-Java-Iterative-solution-DFS-and-BFS
     public static int maxDepthBFS(TreeNode root) {
         if(root == null) {
@@ -56,7 +67,7 @@ public class $104_Maximum_Depth_of_Binary_Tree {
         return count;
     }
 
-    //solution 3: iterative using two stacks, DFS
+    //solution 4: iterative using two stacks, DFS
     public int maxDepth(TreeNode root) {
         if (root == null) return 0;
 
