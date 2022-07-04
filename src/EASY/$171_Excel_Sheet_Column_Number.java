@@ -27,13 +27,15 @@ Output: 701
  */
 
 //similar: 168. Excel Sheet Column Title
-//label_string
+//label_math
 public class $171_Excel_Sheet_Column_Number {
-
+    //https://www.youtube.com/watch?v=6QLxVYg5cQQ&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
     public int titleToNumber(String s) {
 
         int result = 0;
-        for (int i = 0; i < s.length(); result = result * 26 + (s.charAt(i) - 'A' + 1), i++);
+        for (int i = 0; i < s.length(); i++){
+             result = result * 26 + (s.charAt(i) - 'A' + 1);
+        }
         return result;
     }
 }

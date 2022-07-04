@@ -27,7 +27,6 @@ Constraints:
  */
 
 //label_greedy
-//label_array
 public class $45_Jump_Game_II {
     //https://leetcode.com/problems/jump-game-ii/discuss/18014/Concise-O(n)-one-loop-JAVA-solution-based-on-Greedy
     //https://www.youtube.com/watch?v=dJ7sWiOoK7g&ab_channel=NeetCode

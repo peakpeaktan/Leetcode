@@ -17,7 +17,9 @@ Constraints:
 
 //label_dp
 //label_binary_search_tree
+
 //https://www.youtube.com/watch?v=Ox0TenN3Zpg
+//https://www.youtube.com/watch?v=HWJEMKWzy-Q&t=273s&ab_channel=basketwangCoding
 public class $96_Unique_Binary_Search_Tree {
     public int numTrees(int n) {
         int [] dp = new int[n+1];

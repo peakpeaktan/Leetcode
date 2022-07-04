@@ -24,6 +24,7 @@ Each value of postorder also appears in inorder.
 inorder is guaranteed to be the inorder traversal of the tree.
 postorder is guaranteed to be the postorder traversal of the tree.
  */
+
 //label_binary_tree
 public class $106_Construct_Binary_Tree_from_Inorder_and_Postorder_Traversal {
     //leetcode solution

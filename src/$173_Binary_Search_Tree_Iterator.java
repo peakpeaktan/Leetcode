@@ -46,6 +46,7 @@ Could you implement next() and hasNext() to run in average O(1) time and use O(h
 
 //label_binary_search_tree
 public class $173_Binary_Search_Tree_Iterator {
+    //leetcode solution
     class BSTIterator {
 
         Stack<TreeNode> stack;

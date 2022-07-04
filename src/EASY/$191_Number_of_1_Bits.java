@@ -34,9 +34,10 @@ Follow up: If this function is called many times, how would you optimize it?
  */
 
 //similar: 190. Reverse Bits
-//label_math
+//label_bit_manipulation
+//https://www.youtube.com/watch?v=0KAuHtVlN9Y&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
 public class $191_Number_of_1_Bits {
-    //https://leetcode.com/problems/number-of-1-bits/discuss/55108/Readable-simple-JAVA-solution-O(1)
+    //solution 1, check each bit of n
     public int hammingWeight(int n) {
         int count = 0;
         for(int i=0; i<32; i++){
@@ -45,13 +46,13 @@ public class $191_Number_of_1_Bits {
         return count;
     }
 
-    //https://leetcode.com/problems/number-of-1-bits/discuss/55099/Simple-Java-Solution-Bit-Shifting
-    public static int hammingWeight2(int n) {
-        int ones = 0;
-        while(n!=0) {
-            ones = ones + (n & 1);
-            n = n>>>1;
+    //solution 2, use n & n-1 trick to set least significant(rightmost) 1 to be 0
+    public int hammingWeight2(int n) {
+        int sum = 0;
+        while (n != 0) {
+            sum++;
+            n &= (n - 1);
         }
-        return ones;
+        return sum;
     }
 }

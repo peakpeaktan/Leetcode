@@ -17,8 +17,9 @@ Output:
 ]
 */
 
+//label_backtracking
 public class $77_Combinations {
-    //
+    //https://www.youtube.com/watch?v=qzdTZWW1X8A
     public static List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> combs = new ArrayList<List<Integer>>();
         combine(combs, new ArrayList<Integer>(), 1, n, k);

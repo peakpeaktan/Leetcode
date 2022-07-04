@@ -20,6 +20,7 @@ Explanation: The square root of 8 is 2.82842..., and since
              the decimal part is truncated, 2 is returned.
  */
 
+//label_binary_search
 public class $69_SQRTX {
     //https://leetcode.com/problems/sqrtx/discuss/25047/A-Binary-Search-Solution/239667
     public static int mySqrt(int x) {

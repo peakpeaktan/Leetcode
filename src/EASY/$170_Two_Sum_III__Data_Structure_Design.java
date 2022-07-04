@@ -34,6 +34,7 @@ Constraints:
 At most 104 calls will be made to add and find.
  */
 
+//label_hashmap
 public class $170_Two_Sum_III__Data_Structure_Design {
     //taken from leetcode solution
     class TwoSum {

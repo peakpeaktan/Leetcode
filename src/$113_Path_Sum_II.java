@@ -25,8 +25,6 @@ Return:
 
 //label_binary_tree
 //label_backtracking
-//label_dfs
-//label_recursive
 public class $113_Path_Sum_II {
 
     //solution 1: backtracking, DFS

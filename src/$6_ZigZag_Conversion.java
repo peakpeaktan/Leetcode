@@ -26,7 +26,7 @@ Y A   H R
 P     I
  */
 
-
+//label_string
 public class $6_ZigZag_Conversion {
     //https://leetcode.com/problems/zigzag-conversion/discuss/3403/Easy-to-understand-Java-solution
     public String convert(String s, int nRows) {

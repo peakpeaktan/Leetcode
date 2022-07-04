@@ -27,7 +27,6 @@ s[i] is '(', or ')'.
 
  */
 
-//label_string
 //label_stack
 public class $32Longest_Valid_Parentheses {
     //https://leetcode.com/problems/longest-valid-parentheses/discuss/14167/Simple-JAVA-solution-O(n)-time-one-stack

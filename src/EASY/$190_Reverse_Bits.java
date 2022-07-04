@@ -30,6 +30,7 @@ The input must be a binary string of length 32
  */
 
 //similar: 7. Reverse Integer, 191. Number of 1 Bits
+//label_bit_manipulation
 public class $190_Reverse_Bits {
     //https://leetcode.com/problems/reverse-bits/discuss/54738/Sharing-my-2ms-Java-Solution-with-Explanation
     public static int reverseBits(int n) {

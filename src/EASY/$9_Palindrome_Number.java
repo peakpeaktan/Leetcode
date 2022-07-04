@@ -21,7 +21,6 @@ Follow up:
 Coud you solve it without converting the integer to a string?
  */
 
-//label_palindrome
 //label_math
 public class $9_Palindrome_Number {
 

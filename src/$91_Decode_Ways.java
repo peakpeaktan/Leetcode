@@ -19,7 +19,8 @@ Output: 3
 Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
  */
 
-public class $91_DECODE_WAYS {
+//label_dp
+public class $91_Decode_Ways {
     //https://leetcode.com/problems/decode-ways/discuss/30358/Java-clean-DP-solution-with-explanation
     public static int numDecodingsDP(String s) {
         if(s == null || s.length() == 0) {

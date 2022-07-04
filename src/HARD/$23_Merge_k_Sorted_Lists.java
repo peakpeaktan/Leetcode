@@ -39,6 +39,7 @@ lists[i] is sorted in ascending order.
 The sum of lists[i].length won't exceed 10^4.
  */
 
+//label_priority_queue
 //Very good explanation of priority queue/min heap: https://www.youtube.com/watch?v=g9YK6sftDi0
 public class $23_Merge_k_Sorted_Lists {
 

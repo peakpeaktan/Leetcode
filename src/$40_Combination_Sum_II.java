@@ -34,6 +34,8 @@ Constraints:
 1 <= candidates[i] <= 50
 1 <= target <= 30
  */
+
+//label_backtracking
 public class $40_Combination_Sum_II {
     //https://www.youtube.com/watch?v=aBL-aNWNmB4
     public static List<List<Integer>> combinationSum2(int[] candidates, int target) {

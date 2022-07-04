@@ -40,7 +40,6 @@ n == gas.length == cost.length
  */
 
 //label_greedy
-//label_array
 public class $134_Gas_Station {
     //two pass approach
     //https://leetcode.com/problems/gas-station/discuss/42568/Share-some-of-my-ideas./180595

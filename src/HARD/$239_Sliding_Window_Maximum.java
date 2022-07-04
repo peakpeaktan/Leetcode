@@ -32,7 +32,7 @@ Constraints:
 1 <= k <= nums.length
  */
 
-//label_array
+//label_sliding_window
 public class $239_Sliding_Window_Maximum {
     //https://www.youtube.com/watch?v=DfljaUwZsOk&ab_channel=NeetCode
     public static int[] maxSlidingWindow(int[] a, int k) {

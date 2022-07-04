@@ -37,8 +37,28 @@ Follow up: Could you write a solution that runs in O(n) time and use only O(1) m
 
 //label_linkedlist
 public class $160_Intersection_of_Two_LinkedLists {
+    //solution 1
+    //https://www.youtube.com/watch?v=NufEjdUBpgg&ab_channel=XinghaoHuang
+    public ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
+        ListNode curA = headA;
+        ListNode curB = headB;
+        while (curA != curB){
+            if(curA != null){//not curA.next != null here because then curA and curB will never be null and the loop won't exit. It will keep resetting curA = headB
+                curA = curA.next;
+            }else{
+                curA = headB;
+            }
+            if(curB != null){
+                curB = curB.next;
+            }else{
+                curB = headA;
+            }
+        }
+        return curA;
+    }
 
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    //solution 2
+    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
         int lenA = length(headA), lenB = length(headB);
         // move headA and headB to the same start point
         while (lenA > lenB) {
@@ -63,24 +83,5 @@ public class $160_Intersection_of_Two_LinkedLists {
             length++;
         }
         return length;
-    }
-
-    //https://www.youtube.com/watch?v=NufEjdUBpgg&ab_channel=XinghaoHuang
-    public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
-        ListNode curA = headA;
-        ListNode curB = headB;
-        while (curA != curB){
-            if(curA != null){//not curA.next != null here because then curA and curB will never be null and the loop won't exit. It will keep resetting curA = headB
-                curA = curA.next;
-            }else{
-                curA = headB;
-            }
-            if(curB != null){
-                curB = curB.next;
-            }else{
-                curB = headA;
-            }
-        }
-        return curA;
     }
 }

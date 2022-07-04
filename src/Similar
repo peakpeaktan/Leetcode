@@ -1,6 +1,3 @@
-Binary tree, Binary search tree, Binary search
-108, 109
-
 find missing number/duplicates from array
 136. Single Number (bit manipulation)
 268. Missing Number
@@ -8,8 +5,6 @@ find missing number/duplicates from array
 448. Find All Numbers Disappeared in an Array
 
 Dynamic programing
-53. Maximum Subarray
-152. Maximum Product Subarray
     string conversion
         97. Interleaving String
         583. Delete Operation for Two Strings
@@ -25,137 +20,173 @@ LIS
 
 
 
-
-排列组合/backtrack/DFS
-22. Generate Parentheses, consider number of open and close parentheses
-17. Letter Combination of a Phone Number
-39. Combination Sum
-40. Combination Sum II
+排列组合/backtracking
+*17. Letter Combination of a Phone Number - can solve using BFS or DFS backtracking
+*22. Generate Parentheses, consider number of open and close parentheses, only add ) if the number of ) is less than (
+*39. Combination Sum - can use same element multiple times, element is distinct in the input array
+40. Combination Sum II - cannot use same element multiple times, element can have duplicates in the input array, skip duplicate check: i > start && cand[i] == cand[i-1]
 216. Combination Sum III
-78. Subsets
-90. Subsets II
 46. Permutations
 47. Permutations II
+77. Combinations
+*78. Subsets - input array contains unique elements, add the list right after each recursion happens
+[low priority]90. Subsets II
+93. Restore IP Addresses - you can take 1 - 3 digits, and it should be between 0 - 255, also not having leading 0 if current number is more than one single digit, 0 itself is ok being a digit. Add a valid string to the result list if the index reaches the end of input string and there are four strings/segments.
+[low priority, x]95. Unique Binary Search Trees II
 131. Palindrome Partitioning
+
 *267. Palindrome Permutation II
 113. Path Sum II
-*79. Word Search
 [H, x]37. Sudoku Solver
 [H]51. N-Queens
 
 Linkedlist
 
-19. Remove Nth Node From End of List, two pointers(slow and fast) which maintain a gap of n, both move forward until fast reaches end, slow.next = slow.next.next
-83. Remove Duplicates from Sorted List - only delete duplicates
-82. Remove Duplicates from Sorted List II - delete all numbers and their duplicates
-237. Delete Node in a Linked List - head not given, node given is the node that needs to be delete, change its value to next's and skip next
-203. Remove Linked List Elements
-*206. Reverse Linked List
-92. Reverse Linked List II
-234. Palindrome Linked List - use slow and fast pointer to find mid element(be careful about odd or even number of nodes), reverse right half and compare values
-141. Linked List Cycle
-142. Linked List Cycle II
-24. Swap Node in Pairs - awesome diagram: https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share/186959
-2. Add Two Numbers
-160. Intersection of Two Linked Lists - get length of both lists, move/align longer list first and move both lists at the same time to reach the intersection
-21. Merge Two Sorted Lists
-*148. Sort List - merge sort
-*147. Insertion Sort List
-61. Rotate List - get the length of the input linked list which is n, move to n-k%n and rotate
+*19. Remove Nth Node From End of List, two pointers(slow and fast) which maintain a gap of n, both move forward until fast reaches end, slow.next = slow.next.next
+*21. Merge Two Sorted Lists
+24. Swap Nodes in Pairs - awesome diagram: https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share/186959
+[H, x]25. Reverse Nodes in k-Group
+61. Rotate List - slow and fast pointer, move fast to the last node and get the total length of the list, move slow to (n-k%n)th node
+82. Remove Duplicates from Sorted List II - delete duplicates including the number
+83. Remove Duplicates from Sorted List - delete duplicates and keep one
 86. Partition List - maintain two lists, one holds nodes < x, one holds nodes >= x and connect them, O(n)
-[!]23. Merge k Sorted Lists
+92. Reverse Linked List II - reverse linked list between two given indexes, two different ways to reverse a linked list
+*138. Copy List with Random Pointer - use a hashmap and map original nodes to new/copied nodes, traverse the original list again and set copied nodes' next & random nodes
+*141. Linked List Cycle
+142. Linked List Cycle II
+*143. Reorder List - use slow and fast pointer and cut the list into two halves, reverse the second half and merge two halves together
+*146. LRU Cache - need to run in O(1) TC, use a hashmap to map key to node and use a doubly linked list to maintain order, create head & tail global variable which represents just recently used and least recently used nodes
+[low priority]147. Insertion Sort List
+*148. Sort List - merge sort
+*160. Intersection of Two Linked Lists - solution 1: iterate both lists until null, after null is encountered assign node to the head of the other list. solution 2: iterate both lists once and get the length of both lists, move/align longer list first by the difference in length and move both nodes at the same time until they meet to reach the intersection
+*206. Reverse Linked List
+203. Remove Linked List Elements
+
+237. Delete Node in a Linked List - head not given, node given is the node that needs to be delete, change its value to next's and skip next
+234. Palindrome Linked List - use slow and fast pointer to find mid element(be careful about odd or even number of nodes), reverse right half and compare values
+*2. Add Two Numbers - iterate through both lists, make sure node is not null when you add them together, don't forget to check if carry is > 0 at the end so that you need to append one more 1
 328. Odd Even Linked List - space complexity requirement is O(1), in place
 
 String
-28. Implement strStr()
-14. Longest Common Prefix
+[low priority, x]6. Zigzag Conversion
+*14. Longest Common Prefix
+*12. Integer to Roman - create mapping between the number and roman character using two arrays, use a string builder to append character
+*13. Roman to Integer - iterate through input string and put each char's corresponding number in an array, iterate through the array, and if current element is less than next element, subtract it from sum otherwise add it to sum
+28. Implement strStr() - find needle in haystack problem, align first char in needle in haystack first, make sure won't check beyond haystack's length
+38. Count and Say
 58. Length of Last Word
-151. Reverse Words in a String - split using s.trim().split("\\s+") and reverse words
-186. Reverse Words in a String II - reverse the whole string(input), and reverse each word again(guaranteed to have one single space between words)
+[H, x]65. Valid Number
+[H, x]68. Text Justification
+161. One Edit Distance - get length of both strings and calculate the difference , if difference > 1, return false, if difference == 0, compare s.charAt(i) and t.charAt(i), if not equal return s.substring(i+1).equals(t.substring(i+1)), if difference == 1, compare s.charAt(i) and t.charAt(i), if not equal return s.substring(i).equals(t.substring(i+1)).
+[low priority]165. Compare Version Numbers - split("\\."), iterate through both arrays, convert to int using Integer.ParseInt, default to 0 if it is beyond the length
+
 205. Isomorphic Strings - use hashmap to save char mapping and check along the way that if mapping of char to another char is one to one only
 293. Flip Game - important: str.substring(str.length()) == ""
 *242. Valid Anagram - use int[26] or hashmap
-*49. Group Anagrams - iterate through each string -> sort it -> maintain a hashmap of string : list
 *249. Group Shifted Strings - two strings are considered shifted if the difference between each char is the same, for example, acd -> 2 1, dfg -> 2 1, mop -> 2 1
 iterate through each string and calculate such difference, use a hashmap to keep track of all shifted strings that have the same difference
-179. Largest Number - sort the array using a comparator that compares s1 concat s2 with s2 concat s1
-161. One Edit Distance
-38. Count and Say
-*168. Excel Sheet Column Title - while n>0 -> n-- -> n%26 -> n/26
 171. Excel Sheet Column Number
-12. Integer to Roman
-13. Roman to Integer
 [H, !]273. Integer to English Words
 *246. Strobogrammatic Number
 *247. Strobogrammatic Number II
-[H, !]68. Text Justification
-[H, !]65. Valid Number
-*157. Read N Characters Given Read4
-158. Read N Characters Given Read4 II - Call multiple times
-[H, !]214. Shortest Palindrome - KMP
-[low priority]165. Compare Version Numbers - split("\\.");
 
-Sliding Window - String
-[H, *]76. Minimum Window Substring
-[H, !]30. Substring with Concatenation of All Words
+Sliding Window
+[H, *, x]76. Minimum Window Substring
+[H, x]30. Substring with Concatenation of All Words
 *3. Longest Substring Without Repeating Characters
 *340. Longest Substring with At Most K Distinct Characters
 *159. Longest Substring with At Most Two Distinct Characters
+[H, *, needs review]239. Sliding Window Maximum - use a monotonically decreasing queue which can be implemented using a deque, save index rather than the value in the deque
+
 
 Palindrome - String
-*125. Valid Palindrome - use of built-in method of Character.isLetterOrDigit(), compare characters using two pointers head and tail, skip if non alphanumeric
 *266. Palindrome Permutation - use hashset or hashmap - only one character can appear odd number of times, all the other characters must appear even number of times
-
-Parentheses - String
-*20. Valid Parentheses - use a stack -> push corresponding closing brackets if opening brackets are encountered -> if closing brackets are encountered, pop stack and compare -> stack should not be empty at the end
-[H, *]32. Longest Valid Parentheses - use a stack, push the index of (, pop the stack when ) is encountered
+[H, low priority]214. Shortest Palindrome - KMP
 
 DP - 2D array
-*5. Longest Palindromic Substring - draw the dp table and visualize, the start/end indexes can be set using many different ways
 [H, !]132. Palindrome Partitioning II
 
 Math
-*9. Palindrome Number
 *7. Reverse Integer - check overflow: if ((newResult - tail) / 10 != result)
-8. String to Integer (atoi) - another way to check overflow: if(Integer.MAX_VALUE / 10 < total || Integer.MAX_VALUE / 10 == total && Integer.MAX_VALUE % 10 < digit)
-66. Plus One - from last element to first element of the array, if it is less than 9, add 1 to it and return, otherwise set it to 0 and continue, after the iteration if first element becomes 0(for example 999 -> 000), create a new array of n+ 1 sizeand set 0 index to be 1
-[low priority]258. Add Digits
-67. Add Binary
-[x]43. Multiply Strings
+*8. String to Integer (atoi) - another way to check overflow: if(Integer.MAX_VALUE / 10 < total || Integer.MAX_VALUE / 10 == total && Integer.MAX_VALUE % 10 < digit)
+*9. Palindrome Number - reverse the input and compare, return false if input is a negative number or is multiple of 10
 [x]29. Divide Two Integers
+[x]43. Multiply Strings
+[*]50. Pow(x, n) - corner case: when power is Integer.Min, -power will overflow, replace with x * x^-(power + 1)
+*66. Plus One - from last element to first element of the array, if it is less than 9, add 1 to it and return, otherwise set it to 0 and continue, after the iteration if first element becomes 0(for example 999 -> 000), create a new array of n+ 1 size and set 0 index to be 1
+*67. Add Binary
+[H, x]149. Max Points on a Line
+[low priority, x]166. Fraction to Recurring Decimal
+[low priority]168. Excel Sheet Column Title - while n>0, n--, append( (char)('A' + n % 26)), n= n/26
+[low priority]171. Excel Sheet Column Number
+[low priority]172. Factorial Trailing Zeroes
+*202. Happy Number - make sure you add number to a hashset, if it is already in the hashset return false
+
+[low priority]258. Add Digits
 231. Power of Two - using iterative solution is trivial, use bitwise solution: (x & (-x)) == x
 [low priority]326. Power of Three
 [low priority]342. Power of Four
-191. Number of 1 Bits - for each bit, AND with 1 and the result is 1 if the bit is 1
 292. Nim Game
-*202. Happy Number
 263. Ugly Number
-[low priority]172. Factorial Trailing Zeroes
 
-Binary Search
-167. Two Sum II - Input Array Is Sorted
+Bit Manipulation
+*136. Single Number - res = 0, iterate through input and res ^= num; //XOR: 0 ^ N = N , N ^ N = 0
+[low priority, x]137. Single Number II
+190. Reverse Bits
+*191. Number of 1 Bits - check each bit in n, AND with 1 and see the result,  if the result is 1, it means that the bit is 1, left shift n
+[low priority, x]201. Bitwise AND of Numbers Range
 
-Uncategorized
-31. Next Permutation, from right to left find first element that breaks ascending order, swap with next largest element to its right and reverse the rest
-*1. Two Sum
-170. Two Sum III - Data structure design
-*15. 3Sum
+Hashmap
+*1. Two Sum - use a hashmap, key will be element and value will be its index.
+170. Two Sum III Data structure design
+*49. Group Anagrams - solution 1: iterate through each string -> sort it -> maintain a hashmap of string : list. Better solution 2: use char array with length 26(a-z) as the key in the hashmap
+
+Two Pointers
+*15. 3Sum - sort the input array -> iterate through the third last element -> make sure you skip duplicates -> do a two pointer two sum scan on sorted array
+*167. Two Sum II Input Array Is Sorted
 *16. 3Sum Closest
 259. 3Sum Smaller
 [x]18. 4Sum
+
+*11. Container With Most Water
+[H, *]42. Trapping Rain Water
+
+*125. Valid Palindrome - use of Java built-in method of Character.isLetterOrDigit(), compare characters using two pointers head and tail, skip if character is non alphanumeric
+*151. Reverse Words in a String - solution 1(not using any built-in methods): use a string builder, trim leading, trailing zeroes and multiple spaces, reverse string and reverse each words. solution 2: split using s.trim().split("\\s+") and reverse the array and use String.join words with ' ' as delimiters
+[low priority]186. Reverse Words in a String II - reverse the whole string(input), and reverse each word again(guaranteed to have one single space between words)
+
+Uncategorized
+31. Next Permutation, from right to left find first element that breaks ascending order, swap with next largest element to its right and reverse the rest
+*56. Merge Intervals - sort the input array by interval's start time
+*57. Insert Interval - two while loops - newInterval.start > element.end (find intervals to the left of the new interval), newInterval.end >= element.start(merge overlapping intervals), also add the rest of the intervals(intervals to the right of the new interval).
+[H, low priority]60. Permutation Sequence
 [x]560. Subarray Sum Equals K
+[H]123. Best Time to Buy and Sell Stock III
+[H, x]126. Word Ladder II
+[H]135. Candy - create two arrays fill all elements to be 1, scan input array twice, from left to right once and from right to left once, if current element's rating is higher than its neighbor, add 1, at the end iterate through both array and take the max of both elements from left and right array
+*157. Read N Characters Given Read4
+[H, x]158. Read N Characters Given Read4 II - Call multiple times
+[H, low priority, x]164. Maximum Gap
+179. Largest Number - sort the array using a comparator that implements the compare method using s2 concat s1 .compareTo s1 concat s2(reverse order), use a string builder and append each string in the sorted array
+[low priority]187. Repeated DNA Sequences
 
 Array
+*26. Remove Duplicates from Sorted Array
 27. Remove Element
-26. Remove Duplicates from Sorted Array
-80. Remove Duplicates from Sorted Array II
+[H, *]41. First Missing Positive - solution set: [1 : N+1], 1. mark zero, negative numbers and numbers that are greater than the length of the input array as Integer_MAX or length + 1.   2. iterate through the array a second time, make nums[Math.abs(nums[i]-1)] as negative if it is not negative. 3. iterate one more time, return first element that is positive, if not found return N+1.
+*75. Sort Colors - maintain a left index that to the left of this index it will be all zeros, maintain a right index that to the right of this index it will be all 2s, iterate through the input array and if the current element is 0, swap with nums[left], left++, index++, if the current element is 1, continue the loop, if the current element is 2, swap with nums[right], right--, but do not increase the index here.
+[low priority]80. Remove Duplicates from Sorted Array II
+*88. Merge Sorted Array - merge from the end of both array so that there is no need to create a new array
+118. Pascal's Triangle - each row: append a 1 at the beginning
+[low priority]119. Pascal's Triangle II
+*121. Best Time to Buy and Sell Stock - min variable keeps track of the smallest element so far, iterate through the input array, update max = Math.max(max, prices[i] - lowest)
+*122. Best Time to Buy and Sell Stock II - iterate through array, if (prices[i+1]>prices[i]) total += prices[i+1]-prices[i];
+*128. Longest Consecutive Sequence - add all elements to a set, iterate through the input array and for each element see if the set contains the consecutive elements to its left and also to its right, do not forget to remove them from the set if found, keep track of the sequence length count
+[low priority]163. Missing Ranges
+*169. Majority Element - moore voting algorithm, maintain a candidate variable and a count variable (only works when input has a majority element that appears > n/2 times and this problem assumes it always exists)
+*189. Rotate Array - k %= nums.length, reverse whole array once, reverse 0-k once, and reverse k - end once
+
 277. Find the Celebrity
-189. Rotate Array - reverse whole array once, reverse 0-k once, and reverse k - end once
-[H]41. First Missing Positive - mark zero, negative numbers and numbers that are greater than the total length of the input array as Integer_MAX or length + 1, iterate through the array, make nums[Math.abs(nums[i])] as negative
-*134. Gas Station - first pass add up all gas[i] - cost[i] to see if there exists a solution, second pass(solution guaranteed) add up gas[i] - cost[i] until total becomes less than zero, set answer to i + 1.
-118. Pascal's Triangle
-119. Pascal's Triangle II
-169. Majority Element - moore voting algorithm, maintain a candidate variable and a count variable (only works when input has a majority element that appears > n/2 times and this problem assumes it always exists)
 229. Majority Element II - maintain four variables, two candidates and two count, don't forget to check candidates are indeed majority element at the end as they might not exist in this problem
 274. H-Index - sort the array in descending order and visual the histogram y axis as the number of citation and x axis as the citation index, the length of the largest square will be the answer here. Find the largest i that nums[i] > i, and i + 1 is the answer.
 243. Shortest Word Distance
@@ -164,59 +195,46 @@ Array
 217. Contains Duplicate
 219. Contains Duplicate II
 [low priority]220. Contains Duplicate III
-*121. Best Time to Buy and Sell Stock
-*122. Best Time to Buy and Sell Stock II
-*11. Container With Most Water
 334. Increasing Triplet Subsequence - maintain two variables min1 and min2(min1 < min2)
-*128. Longest Consecutive Sequence - add all elements to a set, iterate through the input array and for each element see if the set contains the consecutive elements to its left and also to its right, do not forget to remove them from the set if found.
-[H, low priority]164. Maximum Gap
 287. Find the Duplicate Number - apply the Floyd's cycle detection algorithm
-[H]135. Candy - create two arrays fill all elements to be 1, scan input array twice, from left to right once and from right to left once, if current element's rating is higher than its neighbor, add 1, at the end iterate through both array and take the max of both elements from left and right array
-*57. Insert Interval - two while loops - newInterval.start > element.end (find intervals to the left of the new interval), newInterval.end >= element.start(merge overlapping intervals), also add the rest of the intervals(intervals to the right of the new interval).
-*56. Merge Intervals - sort the input array by interval's start time
 *252. Meeting Rooms - sort the input array by interval's start time
 *253. Meeting Rooms II - sort the input array by start time, use priority queue(min heap), add first element's end in the priority queue first, iterate through the end, if current element's start >= peek() which means no conflict, poll from the queue, next always add current element's end to the queue, the result will be the final size of the queue.
-[H, *, needs review]239. Sliding Window Maximum - the idea of a monotonically decreasing queue which can be implemented using a deque
 325. Maximum Size Subarray Sum Equals k - iterate through the input array and save prefix sum as key and current index in a hashmap, if (prefix sum - k)  exists in the hashmap that means there exists a subarray with sum k.
 *238. Product of Array Except Self
 [low priority]228. Summary Ranges
-[low priority]163. Missing Ranges
-*88. Merge Sorted Array - merge from the end of both array so that there is no need to create a new array
-*75. Sort Colors - maintain a left index that to the left of this index it will be all zeros, maintain a right index that to the right of this index it will be all 2s, iterate through the input array and if the current element is 0, swap with nums[left], left++, index++, if the current element is 1, continue the loop, if the current element is 2, swap with nums[right], right--, but do not increase the index here.
 *283. Move Zeroes - iterate through the input array, if the element is not zero, move it to the front, fill the rest of the array with 0s after the iteration ends.
 [low priority]349. Intersection of Two Arrays - 1. convert both input arrays to sets, iterate through the smaller set and see if the other set contains and add to the result if so 2. sort the smaller array and iterate through the longer array and do binary search in the smaller array
 [low priority]350. Intersection of Two Arrays II
 
-DP - Array
-[H]123. Best Time to Buy and Sell Stock III
-[H, low priority]188. Best Time to Buy and Sell Stock IV
-[H, *]42. Trapping Rain Water
-*53. Maximum Subarray
-*152. Maximum Product Subarray
 
-Greedy - Array
-55. Jump Game - iterate through the input array and maintain a maxReach variable (i + nums[i])
-45. Jump Game II - implicit BFS in one dimensional array, maintain a jump(level) variable, a curMax and nextMax variable, assign nextMax to curMax when a new level starts
+Greedy
+*55. Jump Game - iterate through the input array and maintain a maxReach variable maxReach = Math.max(i + nums[i], maxReach), once i > maxReach return false
+*45. Jump Game II - implicit BFS in one dimensional array, update nextMax = Math.max(nextMax, i+nums[i]) for each i, maintain a step(level) variable, a curMax and nextMax variable, assign nextMax to curMax when a new level starts when i == curMax and step++
+*134. Gas Station - first pass add up all gas[i] - cost[i] to see if there exists a solution, second pass(solution guaranteed) add up gas[i] - cost[i] until total becomes less than zero, set answer to i + 1.
+
 [H, low priority, X]321. Create Maximum Number
 [H, low priority, X]327. Count of Range Sum
 
-Matrix - 2D Array
+Matrix
+*36. Valid Sudoku - create 3 list/arrays, each containing 9 hashsets for the matrix's 9 rows, 9 column and 9 cubes(3*3 cube), traverse the matrix and add the element to the corresponding hashset if the element is not empty, the index of the cube in the hashset array/list is idx = (r / 3) * 3 + c / 3
 *48. Rotate Image - reverse matrix horizontally and transpose(swap) along the diagonal
 *54. Spiral Matrix - important while condition: result.size() < rows * columns, maintain four variables, left, right, up and down
 59. Spiral Matrix II
 73. Set Matrix Zeroes - check if first row and column has zero, start from second row & column if current element is 0 then mark first row and column to be 0, iterate through first column and row once, if it is 0 then mark whole column/row of the matrix to be 0, if first column and row originally have 0 then mark whole row/column to be 0 too.
+
 [low priority, x]311. Sparse Matrix Multiplication
 240. Search a 2D Matrix II - start from bottom left element(or upper right), if target is smaller than the element, search up, if target is larger than the element, search right
 [low priority, H, x]296. Best Meeting Point
-*36. Valid Sudoku - create 3 list/array of 9 hashsets each for the matrix's 9 rows, 9 column and 9 cubes(3*3 cube), iterate through whole matrix add the element to the corresponding hashset if the element is not empty, the index of the cube in the hashset array/list is idx = (r / 3) * 3 + c / 3
 
-Matrix - DFS/BFS
-*200. Number of Islands
-*286. Walls and Gates - BFS level order traversal, start from all the gates
+Matrix - DFS/BFS/Backtracking
+*79. Word Search - Given a cell, if its character is matched, search four direction, make sure search won't go beyond boundaries, mark visited element as '*', don't forget to mark it back to the original character if search fails.
 130. Surrounded Regions - DFS and mark all 0 on the border of the matrix to be 1, iterate through the matrix, mark the remaining 0 to be X and 1 back to 0.
+*200. Number of Islands - DFS or BFS, mark visited cell as 0 or *
 
-General DFS/BFS
-[H, *]127. Word Ladder -
+*286. Walls and Gates - BFS level order traversal, start from all the gates
+
+BFS
+[H, *]127. Word Ladder - use a hashset to mark visited words, convert a word using charToArray() and iterate every index from 'a' to 'z', add to queue if the word dictionary contains such word.
 
 Matrix - backtracking
 [H, *]51. N-Queens -
@@ -226,75 +244,128 @@ Sliding Window/Two Pointers - Array
 *209. Minimum Size Subarray Sum
 
 Binary Search
-275. H-Index II
-[H, *]4. Median of Two Sorted Arrays
-*278. First Bad Version
-*35. Search Insert Position
-*74. Search a 2D Matrix - binary search in a matrix, mid element position in the matrix: row = index / n and col = index % n
+rotated binary search
 *33. Search in Rotated Sorted Array
 81. Search in Rotated Sorted Array II
 153. Find Minimum in Rotated Sorted Array - compare nums[mid] against nums[right] here
 [H, low priority]154. Find Minimum in Rotated Sorted Array II
-*162. Find Peak Element - compare nums[mid] > nums[mid+1]
-374. Guess Number Higher or Lower
+*162. Find Peak Element - compare nums[mid] > nums[mid+1] to see if mid and mid+1 are on a rising or falling slope
+
 *34. Find First and Last Position of Element in Sorted Array - two binary searches look for first position and last position
+[*, x]69. Sqrt(x)
+*74. Search a 2D Matrix - binary search in a matrix, mid element position in the matrix: row = mid / n and col = mid % n
+
+275. H-Index II
+[H, *, x]4. Median of Two Sorted Arrays
+*278. First Bad Version
+*35. Search Insert Position
+374. Guess Number Higher or Lower
 
 Binary Tree
-*144. Binary Tree Preorder Traversal
-*94. Binary Tree Inorder Traversal - look for leftmost node, add the nodes along the way to stack, pop the stack and add the node's value to list, continue the operation for the right node(if exists)
-145. Binary Tree Postorder Traversal - modify preorder traversal so that it is root - right - left, and addFirst each element
-*102. Binary Tree Level Order Traversal
-*107. Binary Tree Level Order Traversal II
-*103. Binary Tree Zigzag Level Order Traversal
-*100. Same Tree
+*94. Binary Tree Inorder Traversal - look for leftmost node, add the nodes along the way to a stack, pop the stack and add the node's value to list, continue the operation for its right node(if exists)
+100. Same Tree - recursive approach: for two root nodes, their left/right subtrees should be equal to each other. Iterative approach: run two tree using BFS level order traversal, compare after poll
 *101. Symmetric Tree
-*226. Invert Binary Tree
-*257. Binary Tree Paths
-*112. Path Sum
-*113. Path Sum II
-*129. Sum Root to Leaf Numbers
-298. Binary Tree Longest Consecutive Sequence
-*111. Minimum Depth of Binary Tree
+*102. Binary Tree Level Order Traversal - can also use DFS approach: if height == result.size, add a new list to the result.
+*103. Binary Tree Zigzag Level Order Traversal - very similar to 102, just need to check if level % 2 == 0, if yes add normally if no add to the beginning/index 0
 *104. Maximum Depth of Binary Tree
-[x]110. Balanced Binary Tree
-[H,x]124. Binary Tree Maximum Path Sum
-[low priorty]250. Count Univalue Subtrees
+[low priority]105. Construct Binary Tree from Preorder and Inorder Traversal
 [low priority]106. Construct Binary Tree from Inorder and Postorder Traversal
-105. Construct Binary Tree from Preorder and Inorder Traversal
+[low priority]107. Binary Tree Level Order Traversal II
+110. Balanced Binary Tree
+111. Minimum Depth of Binary Tree - BFS approach: do level order traversal using a queue and return first node which both left and right child nodes are null
+112. Path Sum - iterative approach: preorder traversal using a stack and create another stack with stores the remainder
+*113. Path Sum II - backtracking
+*114. Flatten Binary Tree to Linked List - preorder traversal using a stack, after pop operation set cur.right = stack.peek(), make sure to set cur.left = null
 *116. Populating Next Right Pointers in Each Node
 [low priority]117. Populating Next Right Pointers in Each Node II
-[*, x]236. Lowest Common Ancestor of a Binary Tree
+*129. Sum Root to Leaf Numbers
+*144. Binary Tree Preorder Traversal
+145. Binary Tree Postorder Traversal - modify preorder traversal so that it is root - right - left, and addFirst each element
+[low priority, x]156. Binary Tree Upside Down
+*199. Binary Tree Right Side View - BFS or DFS approach, DFS: add to result when result.size() == depth, BFS: add to result when i == 0 if you add right then left to queue, or i == size - 1 if you add left then right to queue
+
+*226. Invert Binary Tree
+*257. Binary Tree Paths
+298. Binary Tree Longest Consecutive Sequence
+[H,x]124. Binary Tree Maximum Path Sum
+[low priorty]250. Count Univalue Subtrees
+[*, needs review]236. Lowest Common Ancestor of a Binary Tree
 222. Count Complete Tree Nodes - check left depth and right depth of the root node, if equal it means the tree is a perfect binary tree, if they are not equal, recursively do the same for the left node & right node, either of them will be a perfect binary tree
-*114. Flatten Binary Tree to Linked List - preorder traversal using a stack, set cur.right = stack.peek(), cur.left = null
 
 Binary Search Tree
-96. Unique Binary Search Trees - BST + DP,
+96. Unique Binary Search Trees - BST + DP, two for loops, outer for loop is from 2 to input n, inner for loop is for each int being the root node
+*98. Validate Binary Search Tree - can either do it recursively or iteratively: recursive approach: maintain a min and max(Use Integer and initially set to NULL), for left node, pass current node value as max, for right node, pass current node value as min, both subtree should be BST. Iterative: in order traversal should be in sorted order
+[*, x]99. Recover Binary Search Tree - do not understand O(1) space complexity using morris traversal
+*108. Convert Sorted Array to Binary Search Tree - similar to above
+*109. Convert Sorted List to Binary Search Tree - find mid element using slow/fast pointer in the linked list, use the mid element as the root and recursively do the same thing for left and right child
+*173. Binary Search Tree Iterator - in order traversal
+
 [low priority]255. Verify Preorder Sequence in Binary Search Tree
-*99. Recover Binary Search Tree - inorder traversal of a BST is a sorted array
 *270. Closest Binary Search Tree Value
 [H, x]272. Closest Binary Search Tree Value II
 *230. Kth Smallest Element in a BST - in order traversal of a BST and get the kth element
-*173. Binary Search Tree Iterator
+*235. Lowest Common Ancestor of a Binary Search Tree
+
+Stack
+*20. Valid Parentheses - use a stack -> push corresponding closing brackets if opening brackets are encountered -> if closing brackets are encountered, pop stack and compare -> stack should not be empty at the end
+[H, *]32. Longest Valid Parentheses - use a stack, push the index of (, pop the stack when ) is encountered, after pop if stack is empty, push current index onto the stack, max length so far should be calculated by idx - stack.peek()
+*71. Simplify Path - split with "/", iterate through the string array, pop stack if it is ".."(if stack is not empty), push if it is not "." or empty string, at the end pop the stack and append with / each time to form the result
+[H, x]84. Largest Rectangle in Histogram
+[H, low priority]85. Maximal Rectangle
+*150. Evaluate Reverse Polish Notation - add Integer.parseInt(string) to stack, when +-*/ is encountered, pop stack twice and do the calculation, make sure the order is correct when it is '/' and '-'
+*155. Min Stack - use two stacks, one stack will be used to store min values, push to stack if current element is smaller than stack.peek(), otherwise push stack.peek() to stack
 
 Stack/Queue
-*155. Min Stack - use two stacks
+
+
 716. Max Stack
 232. Implement Queue using Stacks
 [low priority]225. Implement Stack using Queues
-150. Evaluate Reverse Polish Notation
-[*]71. Simplify Path - split with "/", iterate through the array, pop stack if it is ".."(if stack is not empty), push if it is not "." or empty string, at the end pop the stack and append with / each time to form the result
 [*]227. Basic Calculator II - look inside problem
 [H, *]224. Basic Calculator - look inside problem
 [H, x]84. Largest Rectangle in Histogram
 
 Priority Queue/Heap
+[H, *]23. Merge k Sorted Lists - use a min heap
 [*, needs review]215. Kth Largest Element in an Array - 1. use a priority queue and keep the size to be k, poll whenever size > k  2. quickselect(needs review)
 *347. Top K Frequent Elements  - 1. use a hashmap to record each element's frequency and use a min heap and keep the size to be k 2. bucket sort Log(N)
 703. Kth Largest Element in a Stream
 1046. Last Stone Weight
 
 DP
-96. Unique Binary Search Trees
+2D array
+*5. Longest Palindromic Substring - draw the dp table and visualize, the start/end indexes can be set using many different ways
+[x]516. Longest Palindromic Subsequence
+*62. Unique Paths - you can directly modify the input matrix(in place)
+*63. Unique Paths II - create a copy of the input matrix and by default each element will be 0, set first column and row to 1 until an obstacle is met, start from (1,1), if it is 1 (obstacle) continue
+*64. Minimum Path Sum
+[H]72. Edit Distance
+97. Interleaving String
+[H, low priority]115. Distinct Subsequences
+[H, needs review]174. Dungeon Game - start from bottom right of the matrix
+[H, low priority, x]188. Best Time to Buy and Sell Stock IV
+
+*53. Maximum Subarray - dp[i] = nums[i] + (dp[i-1] > 0) ? dp[i-1] : 0
+*152. Maximum Product Subarray - create two arrays for storing max and min so far, for each nums[i], max = Math.Max(Math.Max(nums[i] * max, nums[i] * min), nums[i]), min = Math.Min(Math.Min(nums[i] * temp, nums[i] * min), nums[i]), use a temp value to store max
+*70. Climbing Stairs - Fibonacci dp[i]= dp[i−1] + dp[i−2]
+*91. Decode Ways - set dp array of length n + 1, dp[0] = 1, start from the second character in the input string, if the Integer.valueOf(character) is in [1, 9], dp[i] += dp[i-1], then look at two characters, if value is in [10, 26], dp[i] += dp[i-2]
+120. Triangle - can either bottom up or top down
+[*, needs review]139. Word Break - add input word dictionary to hashset, create a boolean dp array of length n+1, dp[0] = true, two for loops, outer for loop i from [1, n], inner for loop [0, i), if(dp[j] && set.contains(s.substring(j, i))), dp[i] = true, return dp[n]
+[*]198. House Robber - Math.max(dp[n-1], dp[n-2] + cur)
+
+279. Perfect Squares
+*322. Coin Change
+[low priority]375. Guess Number Higher or Lower II
+[X, H]312. Burst Balloons
+[*, needs review]256. Paint House
+[H]265. Paint House II
+213. House Robber II - do two runs, one from 0th element to second last and from 1th element to last
+[low priority]276. Paint Fence
+[H, *, x]10. Regular Expression Matching
+
+
+Graph
+*133. Clone Graph - use a hashmap to map original node to new/copied node, do a BFS and map neighbor nodes to their deep copy nodes
 
 X - do not understand the solution or problem is skipped
 * - important

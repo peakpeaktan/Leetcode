@@ -46,7 +46,6 @@ public class $155_Min_Stack {
     //https://www.youtube.com/watch?v=8UegNFCUQks&ab_channel=TECHDOSE
     //two stack approach, use one stack for recording the min
     class MinStack1 {
-        int min = Integer.MAX_VALUE;
         Stack<Integer> stack = null;
         Stack<Integer> minStack = null;
 

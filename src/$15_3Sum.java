@@ -27,8 +27,9 @@ Constraints:
 */
 //https://www.youtube.com/watch?v=gq-uWp327m8
 
+//label_two_pointers
 public class $15_3Sum {
-
+    //TC: O(n^2), SC: O(logn) to O(n) depending on the sorting algorithm
     public static List<List<Integer>> threeSum(int[] nums) {
 
         List<List<Integer>> myList = new LinkedList<>();
@@ -44,27 +45,20 @@ public class $15_3Sum {
             int right = nums.length - 1;
 
             while (left < right){
-
                 if(nums[left] + nums[right] == target){//triplet sum = 0
-
                     List<Integer> newList = new LinkedList<>();
                     newList.add(nums[i]);
                     newList.add(nums[left]);
                     newList.add(nums[right]);
                     myList.add(newList);
-
                     while(left < right && nums[right] == nums[right-1]) right--;
                     while(left < right && nums[left] == nums[left+1]) left++;
                     right--;
                     left++;
-
                 }else if(nums[left] + nums[right] > target){//triplet sum > 0, shift right pointer to the left
-
                     while(left < right && nums[right] == nums[right-1]) right--;
                     right--;
-
                 }else{//triplet sum < 0, shift left pointer to the right
-
                     while(left < right && nums[left] == nums[left+1]) left++;
                     left++;
                 }

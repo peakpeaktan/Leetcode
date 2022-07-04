@@ -59,9 +59,32 @@ public class $129_Sum_Root_to_Leaf_Numbers {
         helper(root.right, sum);
     }
 
-    //solution 2: Iterative, DFS, preorder, but will change the value of node
+    //solution 2: another way of writing solution 1
+    public int sumNumbers2(TreeNode root) {
+
+        if(root == null) return 0;
+
+        return  helper2(root, 0);
+    }
+
+    public int helper2(TreeNode root, int sum) {
+
+        if(root == null) return 0;
+
+        if(root.left == null && root.right == null){
+
+            return sum * 10 + root.val;
+
+        }else{
+
+            return helper2(root.left, sum * 10 + root.val) + helper2(root.right, sum * 10 + root.val);
+
+        }
+    }
+
+    //solution 3: Iterative, DFS, preorder, but will change the value of node
     //https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/41367/Non-recursive-preorder-traverse-Java-solution
-    public static int sumNumbers2(TreeNode root) {
+    public static int sumNumbers3(TreeNode root) {
         if(root==null){
             return 0;
         }
@@ -90,9 +113,9 @@ public class $129_Sum_Root_to_Leaf_Numbers {
         return sum;
     }
 
-    //solution 3: Iterative using a stack, DFS, preorder, won't change the value of the node
+    //solution 4: Iterative using a stack, DFS, preorder, won't change the value of the node
     //https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/41363/Short-Java-solution.-Recursion./123155
-    public int sumNumbers3(TreeNode root) {
+    public int sumNumbers4(TreeNode root) {
         if(root == null){
             return 0;
         }

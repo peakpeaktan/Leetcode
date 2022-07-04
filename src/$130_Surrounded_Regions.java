@@ -22,7 +22,6 @@ Surrounded regions shouldn’t be on the border, which means that any 'O' on the
  */
 
 //label_dfs
-//label_bfs
 //label_matrix
 public class $130_Surrounded_Regions {
     //DFS solution

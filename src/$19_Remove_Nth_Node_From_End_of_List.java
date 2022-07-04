@@ -16,6 +16,7 @@ Follow up:
 Could you do this in one pass?
  */
 
+//label_linkedlist
 public class $19_Remove_Nth_Node_From_End_of_List {
     //https://www.youtube.com/watch?v=F5kFspTdW1I
     public ListNode removeNthFromEnd(ListNode head, int n) {

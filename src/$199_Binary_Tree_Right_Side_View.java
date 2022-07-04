@@ -1,20 +1,30 @@
 import java.util.*;
 /*
-Given a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
+Given the root of a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom.
 
-Example:
 
-Input: [1,2,3,null,5,null,4]
-Output: [1, 3, 4]
-Explanation:
+Example 1:
 
-   1            <---
- /   \
-2     3         <---
- \     \
-  5     4       <---
+
+Input: root = [1,2,3,null,5,null,4]
+Output: [1,3,4]
+Example 2:
+
+Input: root = [1,null,3]
+Output: [1,3]
+Example 3:
+
+Input: root = []
+Output: []
+
+
+Constraints:
+
+The number of nodes in the tree is in the range [0, 100].
+-100 <= Node.val <= 100
  */
 
+//label_binary_tree
 public class $199_Binary_Tree_Right_Side_View {
     //BFS
     //https://leetcode.com/problems/binary-tree-right-side-view/discuss/56076/Reverse-Level-Order-Traversal-java
@@ -30,7 +40,7 @@ public class $199_Binary_Tree_Right_Side_View {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                if (i == size - 1) {
+                if (i == size - 1) {//or i == 0 and queue.add node.right then node.left below
                     // last element in current level
                     result.add(node.val);
                 }

@@ -8,6 +8,8 @@ Example:
 Input:  1->2->6->3->4->5->6, val = 6
 Output: 1->2->3->4->5
  */
+
+//label_linkedlist
 public class $203_Remove_Linked_List_Elements {
 
     public ListNode removeElements(ListNode head, int val) {

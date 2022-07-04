@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 
 Given a collection of distinct integers, return all possible permutations.
@@ -16,8 +17,7 @@ Output:
 ]
  */
 
-import java.util.*;
-
+//label_backtracking
 public class $46_Permutations {
 
     public static List<List<Integer>> permute(int[] nums) {

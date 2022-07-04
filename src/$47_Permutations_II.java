@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 
@@ -11,8 +12,8 @@ Output:
   [2,1,1]
 ]
  */
-import java.util.*;
 
+//label_backtracking
 public class $47_Permutations_II {
 
     public static List<List<Integer>> permuteUnique(int[] nums) {

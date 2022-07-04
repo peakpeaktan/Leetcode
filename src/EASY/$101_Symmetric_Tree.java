@@ -41,7 +41,7 @@ public class $101_Symmetric_Tree {
         return left.val == right.val && isSymmetricHelper(left.left, right.right) && isSymmetricHelper(left.right, right.left);
     }
 
-    //Iterative solution using stack
+    //Iterative solution using a stack
     //https://leetcode.com/problems/symmetric-tree/discuss/33054/Recursive-and-non-recursive-solutions-in-Java/31849
     public static boolean isSymmetricIterativeStack(TreeNode root) {
 

@@ -24,7 +24,6 @@ Constraints:
  */
 
 //label_greedy
-//label_array
 public class $55_Jump_Game {
     //https://leetcode.com/problems/jump-game/discuss/20932/6-line-java-solution-in-O(n)
     public static boolean canJump(int[] nums) {

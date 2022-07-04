@@ -41,14 +41,70 @@ There is at least one word in s.
 
 
 Follow-up: If the string data type is mutable in your language, can you solve it in-place with O(1) extra space?
-
-
  */
 
 //label_string
 public class $151_Reverse_Words_in_a_String {
+    //solution 1, not using any java built-in functions, taken from leetcode solution
+    public String reverseWords2(String s) {
+        // convert string to string builder and trim spaces at the same time
+        StringBuilder sb = trimSpaces(s);
+
+        // reverse the whole string
+        reverse(sb, 0, sb.length() - 1);
+
+        // reverse each word
+        reverseEachWord(sb);
+
+        return sb.toString();
+    }
+
+    public StringBuilder trimSpaces(String s) {
+        int left = 0, right = s.length() - 1;
+        // remove leading spaces
+        while (left <= right && s.charAt(left) == ' ') ++left;
+
+        // remove trailing spaces
+        while (left <= right && s.charAt(right) == ' ') --right;
+
+        // reduce multiple spaces to single one
+        StringBuilder sb = new StringBuilder();
+        while (left <= right) {
+            char c = s.charAt(left);
+
+            if (c != ' ') sb.append(c);
+            else if (sb.charAt(sb.length() - 1) != ' ') sb.append(c);
+
+            ++left;
+        }
+        return sb;
+    }
+
+    public void reverse(StringBuilder sb, int left, int right) {
+        while (left < right) {
+            char tmp = sb.charAt(left);
+            sb.setCharAt(left++, sb.charAt(right));
+            sb.setCharAt(right--, tmp);
+        }
+    }
+
+    public void reverseEachWord(StringBuilder sb) {
+        int n = sb.length();
+        int start = 0, end = 0;
+
+        while (start < n) {
+            // go to the end of the word
+            while (end < n && sb.charAt(end) != ' ') ++end;
+            // reverse the word
+            reverse(sb, start, end - 1);
+            // move to the next word
+            start = end + 1;
+            ++end;
+        }
+    }
+
     //https://leetcode.com/problems/reverse-words-in-a-string/discuss/47781/Java-3-line-builtin-solution
-    //use built-in functions
+    //solution 2: use built-in functions
     public String reverseWords(String s) {
         String[] words = s.trim().split(" +");//\\s+
         Collections.reverse(Arrays.asList(words));

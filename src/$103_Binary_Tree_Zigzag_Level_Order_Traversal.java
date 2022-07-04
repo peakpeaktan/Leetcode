@@ -32,7 +32,7 @@ public class $103_Binary_Tree_Zigzag_Level_Order_Traversal {
     {
         if(curr == null) return;
 
-        if(sol.size() <= level)
+        if(sol.size() == level)
         {
             List<Integer> newLevel = new LinkedList<>();
             sol.add(newLevel);

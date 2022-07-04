@@ -91,7 +91,7 @@ public class $8_String_to_Integer_atoi {
             int digit = str.charAt(index) - '0';
             if(digit < 0 || digit > 9) break;
 
-            // check for overflow
+            // check for overflow - leetcode solution has a nice explanation
             if(Integer.MAX_VALUE / 10 < total || Integer.MAX_VALUE / 10 == total && Integer.MAX_VALUE % 10 < digit)
                 return sign == 1 ? Integer.MAX_VALUE : Integer.MIN_VALUE;
 

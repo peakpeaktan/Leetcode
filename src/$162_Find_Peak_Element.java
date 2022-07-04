@@ -1,11 +1,12 @@
 /*
 A peak element is an element that is strictly greater than its neighbors.
 
-Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
+Given a 0-indexed integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
 
-You may imagine that nums[-1] = nums[n] = -∞.
+You may imagine that nums[-1] = nums[n] = -∞. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.
 
 You must write an algorithm that runs in O(log n) time.
+
 
 
 Example 1:
@@ -29,7 +30,17 @@ nums[i] != nums[i + 1] for all valid i.
 
 //label_binary_search
 public class $162_Find_Peak_Element {
-    public int findPeakElement(int[] nums) {
+    //solution 1: O(n) time complexity
+    public int findPeakElement1(int[] nums) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] > nums[i + 1])
+                return i;
+        }
+        return nums.length - 1;
+    }
+
+    //solution 2: binary search
+    public int findPeakElement2(int[] nums) {
         int l = 0, r = nums.length - 1;
         while (l < r) {
             int mid = l + (r - l) / 2;

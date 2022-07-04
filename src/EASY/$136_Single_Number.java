@@ -17,7 +17,7 @@ Input: [4,1,2,1,2]
 Output: 4
  */
 
-//label_bitmanipulation
+//label_bit_manipulation
 public class $136_Single_Number {
     //https://leetcode.com/problems/single-number/discuss/43201/Easy-Java-solution-(tell-you-why-using-bitwise-XOR)
     public int singleNumber(int[] nums) {

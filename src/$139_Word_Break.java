@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 
 Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
@@ -23,8 +24,7 @@ Input: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
 Output: false
  */
 
-import java.util.*;
-
+//label_dp
 public class $139_Word_Break {
     //solution 1: DP
     public static boolean wordBreak(String s, List<String> wordDict) {

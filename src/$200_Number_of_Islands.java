@@ -32,12 +32,10 @@ grid[i][j] is '0' or '1'.
  */
 
 //label_matrix
-//label_dfs
-//label_bfs
 public class $200_Number_of_Islands {
     //https://www.youtube.com/watch?v=__98uL6wst8&ab_channel=TECHDOSE
     //https://www.youtube.com/watch?v=Ft0AmONMYyM
-    //https://www.youtube.com/watch?v=T7IEAYtb2ts&ab_channel=%E5%B1%B1%E6%99%AF%E5%9F%8E%E4%B8%80%E5%A7%90
+    //DFS approach
     public int numIslands(char[][] grid) {
 
         if(grid.length == 0) return 0;
@@ -74,4 +72,7 @@ public class $200_Number_of_Islands {
         //in this DFS we do not need to change it back to '1'
         return;
     }
+
+    //BFS approach
+    //https://www.youtube.com/watch?v=T7IEAYtb2ts&ab_channel=%E5%B1%B1%E6%99%AF%E5%9F%8E%E4%B8%80%E5%A7%90
 }

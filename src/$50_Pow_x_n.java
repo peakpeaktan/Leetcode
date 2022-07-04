@@ -21,36 +21,40 @@ Note:
 n is a 32-bit signed integer, within the range [−231, 231 − 1]
  */
 
+//label_math
 public class $50_Pow_x_n {
-
-    public static double myPow(double x, int n) {
-
-        if(n < 0){
-            if(n == Integer.MIN_VALUE){
-                return 1/(myPow(x, -(n+1)) * x);
-            }else{
-                return 1/myPow(x, -n);
-            }
-        }
-
+    //recursive solution
+    public double myPow(double x, int n) {
         if(n == 0) return 1;
-        if(n == 1) return x;
-        if(n == 2) return x*x;
-
-        if(n%2 == 0){
-
-            return myPow(myPow(x, n/2), 2);
-
-        }else{
-
-            return x* myPow(myPow(x, n/2), 2);
+        if(n == Integer.MIN_VALUE){
+            x = x * x;
+            n = n/2;
+        }
+        if(n < 0) {
+            n = -n;
+            x = 1/x;
         }
 
+        return (n%2 == 0) ? myPow(x * x, n/2) : x *  myPow(x * x, n/2);
+    }
+
+    //iterative solution: https://www.youtube.com/watch?v=yEQq3t3T_J0&t=22s&ab_channel=basketwangCoding
+    public double myPow2(double x, int n) {
+        if(n == 0 || x == 1) return 1;
+        if(n == 1) return x;
+        if (n < 0) return 1/(x * myPow2(x, -(n+1)));
+        double res = 1;
+        while (n > 1){
+            if(n % 2 == 1){
+                res *= x;
+            }
+            x = x * x;
+            n /= 2;
+        }
+        res *= x;
+        return res;
     }
 
     public static void main(String [] args){
-
-        //System.out.println(myPow(1, Integer.MIN_VALUE));
-        System.out.println(myPow(2, 10));
     }
 }

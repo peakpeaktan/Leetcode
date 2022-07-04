@@ -22,9 +22,23 @@ Output: 2
  */
 //label_array
 public class $169_Majority_Element {
-    ////https://leetcode.com/problems/majority-element/discuss/51611/Java-solutions-(sorting-hashmap-moore-voting-bit-manipulation).
-    //hash table
-    public int majorityElement(int[] nums) {
+    //solution 1: moore voting algorithm, O(1) extra space
+    public int majorityElement1(int[] nums) {
+        int count=0, ret = 0;
+        for (int num: nums) {
+            if (count==0)
+                ret = num;
+            if (num!=ret)
+                count--;
+            else
+                count++;
+        }
+        return ret;
+    }
+
+    //https://leetcode.com/problems/majority-element/discuss/51611/Java-solutions-(sorting-hashmap-moore-voting-bit-manipulation).
+    //solution 2: use hash table, O(n) extra space
+    public int majorityElement2(int[] nums) {
         Map<Integer, Integer> myMap = new HashMap<Integer, Integer>();
         int ret=0;
         for (int num: nums) {
@@ -40,24 +54,10 @@ public class $169_Majority_Element {
         return ret;
     }
 
-    //moore voting algorithm
-    public static int majorityElement2(int[] nums) {
-        int count=0, ret = 0;
-        for (int num: nums) {
-            if (count==0)
-                ret = num;
-            if (num!=ret)
-                count--;
-            else
-                count++;
-        }
-        return ret;
-    }
-
     public static void main(String [] args){
 
         int[] nums = {2,2,1,1,1,2,2};
 
-        System.out.println(majorityElement2(nums));
+        //System.out.println(majorityElement2(nums));
     }
 }

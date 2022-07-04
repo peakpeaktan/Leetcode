@@ -24,7 +24,6 @@ n == height.length
  */
 
 //label_two_pointers
-//label_array
 public class $11_Container_With_Most_Water {
     //https://www.youtube.com/watch?v=pdKz9TvIjS8
     public int maxArea(int[] height) {

@@ -14,9 +14,7 @@ Output:
 ]
  */
 
-//label_backtrack
-//label_palindrome
-//label_important
+//label_backtracking
 public class $131_Palindrome_Partitioning {
     //Solution 1: backtracking, DFS
     //https://leetcode.com/problems/palindrome-partitioning/discuss/182307/Java%3A-Backtracking-Template-General-Approach

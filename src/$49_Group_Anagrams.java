@@ -19,7 +19,7 @@ All inputs will be in lowercase.
 The order of your output does not matter.
  */
 
-//label_string
+//label_hashmap
 public class $49_Group_Anagrams {
     //https://leetcode.com/problems/group-anagrams/discuss/19176/Share-my-short-JAVA-solution
     public static List<List<String>> groupAnagrams(String[] strs) {
@@ -41,6 +41,7 @@ public class $49_Group_Anagrams {
         return new ArrayList<>(map.values());
     }
 
+    //better solution
     public static List<List<String>> groupAnagrams2(String[] strs) {
         if (strs == null || strs.length == 0) return new ArrayList<>();
         Map<String, List<String>> map = new HashMap<>();
