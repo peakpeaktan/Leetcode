@@ -14,12 +14,11 @@ If a palindromic permutation exists, we just need to generate the first half of 
 
  */
 
-//label_backtrack
-//label_string
+//label_backtracking
 public class $267_Palindrome_Permutation_II {
     //https://www.youtube.com/watch?v=Fvx65X4fBUk&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
     //https://cheonhyangzhang.gitbooks.io/leetcode-solutions/content/267-palindrome-permutation-ii.html
-    public List<String> generatePalindromes(String s) {
+    public static List<String> generatePalindromes(String s) {
         int[] cha = new int [256];
         for (int i = 0; i < s.length(); i ++) {
             cha[s.charAt(i)] += 1;
@@ -46,7 +45,8 @@ public class $267_Palindrome_Permutation_II {
         return result;
     }
 
-    private void process(String base, int[] cha, int n, List<String> result) {
+    private static void process(String base, int[] cha, int n, List<String> result) {
+        System.out.println(base);
         if (base.length() == n) {
             result.add(base);
             return;
@@ -59,4 +59,9 @@ public class $267_Palindrome_Permutation_II {
             }
         }
     }
+
+    public static void main(String[] args){
+        generatePalindromes("aaaabbcc");
+    }
+
 }

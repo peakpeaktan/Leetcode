@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 There are a total of n courses you have to take labelled from 0 to n - 1.
 
@@ -36,10 +37,11 @@ ai != bi
 All the pairs [ai, bi] are distinct.
  */
 
-import java.util.*;
-
 //similar: 207. Course Schedule
+//label_graph
+//label_bfs
 public class $210_Course_Schedule_II {
+    //https://www.youtube.com/watch?v=WQTkS42-g0E
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         int[] inDegree = new int[numCourses];
         Map<Integer, List<Integer>> graph = new HashMap<>();
@@ -53,15 +55,15 @@ public class $210_Course_Schedule_II {
                 graph.put(prerequisites[i][1], list);
             }
         }
-        int[] result = new int[numCourses];
-        int j = 0;
+        int[] result = new int[numCourses];//addition comparing to 207. course schudule I
+        int j = 0;//addition comparing to 207 course schudule 1
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < numCourses; i++) {
             if (inDegree[i] == 0) queue.add(i);
         }
         while (!queue.isEmpty()) {
             int cur = queue.poll();
-            result[j++] = cur;
+            result[j++] = cur;//addition comparing to 207. course schudule I
             List<Integer> toTake = graph.get(cur);
             if(toTake != null){
                 for (Integer num : toTake){
@@ -76,6 +78,6 @@ public class $210_Course_Schedule_II {
         for (int i = 0; i < numCourses; i++) {
             if (inDegree[i] != 0) return new int[0];
         }
-        return result;
+        return result;//addition comparing to 207. course schudule I
     }
 }

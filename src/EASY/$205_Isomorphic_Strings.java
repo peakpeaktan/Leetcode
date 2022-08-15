@@ -25,9 +25,9 @@ Note:
 You may assume both s and t have the same length.
  */
 
-//label_string
+//label_hashmap
 public class $205_Isomorphic_Strings {
-
+    //https://www.youtube.com/watch?v=Dgw0uoq_B_4&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
     public boolean isIsomorphic(String s, String t) {
 
         if(s == null || t == null) return false;

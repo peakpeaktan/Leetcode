@@ -25,12 +25,13 @@ Constraints:
 //label_dp
 //similar: 322. Coin Change
 public class $279_Perfect_Squares {
+    //https://www.youtube.com/watch?v=HLZLwjzIVGo&ab_channel=NeetCode
     //https://leetcode.com/problems/perfect-squares/discuss/71495/An-easy-understanding-DP-solution-in-Java
     public static int numSquares(int n) {
         int[] res = new int[n + 1];
         Arrays.fill(res, Integer.MAX_VALUE);
         res[0] = 0;
-        for(int i = 0; i <= n; i++) {
+        for(int i = 1; i <= n; i++) {
             for(int j = 1; j * j <= i; j++) {
                 res[i] = Math.min(res[i], res[i - j * j]+1);
             }

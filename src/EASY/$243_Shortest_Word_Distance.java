@@ -24,7 +24,7 @@ word1 != word2
  */
 
 //follow up: 244, 245
-//label_array
+//label_two_pointers
 public class $243_Shortest_Word_Distance {
     //https://www.youtube.com/watch?v=HmBjC413Vug
     public static int shortestWordDistance(String[] words, String word1, String word2){

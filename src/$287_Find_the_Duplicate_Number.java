@@ -6,7 +6,6 @@ There is only one repeated number in nums, return this repeated number.
 You must solve the problem without modifying the array nums and uses only constant extra space.
 
 
-
 Example 1:
 
 Input: nums = [1,3,4,2,2]
@@ -28,12 +27,14 @@ All the integers in nums appear only once except for precisely one integer which
 Follow up:
 
 How can we prove that at least one duplicate number must exist in nums?
-Can you solve the problem in linear runtime complexity?
+Can you solve the problem in linear runtime  complexity?
  */
 
 //label_array
 //label_two_pointers
+//label_linkedlist
 public class $287_Find_the_Duplicate_Number {
+    //most optimal solution
     //https://leetcode.com/problems/find-the-duplicate-number/discuss/72846/My-easy-understood-solution-with-O(n)-time-and-O(1)-space-without-modifying-the-array.-With-clear-explanation.
     //https://www.youtube.com/watch?v=wjYnzkAhcNk&ab_channel=NeetCode
     public int findDuplicate(int[] nums)

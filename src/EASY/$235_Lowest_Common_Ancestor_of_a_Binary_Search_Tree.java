@@ -34,7 +34,7 @@ p and q will exist in the BST.
 
 //label_binary_search_tree
 public class $235_Lowest_Common_Ancestor_of_a_Binary_Search_Tree {
-    //https://www.youtube.com/watch?v=B48MMwTlRuA
+    //https://www.youtube.com/watch?v=gs2LMfuOR9k&ab_channel=NeetCode
     //https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/discuss/64954/My-Java-Solution
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root.val > p.val && root.val > q.val){

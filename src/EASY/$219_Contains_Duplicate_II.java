@@ -18,7 +18,7 @@ Output: false
  */
 
 //similar: 217. Contains Duplicate, 220. Contains Duplicate III
-//label_array
+//label_hashset
 public class $219_Contains_Duplicate_II {
     //sliding window + set
     public static boolean containsNearbyDuplicate(int[] nums, int k) {

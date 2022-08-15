@@ -37,7 +37,7 @@ public class $266_Palindrome_Permutation {
 
         int count = 0;
         for (int each: map.values()) {
-            if (each % 2 == 1) {
+            if (each % 2 == 1) {//or   each % 2 != 0
                 count++;
             }
         }

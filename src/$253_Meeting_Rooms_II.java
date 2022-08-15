@@ -19,8 +19,8 @@ Constraints:
 0 <= starti < endi <= 106
  */
 
-//label_array
 //label_priority_queue
+//label_two_pointers
 public class $253_Meeting_Rooms_II {
     //https://www.youtube.com/watch?v=4MEkBvqE_2Q&ab_channel=%E5%B1%B1%E6%99%AF%E5%9F%8E%E4%B8%80%E5%A7%90
     //priority queue solution from leetcode solution
@@ -68,6 +68,67 @@ public class $253_Meeting_Rooms_II {
 
         // The size of the heap tells us the minimum rooms required for all the meetings.
         return allocator.size();
+    }
+
+    //https://www.youtube.com/watch?v=FdzJmTCVyJU&ab_channel=NeetCode
+    //Chronological Ordering
+    public int minMeetingRooms2(int[][] intervals) {
+
+        // Check for the base case. If there are no intervals, return 0
+        if (intervals.length == 0) {
+            return 0;
+        }
+
+        Integer[] start = new Integer[intervals.length];
+        Integer[] end = new Integer[intervals.length];
+
+        for (int i = 0; i < intervals.length; i++) {
+            start[i] = intervals[i][0];
+            end[i] = intervals[i][1];
+        }
+
+        // Sort the intervals by end time
+        Arrays.sort(
+                end,
+                new Comparator<Integer>() {
+                    public int compare(Integer a, Integer b) {
+                        return a - b;
+                    }
+                });
+
+        // Sort the intervals by start time
+        Arrays.sort(
+                start,
+                new Comparator<Integer>() {
+                    public int compare(Integer a, Integer b) {
+                        return a - b;
+                    }
+                });
+
+        // The two pointers in the algorithm: e_ptr and s_ptr.
+        int startPointer = 0, endPointer = 0;
+
+        // Variables to keep track of maximum number of rooms used.
+        int usedRooms = 0;
+
+        // Iterate over intervals.
+        while (startPointer < intervals.length) {
+
+            // If there is a meeting that has ended by the time the meeting at `start_pointer` starts
+            if (start[startPointer] >= end[endPointer]) {
+                usedRooms -= 1;
+                endPointer += 1;
+            }
+
+            // We do this irrespective of whether a room frees up or not.
+            // If a room got free, then this used_rooms += 1 wouldn't have any effect. used_rooms would
+            // remain the same in that case. If no room was free, then this would increase used_rooms
+            usedRooms += 1;
+            startPointer += 1;
+
+        }
+
+        return usedRooms;
     }
 }
 

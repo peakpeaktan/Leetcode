@@ -26,7 +26,7 @@ Constraints:
  */
 
 //similar: 219. Contains Duplicate II, 220. Contains Duplicate III
-//label_array
+//label_hashset
 public class $217_Contains_Duplicate {
     //https://leetcode.com/problems/contains-duplicate/discuss/60858/Possible-solutions.
     public boolean containsDuplicate(int[] nums) {

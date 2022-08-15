@@ -27,12 +27,10 @@ Constraints:
 Follow up: If you have figured out the O(n) solution, try coding another solution of which the time complexity is O(n log(n)).
  */
 
-//label_array
 //label_sliding_window
 //label_two_pointers
 public class $209_Minimum_Size_Subarray_Sum {
     //https://www.youtube.com/watch?v=aYqYMIqZx5s&ab_channel=NeetCode
-    //https://www.youtube.com/watch?v=jKF9AcyBZ6E
     public static int minSubArrayLen(int s, int[] nums) {
         if(nums.length == 0) return 0;
         int sum = 0;

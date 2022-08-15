@@ -23,7 +23,8 @@ wordsDict[i] consists of lowercase English letters.
 word1 and word2 are in wordsDict.
  */
 
-//label_array
+//label_hashmap
+//label_two_pointers
 public class $245_Shortest_Word_Distance_III {
     public int shortestWordDistance(String[] words, String word1, String word2) {
         Map<String, List<Integer>> map = new HashMap<>();

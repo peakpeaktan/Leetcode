@@ -35,6 +35,7 @@ Every number and running calculation will fit in a signed 32-bit integer.
 //similar: 227. Basic Calculator II
 public class $224_Basic_Calculator {
     //https://leetcode.com/problems/basic-calculator/discuss/62361/Iterative-Java-solution-with-stack
+    //https://leetcode.com/problems/basic-calculator/solution/
     public static int calculate(String s) {
         Stack<Integer> stack = new Stack<Integer>();
         int result = 0;

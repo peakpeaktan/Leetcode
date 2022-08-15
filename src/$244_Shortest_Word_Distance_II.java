@@ -13,7 +13,9 @@ Note:
 You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
  */
 
-//label_array
+//label_hashmap
+//label_data_structure_design
+//label_two_pointers
 public class $244_Shortest_Word_Distance_II {
     //https://www.youtube.com/watch?v=BBJRj3Ku2P8
     public class WordDistance {

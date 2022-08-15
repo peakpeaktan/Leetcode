@@ -28,7 +28,7 @@ Constraints:
 Follow up: Could you solve it without loops/recursion?
  */
 
-//label_math
+//label_bit_manipulation
 public class $231_Power_of_Two {
     //iterative solution
     public boolean isPowerOfTwo(int n) {
@@ -39,12 +39,15 @@ public class $231_Power_of_Two {
 
     //bitwise solution - refer to leetcode solution for intuition & details
     public boolean isPowerOfTwo2(int n) {
-        if (n == 0) return false;
+        if (n <= 0) return false;
         long x = (long) n;
         return (x & (-x)) == x;
     }
 
+    //bitwise solution - refer to leetcode solution for intuition & details
     public boolean isPowerOfTwo3(int n) {
-        return n>0 && (1073741824 % n == 0);
+        if (n <= 0) return false;
+        long x = (long) n;
+        return (x & (x - 1)) == 0;
     }
 }

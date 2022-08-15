@@ -36,7 +36,7 @@ You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
 //label_binary_search_tree
 public class $230_Kth_Smallest_Element_in_a_BST {
     //https://www.youtube.com/watch?v=n-PU677retk
-    //in order traversal iterative
+    //in order traversal - iterative
     public int kthSmallest(TreeNode root, int k) {
         LinkedList<TreeNode> stack = new LinkedList<>();
 
@@ -51,7 +51,7 @@ public class $230_Kth_Smallest_Element_in_a_BST {
         }
     }
 
-    //in order traversal recursive
+    //in order traversal - recursive (left, root, right)
     static int count = 0;
     static int result = 0;
     public static int kthSmallest2(TreeNode root, int k) {

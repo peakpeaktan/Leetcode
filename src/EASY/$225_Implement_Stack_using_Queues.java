@@ -44,9 +44,10 @@ Follow-up: Can you implement the stack using only one queue?
 
 //similar: 232. Implement Queue using Stacks
 //label_stack
+//label_queue
 public class $225_Implement_Stack_using_Queues {
-
     //one Queue solution
+    //https://www.youtube.com/watch?v=bGlv0VGHed8&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
     private Queue<Integer> q = new LinkedList<Integer>();
 
     // Push element x onto stack.

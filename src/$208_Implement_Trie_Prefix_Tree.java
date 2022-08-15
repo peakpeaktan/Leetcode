@@ -19,8 +19,9 @@ All inputs are guaranteed to be non-empty strings.
 
 //similar: 211. Design Add and Search Words Data Structure
 
+//label_trie
 class Trie {
-
+    //https://www.youtube.com/watch?v=pkaooVBexeU&ab_channel=%E5%B1%B1%E6%99%AF%E5%9F%8E%E4%B8%80%E5%A7%90
     private class TrieNode {
         char character;
         boolean isWord = false;

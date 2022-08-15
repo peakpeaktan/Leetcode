@@ -30,7 +30,7 @@ public class $286_Walls_and_Gates {
     public void wallsAndGates(int[][] rooms) {
         int m = rooms.length;
         int n = m == 0 ? 0 : rooms[0].length;
-        int[][] dirs = {{-1,0}, {0,1}, {0,-1}, {1,0}};
+        int[][] dirs = {{-1,0}, {0,1}, {0,-1}, {1,0}};//up, right, left, down
         Queue<int[]> queue = new LinkedList<>();
         // add all gates to the queue
         for (int i=0; i<m; i++) {

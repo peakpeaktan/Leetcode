@@ -35,7 +35,8 @@ word in search consist of  '.' or lower-case English letters.
 At most 50000 calls will be made to addWord and search.
  */
 
-//similar: 208. Implement Trie (Prefix Tree)
+//similar: 208. Implement Trie (Prefix Tree)\
+//label_trie
 public class $211_Design_Add_and_Search_Words_Data_Structure {
     public static void main(String[] args) {
         WordDictionary dic = new WordDictionary();

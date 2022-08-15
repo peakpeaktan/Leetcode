@@ -18,7 +18,6 @@ Could you do it in O(n) time and O(1) space?
 
 import java.util.List;
 
-//label_palindrome
 //label_linkedlist
 public class $234_Palindrome_LinkedList {
     //reverse right half

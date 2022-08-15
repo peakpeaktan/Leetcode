@@ -1,9 +1,35 @@
 /*
 Given an m x n binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
+
+
+Example 1:
+
+
+Input: matrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"]]
+Output: 4
+Example 2:
+
+
+Input: matrix = [["0","1"],["1","0"]]
+Output: 1
+Example 3:
+
+Input: matrix = [["0"]]
+Output: 0
+
+
+Constraints:
+
+m == matrix.length
+n == matrix[i].length
+1 <= m, n <= 300
+matrix[i][j] is '0' or '1'.
  */
 
+//label_dp
 public class $221_Maximal_Square {
     //https://www.youtube.com/watch?v=5AfIa6z3Yw0
+    //https://www.youtube.com/watch?v=grfZlZT03mM&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
     public static int maximalSquare(char[][] matrix) {
         int column = matrix[0].length;
         int row = matrix.length;
@@ -35,7 +61,6 @@ public class $221_Maximal_Square {
 
     /*another form, this simplifies things when for example it's 1 1, the 1st solution will start from [1,1] and since it's 0, it will not return correct answer.
                                                                  1 0
-
      */
     public static int maximalSquare2(char[][] a) {
         if(a.length == 0) return 0;
