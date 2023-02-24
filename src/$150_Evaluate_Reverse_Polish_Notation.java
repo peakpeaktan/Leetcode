@@ -68,4 +68,31 @@ public class $150_Evaluate_Reverse_Polish_Notation {
         }
         return S.pop();
     }
+
+    public static int evalRPN2(String[] tokens) {
+        Stack<Integer> st = new Stack<>();
+        for(String str : tokens){
+            if(str == "+" || str == "-" || str == "*" || str == "/"){
+                Integer v1 = st.pop();
+                Integer v2 = st.pop();
+                if(str == "+"){
+                    st.push(v1 + v2);
+                }else if(str == "-"){
+                    st.push(v2 - v1);
+                }else if(str == "*"){
+                    st.push(v1 * v2);
+                }else{
+                    st.push(v2 / v1);
+                }
+            }else{
+                st.push(Integer.valueOf(str));
+            }
+        }
+        return st.pop();
+    }
+
+    public static void main(String[] args){
+        evalRPN2(new String[]{"2","1","+","3","*"});
+    }
+
 }

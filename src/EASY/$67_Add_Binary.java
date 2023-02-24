@@ -19,6 +19,7 @@ Each string does not contain leading zeros except for the zero itself.
  */
 
 //label_math
+//label_bit_manipulation
 public class $67_Add_Binary {
     //https://www.youtube.com/watch?v=3zg1eEAX-1Y&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
     //https://leetcode.com/problems/add-binary/discuss/24488/Short-AC-solution-in-Java-with-explanation/246072

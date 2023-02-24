@@ -19,9 +19,15 @@ Given word = "ABCB", return false.
  */
 
 //label_backtracking
+//label_matrix
 public class $79_Word_Search {
     //https://www.youtube.com/watch?v=NxWefJtJJwk&ab_channel=%E5%B1%B1%E6%99%AF%E5%9F%8E%E4%B8%80%E5%A7%90
-    //in space solution
+    //Time Complexity: O(N⋅3^L) where N is the number of cells in the board and L is the length of the word to be matched
+    //TC analysis:
+    //For the backtracking function, initially we could have at most 4 directions to explore, but further the choices are reduced into 3 (since we won't go back to where we come from).
+    // As a result, the execution trace after the first step could be visualized as a 3-ary tree, each of the branches represent a potential exploration in the corresponding direction.
+    // Therefore, in the worst case, the total number of invocation would be the number of nodes in a full 3-nary tree, which is about 3^L
+    //SC: in place
     public boolean exist(char[][] board, String word) {
         for(int i = 0; i < board.length; i++)
             for(int j = 0; j < board[0].length; j++){

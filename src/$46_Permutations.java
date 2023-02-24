@@ -19,7 +19,6 @@ Output:
 
 //label_backtracking
 public class $46_Permutations {
-
     public static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> list = new ArrayList<>();
         // Arrays.sort(nums); // not necessary
@@ -39,6 +38,9 @@ public class $46_Permutations {
             }
         }
     }
+
+    //you may also use a hashset for duplicates: https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)/157117
+    //contains is O(1) with a hashset
 
     /*
     backtrack({},{},{1,2,3})

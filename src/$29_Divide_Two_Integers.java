@@ -21,6 +21,7 @@ Assume we are dealing with an environment which could only store integers within
 For the purpose of this problem, assume that your function returns 231 − 1 when the division result overflows.
  */
 
+//label_math
 public class $29_Divide_Two_Integers {
 
     public static int divide(int dividend, int divisor) {

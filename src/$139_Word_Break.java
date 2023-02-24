@@ -25,6 +25,7 @@ Output: false
  */
 
 //label_dp
+//label_backtracking
 public class $139_Word_Break {
     //solution 1: DP
     public static boolean wordBreak(String s, List<String> wordDict) {
@@ -85,8 +86,6 @@ public class $139_Word_Break {
             if(dict.contains(t))
                 if(dfs(s, i, dict, set))
                     return true;
-                else
-                    set.add(i);
         }
         set.add(index);
         return false;
@@ -110,7 +109,7 @@ public class $139_Word_Break {
         for (int end = idx + 1; end <= s.length(); end++) {
             String str = s.substring(idx, end);
             if (dict.contains(str) && bckTrck(s, dict, end, memo)){
-                memo[idx] = true;
+                memo[idx] = true;//this line is not necessary
                 return true;
             }
         }
@@ -130,7 +129,7 @@ public class $139_Word_Break {
                 if (s.length() == len)
                     return true;
                 else {
-                    if (wordBreak4(s.substring(len), wordDict))
+                    if (wordBreak5(s.substring(len), wordDict))
                         return true;
                 }
             }

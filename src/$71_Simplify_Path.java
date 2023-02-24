@@ -63,6 +63,27 @@ public class $71_Simplify_Path {
         return result;
     }
 
+    public static String simplifyPath2(String path) {
+        List<String> list = new ArrayList<>();
+        String[] array = path.split("/");
+        for(String s: array){
+            if(s.equals("..") ) {
+                if(!list.isEmpty()){
+                    list.remove(list.size() - 1);
+                }
+            }
+            else if(!s.equals("") && !s.equals(".")) {
+                list.add(s);
+            }
+        }
+        String result = "";
+        if(list.size() == 0) return "/";
+        for(String each : list){
+            result += "/" + each;
+        }
+        return result;
+    }
+
     public static void main(String [] args){
         System.out.println(simplifyPath("/home//foo/")); // "/home/foo"
         System.out.println(simplifyPath("/a/./b/../../c/")); // "/c"

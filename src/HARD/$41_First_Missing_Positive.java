@@ -59,7 +59,7 @@ public class $41_First_Missing_Positive {
             }
         }
 
-        // 4. no positive numbers were found, which means the array contains all numbers 1..n
+        // 4. no positive numbers were found, which means the array contains all consecutive numbers from 1..n
         return n + 1;
     }
 }

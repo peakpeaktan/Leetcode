@@ -26,7 +26,7 @@ The number of nodes in the tree is in the range [1, 3 * 104].
 
 //label_binary_tree
 public class $298_Binary_Tree_Longest_Consecutive_Sequence {
-    //preorder traversal - from leetcode solution
+    //top down recursive DFS (preorder traversal) - from leetcode solution
     private int maxLength = 0;
     public int longestConsecutive(TreeNode root) {
         dfs(root, null, 0);

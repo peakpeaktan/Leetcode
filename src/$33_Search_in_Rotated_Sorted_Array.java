@@ -33,7 +33,7 @@ public class $33_Search_in_Rotated_Sorted_Array {
 
             if (A[lo] <= A[mid]) {
                 if (target >= A[lo] && target < A[mid]) {
-                    hi = mid - 1;
+                    hi = mid - 1;//mid
                 } else {
                     lo = mid + 1;
                 }
@@ -41,7 +41,7 @@ public class $33_Search_in_Rotated_Sorted_Array {
                 if (target > A[mid] && target <= A[hi]) {
                     lo = mid + 1;
                 } else {
-                    hi = mid - 1;
+                    hi = mid - 1;//mid
                 }
             }
         }

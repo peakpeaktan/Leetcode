@@ -49,18 +49,6 @@ public class $226_Invert_Binary_Tree {
         return root;
     }
 
-    //Postorder
-    //https://www.youtube.com/watch?v=_i0jqdVkObU
-    public static TreeNode invertTree3(TreeNode root) {
-        if(root == null) return null;
-        invertTree3(root.left);
-        invertTree3(root.right);
-        TreeNode temp = root.left;
-        root.left = root.right;
-        root.right = temp;
-        return root;
-    }
-
     //DFS using stack
     //https://leetcode.com/problems/invert-binary-tree/discuss/62707/Straightforward-DFS-recursive-iterative-BFS-solutions
     public static TreeNode invertTree4(TreeNode root) {
@@ -122,6 +110,6 @@ public class $226_Invert_Binary_Tree {
         } catch (Exception e) {
             System.out.println(e);
         }
-        invertTree3(node);
+        invertTree(node);
     }
 }

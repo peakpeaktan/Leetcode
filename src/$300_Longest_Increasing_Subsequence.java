@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given an integer array nums, return the length of the longest strictly increasing subsequence.
 
@@ -45,8 +46,33 @@ public class $300_Longest_Increasing_Subsequence {
     }
 
     public static void main(String [] args){
-        int[] array = {10,9,2,5,3,7,101,18};
-        //System.out.println(lengthOfLIS(array));
+        //int[] array = {6, 5, 9, 8, 10, 2};
+        int[] array = {1,2,3,5};
+        System.out.println(lengthOfLIS2(array));
 
+    }
+
+    public static int lengthOfLIS2(int[] nums) {
+        int[] cache = new int[nums.length];
+        Arrays.fill(cache, -1);
+        int result = 0;
+        return checkLIS2(Integer.MIN_VALUE, cache, 0, nums);
+    }
+
+    public static int checkLIS2(int base, int[] cache, int index, int[] nums){
+        if(index == nums.length) return 0;
+        int result = 0;
+        if(cache[index] != -1){
+            return cache[index];
+        }
+        for(int i = index; i < nums.length; i++){
+            if(nums[i] <= base){
+                continue;
+            }
+            int length = 1 + checkLIS2(nums[i], cache, i + 1, nums);
+            result = Math.max(result, length);
+        }
+        cache[index] = result;
+        return result;
     }
 }

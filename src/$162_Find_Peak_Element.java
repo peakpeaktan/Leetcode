@@ -8,7 +8,6 @@ You may imagine that nums[-1] = nums[n] = -∞. In other words, an element is al
 You must write an algorithm that runs in O(log n) time.
 
 
-
 Example 1:
 
 Input: nums = [1,2,3,1]
@@ -40,6 +39,7 @@ public class $162_Find_Peak_Element {
     }
 
     //solution 2: binary search
+    //https://www.youtube.com/watch?v=etuTPmks7Dc&t=13s&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
     public int findPeakElement2(int[] nums) {
         int l = 0, r = nums.length - 1;
         while (l < r) {

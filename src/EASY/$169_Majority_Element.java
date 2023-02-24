@@ -21,6 +21,7 @@ Output: 2
  * follow up: 229 Majority Element II
  */
 //label_array
+//label_hashmap
 public class $169_Majority_Element {
     //solution 1: moore voting algorithm, O(1) extra space
     public int majorityElement1(int[] nums) {

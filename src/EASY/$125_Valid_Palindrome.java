@@ -14,8 +14,7 @@ Input: "race a car"
 Output: false
  */
 
-//label_palindrome
-//label_twopointers
+//label_two_pointers
 //label_string
 public class $125_Valid_Palindrome {
     //solution 1, use built in method to check if a char is alphanumeric
@@ -66,6 +65,7 @@ public class $125_Valid_Palindrome {
     }
 
     public static void main(String [] args){
-        isPalindrome("a? bcdd !cb# a");
+        //isPalindrome("a? bcdd !cb# a");
+        isPalindrome2("A man, a plan, a canal: Panama");
     }
 }

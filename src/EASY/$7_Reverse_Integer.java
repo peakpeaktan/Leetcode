@@ -25,7 +25,8 @@ For the purpose of this problem, assume that your function returns 0 when the re
 public class $7_Reverse_Integer {
     //https://leetcode.com/problems/reverse-integer/discuss/4060/My-accepted-15-lines-of-code-for-Java/
     //https://leetcode.com/problems/reverse-integer/discuss/4060/My-accepted-15-lines-of-code-for-Java/168051
-    public int reverse(int x)
+    //https://www.youtube.com/watch?v=j8z-OK1dI3I&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
+    public static int reverse(int x)
     {
         int result = 0;
 
@@ -40,5 +41,9 @@ public class $7_Reverse_Integer {
         }
 
         return result;
+    }
+
+    public static void main(String[] args){
+
     }
 }

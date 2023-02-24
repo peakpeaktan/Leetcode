@@ -21,13 +21,30 @@ return its minimum depth = 2.
 
 //label_binary_tree
 public class $111_Minimum_Depth_of_Binary_Tree {
-    //solution 1: DFS
+    //solution 1:bottom up DFS
     //https://leetcode.com/problems/minimum-depth-of-binary-tree/discuss/36045/My-4-Line-java-solution
     public int minDepthDFS(TreeNode root) {
         if(root == null) return 0;
         int left = minDepthDFS(root.left);
         int right = minDepthDFS(root.right);
         return (left == 0 || right == 0) ? left + right + 1: Math.min(left,right) + 1;
+    }
+
+    //solution 2:top down DFS
+    public int min = Integer.MAX_VALUE;
+    public int minDepthDFS2(TreeNode root) {
+        if(root == null) return 0;
+        minDepthDFS2Helper(root, 1);
+        return min;
+    }
+
+    public void minDepthDFS2Helper(TreeNode root, int level) {
+        if(root == null) return;
+        if(root.left == null && root.right == null){
+            min = Math.min(min, level);
+        }
+        minDepthDFS2Helper(root.left, level +1);
+        minDepthDFS2Helper(root.right, level +1);
     }
 
     //recommended solution 2: queue BFS

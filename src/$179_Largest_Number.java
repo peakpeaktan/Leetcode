@@ -58,6 +58,19 @@ public class $179_Largest_Number {
         int[] array = {3,30,34,5,9};
 
         System.out.println(largestNumber(array));
+        //test();
+    }
+
+    public static void test(){
+        Comparator<Integer> newComParator = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return  o2.compareTo(o1);
+            }
+        };
+        Integer[] array = new Integer[]{5,4,3,6};
+        Arrays.sort(array, newComParator);
+        System.out.println(array);
     }
 
 }

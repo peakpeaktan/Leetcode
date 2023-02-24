@@ -82,7 +82,40 @@ public class $131_Palindrome_Partitioning {
         return result[len];
     }
 
+
+    public static List<List<String>> partitionself(String s) {
+        List<List<String>> result = new ArrayList<>();
+        helperself(result, new ArrayList<String>(), s, 0);
+        return result;
+    }
+
+    public static void helperself(List<List<String>> result, List<String> temp, String s, int index){
+        if(index == s.length()){
+            result.add(new ArrayList(temp));
+        }
+        for(int i = index + 1; i <= s.length(); i++){
+            if(isPalindromeself(s.substring(index, i))){
+                temp.add(s.substring(index, i));
+                helperself(result, temp, s, i);
+                temp.remove(temp.size() - 1);
+            }
+        }
+    }
+
+    public static boolean isPalindromeself(String s) {
+        int left = 0;
+        int right = s.length() - 1;
+        while (left < right){
+            if(s.charAt(left) != s.charAt(right)){
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
     public static void main(String [] args){
-        partition("abba");
+        partitionself("abba");
     }
 }

@@ -32,9 +32,10 @@ Output: true
 
 import java.util.Stack;
 
-//label_string
+//label_stack
 public class $20_Valid_Parentheses {
     //https://leetcode.com/problems/valid-parentheses/discuss/9178/Short-java-solution
+    //TC: O(N) SC: O(N)
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
         for (Character chr : s.toCharArray()){

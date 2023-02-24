@@ -32,6 +32,7 @@ grid[i][j] is '0' or '1'.
  */
 
 //label_matrix
+//label_dfs
 public class $200_Number_of_Islands {
     //https://www.youtube.com/watch?v=__98uL6wst8&ab_channel=TECHDOSE
     //https://www.youtube.com/watch?v=Ft0AmONMYyM
@@ -49,9 +50,9 @@ public class $200_Number_of_Islands {
 
             for (int j = 0; j < n; j++) {
 
-                if(grid[m][n] == 1){
+                if(grid[i][j] == '1'){
 
-                    DFSHelper(grid, m, n);
+                    DFSHelper(grid, i, j);
                     answer++;
                 }
             }

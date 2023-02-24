@@ -43,6 +43,6 @@ public class $249_Group_Shifted_Strings {
     }
 
     public static void main(String[] args){
-        groupStrings(new String[]{"abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"});
+        groupStrings(new String[]{"ba", "abc", "bcd", "acef", "xyz", "az", "a", "z"});
     }
 }

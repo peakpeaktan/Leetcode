@@ -26,8 +26,10 @@ digits[i] is a digit in the range ['2', '9'].
  */
 
 //label_backtracking
+//label_dfs
+//label_bfs
 public class $17_Letter_Combinations_of_a_Phone_Number {
-    //BFS solution using a queue, TC: O(4^N), where N is the length of the input digits, 4 digits if the digit is 7 or 9
+    //BFS solution using a queue, TC: O(4^N), where N is the length of the input digits, 4 digits in total if the digit is 7 or 9
     //https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/8064/My-java-solution-with-FIFO-queue
     public List<String> letterCombinationsBFS(String digits) {
         LinkedList<String> ans = new LinkedList<String>();
@@ -51,7 +53,7 @@ public class $17_Letter_Combinations_of_a_Phone_Number {
         */
     }
 
-    //another BFS solution
+    //another BFS solution, which is more intuitive to me
     //https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/8064/My-java-solution-with-FIFO-queue/205699
     public List<String> letterCombinationsBFS2(String digits) {
         List<String> ans = new LinkedList<String>();
@@ -99,7 +101,7 @@ public class $17_Letter_Combinations_of_a_Phone_Number {
         backtrack(digits,list,map,new StringBuilder(),0);
         return list;
     }
-    private void backtrack(String digits, List<String> list,char[][] map, StringBuilder sb, int start){
+    private void backtrack(String digits, List<String> list, char[][] map, StringBuilder sb, int start){
         if(start == digits.length()) {
             list.add(new String(sb));
             return;
@@ -107,7 +109,7 @@ public class $17_Letter_Combinations_of_a_Phone_Number {
         int num = digits.charAt(start) - '0';
         for(int i = 0;i< map[num].length;i++){
             sb.append(map[num][i]);
-            backtrack(digits,list,map,sb,start+1);
+            backtrack(digits, list, map, sb,start+1);
             sb.deleteCharAt(sb.length() - 1);
         }
     }

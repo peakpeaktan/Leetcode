@@ -36,7 +36,6 @@ word1 and word2 consist of lowercase English letters.
  */
 
 //similar: 1143. Longest Common Subsequence, 583. Delete Operation for Two Strings, 712. Minimum ASCII Delete Sum for Two Strings
-//label_string
 //label_dp
 public class $72_Edit_Distance {
     //https://www.youtube.com/watch?v=MiqoA-yF-0M&ab_channel=BackToBackSWE

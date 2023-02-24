@@ -12,7 +12,7 @@ public class $240_Search_a_2D_Matrix_II {
         int row = matrix.length;
         int i = row - 1;
         int j = 0;
-        while (i >= 0 && i < row && j >= 0 && j < column){
+        while (i >= 0 && i <= row && j >= 0 && j < column){
             if(matrix[i][j] > target){
                 i--;
             }else if(matrix[i][j] < target){

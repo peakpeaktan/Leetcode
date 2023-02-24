@@ -63,9 +63,10 @@ s consists of English letters (lower-case and upper-case), digits (0-9), ' ', '+
  */
 
 //label_math
+//label_string
 public class $8_String_to_Integer_atoi {
     //two different solutions in https://www.youtube.com/watch?v=FcT5-yrKtyY&ab_channel=%E8%B4%BE%E8%80%83%E5%8D%9A
-    public int myAtoi(String str) {
+    public static int myAtoi(String str) {
         int index = 0;
         int total = 0;
         int sign = 1;
@@ -100,4 +101,9 @@ public class $8_String_to_Integer_atoi {
         }
         return total*sign;
     }
+
+    public static void main (String[] args){
+        myAtoi("1942a");
+    }
+
 }

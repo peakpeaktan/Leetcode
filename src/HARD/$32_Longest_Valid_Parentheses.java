@@ -28,7 +28,7 @@ s[i] is '(', or ')'.
  */
 
 //label_stack
-public class $32Longest_Valid_Parentheses {
+public class $32_Longest_Valid_Parentheses {
     //https://leetcode.com/problems/longest-valid-parentheses/discuss/14167/Simple-JAVA-solution-O(n)-time-one-stack
     //https://www.youtube.com/watch?v=M1Vw5Tk1rw4&ab_channel=basketwangCoding
     public int longestValidParentheses(String s) {

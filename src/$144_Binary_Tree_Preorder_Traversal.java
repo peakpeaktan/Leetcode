@@ -18,7 +18,7 @@ Follow up: Recursive solution is trivial, could you do it iteratively?
 //label_binary_tree
 public class $144_Binary_Tree_Preorder_Traversal {
     //https://leetcode.com/problems/binary-tree-preorder-traversal/discuss/45468/3-Different-Solutions
-    //Solution 1: Iterative + stack
+    //Solution 1: DFS Iterative + stack
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> pre = new LinkedList<Integer>();
         if(root==null) return pre;
@@ -33,7 +33,7 @@ public class $144_Binary_Tree_Preorder_Traversal {
         return pre;
     }
 
-    //Solution 2: Recursive
+    //Solution 2: DFS Recursive
     public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> pre = new LinkedList<Integer>();
         preHelper(root,pre);

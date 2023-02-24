@@ -43,7 +43,7 @@ public class $227_Basic_Calculator_II {
             if(Character.isDigit(s.charAt(i))){
                 num = num*10+s.charAt(i)-'0';
             }
-            if((!Character.isDigit(s.charAt(i)) &&' '!=s.charAt(i)) || i==s.length()-1){
+            if((!Character.isDigit(s.charAt(i)) && ' '!=s.charAt(i)) || i==s.length()-1){
                 if(sign=='-'){
                     stack.push(-num);
                 }
@@ -70,7 +70,7 @@ public class $227_Basic_Calculator_II {
 
     public static void main (String[] args){
         calculate("3-2*3");
-        calculate("2*3+3");
-        calculate("3+2*3+3");
+        //calculate("2*3+3");
+        //calculate("3+2*3+3");
     }
 }

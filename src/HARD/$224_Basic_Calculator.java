@@ -73,6 +73,6 @@ public class $224_Basic_Calculator {
     }
 
     public static void main(String[] args){
-        calculate("1+1");
+        calculate("1+(4+5+2)-3+(6+8)");
     }
 }

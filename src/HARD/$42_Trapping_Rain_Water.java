@@ -19,9 +19,10 @@ n == height.length
  */
 
 //label_array
+//label_two_pointers
 //label_dp
 public class $42_Trapping_Rain_Water {
-    //dp solution
+    //dp solution, O(N) TC and SC
     //https://leetcode.com/problems/trapping-rain-water/discuss/409175/Java-Detailed-Explanations-and-Illustrations-(divide-and-conquer-DP-two-pointers)
     public int trap(int[] height) {
         int n = height.length;

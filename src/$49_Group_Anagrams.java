@@ -41,7 +41,7 @@ public class $49_Group_Anagrams {
         return new ArrayList<>(map.values());
     }
 
-    //better solution
+    //better solution when characters are from a - z only in the input
     public static List<List<String>> groupAnagrams2(String[] strs) {
         if (strs == null || strs.length == 0) return new ArrayList<>();
         Map<String, List<String>> map = new HashMap<>();

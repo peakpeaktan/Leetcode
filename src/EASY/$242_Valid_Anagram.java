@@ -15,7 +15,7 @@ What if the inputs contain unicode characters? How would you adapt your solution
 
  */
 
-//label_string
+//label_hashmap
 public class $242_Valid_Anagram {
 
     public static boolean isAnagram(String s, String t) {

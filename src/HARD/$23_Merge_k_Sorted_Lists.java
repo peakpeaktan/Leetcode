@@ -6,7 +6,6 @@ You are given an array of k linked-lists lists, each linked-list is sorted in as
 Merge all the linked-lists into one sorted linked-list and return it.
 
 
-
 Example 1:
 
 Input: lists = [[1,4,5],[1,3,4],[2,6]]
@@ -40,12 +39,15 @@ The sum of lists[i].length won't exceed 10^4.
  */
 
 //label_priority_queue
-//Very good explanation of priority queue/min heap: https://www.youtube.com/watch?v=g9YK6sftDi0
+//label_linkedlist
 public class $23_Merge_k_Sorted_Lists {
-
+    //solution 1: using min heap
+    //Very good explanation of priority queue/min heap: https://www.youtube.com/watch?v=g9YK6sftDi0
     //https://leetcode.com/problems/merge-k-sorted-lists/discuss/10528/A-java-solution-based-on-Priority-Queue
     public ListNode mergeKLists(ListNode[] lists) {
         return null;
     }
+
+    //solution 2: divide snd conquer, merge pairs
 
 }

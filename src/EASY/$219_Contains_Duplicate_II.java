@@ -19,8 +19,9 @@ Output: false
 
 //similar: 217. Contains Duplicate, 220. Contains Duplicate III
 //label_hashset
+//label_sliding_window
 public class $219_Contains_Duplicate_II {
-    //sliding window + set
+    //sliding window + hashset
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
         Set<Integer> set = new HashSet<Integer>();
         for(int i = 0; i < nums.length; i++){

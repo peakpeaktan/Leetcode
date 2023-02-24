@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
 
@@ -14,8 +15,6 @@ For example, given n = 3, a solution set is:
 
 //very good explanation:
 //https://www.youtube.com/watch?v=PCb1Ca_j6OU
-
-import java.util.*;
 
 //label_backtracking
 public class $22_Generate_Parentheses {

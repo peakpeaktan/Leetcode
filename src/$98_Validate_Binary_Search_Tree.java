@@ -29,7 +29,6 @@ The number of nodes in the tree is in the range [1, 104].
  */
 
 //label_binary_search_tree
-//label_binary_tree
 public class $98_Validate_Binary_Search_Tree {
     //https://www.youtube.com/watch?v=n_bdrIzrnPA
     //https://leetcode.com/problems/validate-binary-search-tree/discuss/32138/Another-passed-Java-solution

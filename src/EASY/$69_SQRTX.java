@@ -42,7 +42,8 @@ public class $69_SQRTX {
     }
 
     public static void main(String [] args){
-        System.out.println(mySqrt(8));
-        System.out.println(mySqrt(23));
+        //System.out.println(mySqrt(2));
+        System.out.println(mySqrt(10));
+        //System.out.println(mySqrt(23));
     }
 }

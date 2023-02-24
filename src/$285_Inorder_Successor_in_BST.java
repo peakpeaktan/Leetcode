@@ -29,11 +29,8 @@ All Nodes will have unique values.
 public class $285_Inorder_Successor_in_BST {
     //read leetcode solution, TC: O(log(n)) if tree is balanced, O(n) if tree is skewed
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
-
         TreeNode successor = null;
-
         while (root != null) {
-
             if (p.val >= root.val) {
                 root = root.right;
             } else {

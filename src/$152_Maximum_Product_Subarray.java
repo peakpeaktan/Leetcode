@@ -1,3 +1,4 @@
+import java.util.*;
 /*
 Given an integer array nums, find a contiguous non-empty subarray within the array that has the largest product, and return the product.
 
@@ -46,10 +47,54 @@ public class $152_Maximum_Product_Subarray {
         return product;
     }
 
+    //for amazon oa
+    public static long maximumQuality(List<Integer> packets, int channels) {
+        // Write your code here
+        int size = packets.size();
+
+        double answer = 0;
+        if(size == channels) {
+            for(int i = 0;i<size;i++) {
+                answer += packets.get(i);
+            }
+            return (long)answer;
+        }
+
+        Collections.sort(packets);
+
+        for(int i = size - channels+1;i<size;i++) {
+            answer += packets.get(i);
+        }
+
+        size = size-channels + 1;
+
+        if(size % 2 == 0) {
+            double value = packets.get(size/2 - 1) + packets.get(size/2);
+            answer += value/2;
+        }
+        else {
+            answer += packets.get(size/2);
+        }
+        return (long)Math.ceil(answer);
+
+        //        if(n%2 == 0) {
+//            // odd
+//            answer += packets.get(n/2);
+//        }
+//        else {
+//            //even
+//            double value = packets.get(n/2) + packets.get((n/2) + 1);
+//            answer += value/2;
+//        }
+    }
+
     public static void main(String [] args){
 
         int[] array = {-1,2,-3,2,1};
 
         System.out.println(maxProduct(array));
+
+
+        maximumQuality(Arrays.asList(1,2,3,4,5), 2);
     }
 }

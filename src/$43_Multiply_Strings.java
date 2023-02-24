@@ -21,6 +21,7 @@ You must not use any built-in BigInteger library or convert the inputs to intege
  */
 
 //label_math
+//label_string
 public class $43_Multiply_Strings {
     //https://leetcode.com/problems/multiply-strings/discuss/17605/Easiest-JAVA-Solution-with-Graph-Explanation
     //https://www.youtube.com/watch?v=Z_xGMYUSEJ8

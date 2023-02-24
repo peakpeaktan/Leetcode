@@ -33,7 +33,7 @@ Constraints:
 //similar: 279. Perfect Squares
 public class $322_Coin_Change {
     //https://www.youtube.com/watch?v=H9bfqozjoqs
-    public int coinChange(int[] coins, int amount) {
+    public static int coinChange(int[] coins, int amount) {
         int max = amount + 1;
         int[] dp = new int[amount + 1];
         Arrays.fill(dp, max);
@@ -48,4 +48,7 @@ public class $322_Coin_Change {
         return dp[amount] > amount ? -1 : dp[amount];
     }
 
+    public static void main(String[] args){
+        coinChange(new int[]{1,2,5}, 11);
+    }
 }

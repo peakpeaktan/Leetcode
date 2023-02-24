@@ -35,7 +35,7 @@ n == dungeon[i].length
 
 //label_dp
 public class $174_Dungeon_Game {
-    //https://www.youtube.com/watch?v=pt-xIS6huIg
+    //https://www.youtube.com/watch?v=4uUGxZXoR5o&t=916s&ab_channel=TECHDOSE
     public int calculateMinimumHP(int[][] dungeon) {
         return 0;
     }

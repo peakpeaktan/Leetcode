@@ -51,6 +51,8 @@ public class $268_Missing_Number {
         return sum;
     }
 
+    //hashset
+
     public static void main(String [] args){
 
         int[] array = {4,2,1,0};

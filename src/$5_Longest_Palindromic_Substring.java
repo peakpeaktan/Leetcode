@@ -14,6 +14,7 @@ Output: "bb"
 
 //must watch: https://www.youtube.com/watch?v=ZnzvU03HtYk
 //label_dp
+//label_two_pointers
 public class $5_Longest_Palindromic_Substring{
     public static String longestPalindrome(String s) {
 

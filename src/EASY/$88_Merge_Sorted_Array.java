@@ -42,6 +42,7 @@ Follow up: Can you come up with an algorithm that runs in O(m + n) time?
  */
 
 //label_array
+//label_two_pointers
 public class $88_Merge_Sorted_Array {
     //https://www.youtube.com/watch?v=KkmV7Uuosmc
     public void merge(int[] nums1, int m, int[] nums2, int n) {

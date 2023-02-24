@@ -33,6 +33,7 @@ All the words in wordList are unique.
  */
 
 //label_bfs
+//label_graph
 public class $127_Word_Ladder {
     //solution 1: BFS, using queue.size to calculate level, no dedicated hashset for making visited works
     //https://www.youtube.com/watch?v=hB_nYXFtwP0
@@ -113,6 +114,9 @@ public class $127_Word_Ladder {
             beginSet = temp;
             len++;
         }
+
+        //solution 3: using graph
+        //https://www.youtube.com/watch?v=h9iTnkgv05E&ab_channel=NeetCode
 
         return 0;
     }
